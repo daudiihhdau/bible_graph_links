@@ -1,0 +1,3515 @@
+{
+  "schema_version": "1.1.0",
+  "metadata": {
+    "title_de": "Reiseberichte Jesu in den vier Evangelien",
+    "created_on": "2026-10-12",
+    "language": "de",
+    "protagonist": "Jesus",
+    "purpose": "learning_and_data_visualization",
+    "scope": "final_synoptic_journeys_and_selected_john_journeys",
+    "related_dataset": "Evangelien_Themenvergleich.json",
+    "authoring_note_de": "Eigene Zusammenführung nach den Quellen; nicht fachlich begutachtet.",
+    "reference_note_de": "Jede Texteinteilung enthält ausdrücklich Buch, Kapitel und Vers."
+  },
+  "methodology": {
+    "lukan_core_range": "Luke.9.51–Luke.19.27",
+    "exhaustive_itinerary": false,
+    "historical_route_reconstruction": false,
+    "scope_note_de": "Im Mittelpunkt steht Jesu Weg nach Jerusalem. Dazu kommen ausgewählte johanneische Reisen. Nicht alle Ortswechsel, Kindheitsreisen oder nachösterlichen Wege werden erfasst.",
+    "literary_note_de": "Der lukanische Reisebericht ist vor allem ein literarischer Rahmen für Lehre und Nachfolge. Die kürzeren synoptischen Wegabschnitte sind keine Parallelfassung jedes darin enthaltenen Textes.",
+    "john_note_de": "Johannes besitzt keinen entsprechenden durchgehenden synoptischen Reisebericht. Deshalb werden einzelne Bewegungen mit ihren erzählerischen Kontexten gesondert erfasst.",
+    "location_note_de": "Ortsnamen geben Textangaben wieder. Moderne Koordinaten, Distanzen und eine lückenlose Marschroute werden nicht behauptet. Die Eintragung von Samaria und Galiläa in Lk 17,11 legt keine genaue Wegfolge oder Grenze fest.",
+    "boundary_note_de": "Lukas wird nach Bull bis 19,27 abgegrenzt. Gadenz schließt Einzug und Klage bis 19,44 in die Reise ein; diese Szenen werden hier als Anschluss erfasst.",
+    "classification_note_de": "Die Abschnittstitel sind für das Lernen vereinfacht. next_in_text bedeutet Textreihenfolge, nicht eine gesicherte gemeinsame historische Zeitleiste."
+  },
+  "data_dictionary": {
+    "ranges": "Inklusive Grenzen, ganzzahlige chapter- und verse-Felder; Referenzen Buch.Kapitel.Vers.",
+    "null_departure": "Der Ausgangsort wird für diesen Ausschnitt nicht ausdrücklich festgelegt.",
+    "goal_or_arrival_location_id": "Erzähltes Ziel oder Ankunftsort; eine Zielangabe beweist keine bereits erfolgte Ankunft.",
+    "context_range": "Erzählabschnitt um eine Reise; enthält auch Gespräche und Handlungen am Ziel.",
+    "movement_signal_ranges": "Engere Stellen, an denen ein Ortswechsel beschrieben oder angekündigt wird.",
+    "comparison_groups": "Ausgewählte Erzählparallelen; Unterschiede stehen im jeweiligen note_de.",
+    "graph": "Knoten mit stabilen IDs, Kanten mit type und directed. Gegenstände werden über IDs mit den ausführlichen Beschreibungen verbunden.",
+    "bible_reference_de": "Lesbare Bibelstellenangabe mit Buchkürzel, Kapitel und Vers, beispielsweise Lk 9,51–19,27. Steht an jeder strukturierten Versspanne.",
+    "bible_references_de": "Liste der Bibelstellen des betreffenden Abschnitts; Kontext, Bewegungsstellen und weitere Rahmenbereiche können darin gemeinsam vorkommen."
+  },
+  "gospels": [
+    {
+      "id": "Matt",
+      "name_de": "Matthäus",
+      "order": 1,
+      "chapter_count": 28
+    },
+    {
+      "id": "Mark",
+      "name_de": "Markus",
+      "order": 2,
+      "chapter_count": 16
+    },
+    {
+      "id": "Luke",
+      "name_de": "Lukas",
+      "order": 3,
+      "chapter_count": 24
+    },
+    {
+      "id": "John",
+      "name_de": "Johannes",
+      "order": 4,
+      "chapter_count": 21
+    }
+  ],
+  "journey_reports": [
+    {
+      "id": "matt_final_journey",
+      "gospel_id": "Matt",
+      "protagonist": "Jesus",
+      "title_de": "Weg Jesu nach Jerusalem",
+      "classification": "short_final_journey_section",
+      "range": {
+        "label_de": "19,1–20,34",
+        "start": {
+          "chapter": 19,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 20,
+          "verse": 34
+        },
+        "start_ref": "Matt.19.1",
+        "end_ref": "Matt.20.34",
+        "inclusive": true,
+        "bible_book_id": "Matt",
+        "bible_book_de": "Matthäus",
+        "bible_reference_de": "Mt 19,1–20,34"
+      },
+      "destination_location_id": "place_jerusalem",
+      "source_ids": [
+        "bull_mt",
+        "mitch_sri_mt"
+      ],
+      "subdivision_type": "literary_learning_sections",
+      "sections": [
+        {
+          "id": "matt_final_journey_section_01",
+          "order": 1,
+          "title_de": "Aufbruch und Unterweisung über Ehe und Kinder",
+          "range": {
+            "label_de": "19,1–15",
+            "start": {
+              "chapter": 19,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 15
+            },
+            "start_ref": "Matt.19.1",
+            "end_ref": "Matt.19.15",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 19,1–15"
+          },
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 19,1–15"
+          ]
+        },
+        {
+          "id": "matt_final_journey_section_02",
+          "order": 2,
+          "title_de": "Reichtum und Nachfolge",
+          "range": {
+            "label_de": "19,16–30",
+            "start": {
+              "chapter": 19,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 30
+            },
+            "start_ref": "Matt.19.16",
+            "end_ref": "Matt.19.30",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 19,16–30"
+          },
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 19,16–30"
+          ]
+        },
+        {
+          "id": "matt_final_journey_section_03",
+          "order": 3,
+          "title_de": "Gleichnis von den Arbeitern im Weinberg",
+          "range": {
+            "label_de": "20,1–16",
+            "start": {
+              "chapter": 20,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 16
+            },
+            "start_ref": "Matt.20.1",
+            "end_ref": "Matt.20.16",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 20,1–16"
+          },
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 20,1–16"
+          ]
+        },
+        {
+          "id": "matt_final_journey_section_04",
+          "order": 4,
+          "title_de": "Leiden, Dienst und Heilung bei Jericho",
+          "range": {
+            "label_de": "20,17–34",
+            "start": {
+              "chapter": 20,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 34
+            },
+            "start_ref": "Matt.20.17",
+            "end_ref": "Matt.20.34",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 20,17–34"
+          },
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 20,17–34"
+          ]
+        }
+      ],
+      "related_broader_instruction_range": {
+        "label_de": "16,21–20,34",
+        "start": {
+          "chapter": 16,
+          "verse": 21
+        },
+        "end": {
+          "chapter": 20,
+          "verse": 34
+        },
+        "start_ref": "Matt.16.21",
+        "end_ref": "Matt.20.34",
+        "inclusive": true,
+        "bible_book_id": "Matt",
+        "bible_book_de": "Matthäus",
+        "bible_reference_de": "Mt 16,21–20,34"
+      },
+      "note_de": "Der Reiseblock ist Teil der breiteren Jüngerbelehrung ab 16,21. Der Einzug folgt ab 21,1.",
+      "bible_references_de": [
+        "Mt 19,1–20,34",
+        "Mt 16,21–20,34"
+      ]
+    },
+    {
+      "id": "mark_final_journey",
+      "gospel_id": "Mark",
+      "protagonist": "Jesus",
+      "title_de": "Weg Jesu nach Jerusalem",
+      "classification": "short_final_journey_section",
+      "range": {
+        "label_de": "10,1–52",
+        "start": {
+          "chapter": 10,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 52
+        },
+        "start_ref": "Mark.10.1",
+        "end_ref": "Mark.10.52",
+        "inclusive": true,
+        "bible_book_id": "Mark",
+        "bible_book_de": "Markus",
+        "bible_reference_de": "Mk 10,1–52"
+      },
+      "destination_location_id": "place_jerusalem",
+      "source_ids": [
+        "bull_mk",
+        "stolle_mk"
+      ],
+      "subdivision_type": "literary_learning_sections",
+      "sections": [
+        {
+          "id": "mark_final_journey_section_01",
+          "order": 1,
+          "title_de": "Ehe und Scheidung",
+          "range": {
+            "label_de": "10,1–12",
+            "start": {
+              "chapter": 10,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "start_ref": "Mark.10.1",
+            "end_ref": "Mark.10.12",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,1–12"
+          },
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,1–12"
+          ]
+        },
+        {
+          "id": "mark_final_journey_section_02",
+          "order": 2,
+          "title_de": "Kinder und Gottesreich",
+          "range": {
+            "label_de": "10,13–16",
+            "start": {
+              "chapter": 10,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 16
+            },
+            "start_ref": "Mark.10.13",
+            "end_ref": "Mark.10.16",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,13–16"
+          },
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,13–16"
+          ]
+        },
+        {
+          "id": "mark_final_journey_section_03",
+          "order": 3,
+          "title_de": "Reichtum und Nachfolge",
+          "range": {
+            "label_de": "10,17–31",
+            "start": {
+              "chapter": 10,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 31
+            },
+            "start_ref": "Mark.10.17",
+            "end_ref": "Mark.10.31",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,17–31"
+          },
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,17–31"
+          ]
+        },
+        {
+          "id": "mark_final_journey_section_04",
+          "order": 4,
+          "title_de": "Leidensankündigung, Dienst und Bartimäus",
+          "range": {
+            "label_de": "10,32–52",
+            "start": {
+              "chapter": 10,
+              "verse": 32
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 52
+            },
+            "start_ref": "Mark.10.32",
+            "end_ref": "Mark.10.52",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,32–52"
+          },
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,32–52"
+          ]
+        }
+      ],
+      "related_broader_instruction_range": {
+        "label_de": "8,27–10,52",
+        "start": {
+          "chapter": 8,
+          "verse": 27
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 52
+        },
+        "start_ref": "Mark.8.27",
+        "end_ref": "Mark.10.52",
+        "inclusive": true,
+        "bible_book_id": "Mark",
+        "bible_book_de": "Markus",
+        "bible_reference_de": "Mk 8,27–10,52"
+      },
+      "note_de": "Der eigentliche Reiseabschnitt in Kapitel 10 steht innerhalb der Jüngerbelehrung ab 8,27. Der Einzug folgt ab 11,1.",
+      "bible_references_de": [
+        "Mk 10,1–52",
+        "Mk 8,27–10,52"
+      ]
+    },
+    {
+      "id": "luke_travel_report",
+      "gospel_id": "Luke",
+      "protagonist": "Jesus",
+      "title_de": "Lukanischer Reisebericht",
+      "classification": "extended_literary_travel_narrative",
+      "range": {
+        "label_de": "9,51–19,27",
+        "start": {
+          "chapter": 9,
+          "verse": 51
+        },
+        "end": {
+          "chapter": 19,
+          "verse": 27
+        },
+        "start_ref": "Luke.9.51",
+        "end_ref": "Luke.19.27",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 9,51–19,27"
+      },
+      "destination_location_id": "place_jerusalem",
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "subdivision_type": "literary_learning_sections",
+      "sections": [
+        {
+          "id": "luke_travel_report_section_01",
+          "order": 1,
+          "title_de": "Aufbruch, Nachfolge und Aussendung",
+          "range": {
+            "label_de": "9,51–10,24",
+            "start": {
+              "chapter": 9,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 24
+            },
+            "start_ref": "Luke.9.51",
+            "end_ref": "Luke.10.24",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 9,51–10,24"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 9,51–10,24"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_02",
+          "order": 2,
+          "title_de": "Lehre über Nächstenliebe, Gebet und Hören",
+          "range": {
+            "label_de": "10,25–11,36",
+            "start": {
+              "chapter": 10,
+              "verse": 25
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 36
+            },
+            "start_ref": "Luke.10.25",
+            "end_ref": "Luke.11.36",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 10,25–11,36"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 10,25–11,36"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_03",
+          "order": 3,
+          "title_de": "Gericht, Mahnung und Umkehr",
+          "range": {
+            "label_de": "11,37–13,9",
+            "start": {
+              "chapter": 11,
+              "verse": 37
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 9
+            },
+            "start_ref": "Luke.11.37",
+            "end_ref": "Luke.13.9",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 11,37–13,9"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 11,37–13,9"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_04",
+          "order": 4,
+          "title_de": "Heilung am Sabbat",
+          "range": {
+            "label_de": "13,10–17",
+            "start": {
+              "chapter": 13,
+              "verse": 10
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 17
+            },
+            "start_ref": "Luke.13.10",
+            "end_ref": "Luke.13.17",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 13,10–17"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 13,10–17"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_05",
+          "order": 5,
+          "title_de": "Gottesreich und Jerusalem",
+          "range": {
+            "label_de": "13,18–35",
+            "start": {
+              "chapter": 13,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 35
+            },
+            "start_ref": "Luke.13.18",
+            "end_ref": "Luke.13.35",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 13,18–35"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 13,18–35"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_06",
+          "order": 6,
+          "title_de": "Gastmahl und Nachfolge",
+          "range": {
+            "label_de": "14,1–35",
+            "start": {
+              "chapter": 14,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 35
+            },
+            "start_ref": "Luke.14.1",
+            "end_ref": "Luke.14.35",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 14,1–35"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 14,1–35"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_07",
+          "order": 7,
+          "title_de": "Gleichnisse vom Verlorenen",
+          "range": {
+            "label_de": "15,1–32",
+            "start": {
+              "chapter": 15,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 32
+            },
+            "start_ref": "Luke.15.1",
+            "end_ref": "Luke.15.32",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 15,1–32"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 15,1–32"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_08",
+          "order": 8,
+          "title_de": "Besitz und Verantwortung",
+          "range": {
+            "label_de": "16,1–31",
+            "start": {
+              "chapter": 16,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 31
+            },
+            "start_ref": "Luke.16.1",
+            "end_ref": "Luke.16.31",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 16,1–31"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 16,1–31"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_09",
+          "order": 9,
+          "title_de": "Unterweisung der Jünger",
+          "range": {
+            "label_de": "17,1–10",
+            "start": {
+              "chapter": 17,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 10
+            },
+            "start_ref": "Luke.17.1",
+            "end_ref": "Luke.17.10",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 17,1–10"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 17,1–10"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_10",
+          "order": 10,
+          "title_de": "Heilung der zehn Aussätzigen",
+          "range": {
+            "label_de": "17,11–19",
+            "start": {
+              "chapter": 17,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 19
+            },
+            "start_ref": "Luke.17.11",
+            "end_ref": "Luke.17.19",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 17,11–19"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 17,11–19"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_11",
+          "order": 11,
+          "title_de": "Kommen des Gottesreiches",
+          "range": {
+            "label_de": "17,20–37",
+            "start": {
+              "chapter": 17,
+              "verse": 20
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 37
+            },
+            "start_ref": "Luke.17.20",
+            "end_ref": "Luke.17.37",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 17,20–37"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 17,20–37"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_12",
+          "order": 12,
+          "title_de": "Gebet und Aufnahme ins Gottesreich",
+          "range": {
+            "label_de": "18,1–30",
+            "start": {
+              "chapter": 18,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 30
+            },
+            "start_ref": "Luke.18.1",
+            "end_ref": "Luke.18.30",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 18,1–30"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 18,1–30"
+          ]
+        },
+        {
+          "id": "luke_travel_report_section_13",
+          "order": 13,
+          "title_de": "Letzter Wegabschnitt und Jericho",
+          "range": {
+            "label_de": "18,31–19,27",
+            "start": {
+              "chapter": 18,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 27
+            },
+            "start_ref": "Luke.18.31",
+            "end_ref": "Luke.19.27",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 18,31–19,27"
+          },
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 18,31–19,27"
+          ]
+        }
+      ],
+      "related_broader_instruction_range": null,
+      "note_de": "Langer literarischer Rahmen mit viel Lehre und Gleichnissen. Hier endet er mit 19,27; der Einzug beginnt bei 19,28. Andere Kommentare reichen bis 19,44. Die Abschnittstitel sind vereinfacht.",
+      "bible_references_de": [
+        "Lk 9,51–19,27"
+      ]
+    }
+  ],
+  "travel_signals": [
+    {
+      "id": "matt_travel_signal_01",
+      "gospel_id": "Matt",
+      "order_within_gospel": 1,
+      "report_id": "matt_final_journey",
+      "title_de": "Galiläa verlassen",
+      "range": {
+        "label_de": "19,1–2",
+        "start": {
+          "chapter": 19,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 19,
+          "verse": 2
+        },
+        "start_ref": "Matt.19.1",
+        "end_ref": "Matt.19.2",
+        "inclusive": true,
+        "bible_book_id": "Matt",
+        "bible_book_de": "Matthäus",
+        "bible_reference_de": "Mt 19,1–2"
+      },
+      "from_location_id": "place_galilee",
+      "goal_or_arrival_location_id": "place_judea",
+      "location_ids_mentioned": [
+        "place_jordan_beyond"
+      ],
+      "source_ids": [
+        "bull_mt"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Mt 19,1–2"
+      ]
+    },
+    {
+      "id": "matt_travel_signal_02",
+      "gospel_id": "Matt",
+      "order_within_gospel": 2,
+      "report_id": "matt_final_journey",
+      "title_de": "Hinauf nach Jerusalem",
+      "range": {
+        "label_de": "20,17–19",
+        "start": {
+          "chapter": 20,
+          "verse": 17
+        },
+        "end": {
+          "chapter": 20,
+          "verse": 19
+        },
+        "start_ref": "Matt.20.17",
+        "end_ref": "Matt.20.19",
+        "inclusive": true,
+        "bible_book_id": "Matt",
+        "bible_book_de": "Matthäus",
+        "bible_reference_de": "Mt 20,17–19"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_mt"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Mt 20,17–19"
+      ]
+    },
+    {
+      "id": "mark_travel_signal_01",
+      "gospel_id": "Mark",
+      "order_within_gospel": 1,
+      "report_id": "mark_final_journey",
+      "title_de": "Judäa und Gebiet jenseits des Jordans",
+      "range": {
+        "label_de": "10,1",
+        "start": {
+          "chapter": 10,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 1
+        },
+        "start_ref": "Mark.10.1",
+        "end_ref": "Mark.10.1",
+        "inclusive": true,
+        "bible_book_id": "Mark",
+        "bible_book_de": "Markus",
+        "bible_reference_de": "Mk 10,1"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": null,
+      "location_ids_mentioned": [
+        "place_judea",
+        "place_jordan_beyond"
+      ],
+      "source_ids": [
+        "bull_mk",
+        "stolle_mk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Mk 10,1"
+      ]
+    },
+    {
+      "id": "mark_travel_signal_02",
+      "gospel_id": "Mark",
+      "order_within_gospel": 2,
+      "report_id": "mark_final_journey",
+      "title_de": "Auf dem Weg nach Jerusalem",
+      "range": {
+        "label_de": "10,32–34",
+        "start": {
+          "chapter": 10,
+          "verse": 32
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 34
+        },
+        "start_ref": "Mark.10.32",
+        "end_ref": "Mark.10.34",
+        "inclusive": true,
+        "bible_book_id": "Mark",
+        "bible_book_de": "Markus",
+        "bible_reference_de": "Mk 10,32–34"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_mk",
+        "stolle_mk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Mk 10,32–34"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_01",
+      "gospel_id": "Luke",
+      "order_within_gospel": 1,
+      "report_id": "luke_travel_report",
+      "title_de": "Ausrichtung auf Jerusalem und Samariterdorf",
+      "range": {
+        "label_de": "9,51–56",
+        "start": {
+          "chapter": 9,
+          "verse": 51
+        },
+        "end": {
+          "chapter": 9,
+          "verse": 56
+        },
+        "start_ref": "Luke.9.51",
+        "end_ref": "Luke.9.56",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 9,51–56"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [
+        "place_samaria"
+      ],
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 9,51–56"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_02",
+      "gospel_id": "Luke",
+      "order_within_gospel": 2,
+      "report_id": "luke_travel_report",
+      "title_de": "Unterwegs durch Städte und Dörfer",
+      "range": {
+        "label_de": "13,22",
+        "start": {
+          "chapter": 13,
+          "verse": 22
+        },
+        "end": {
+          "chapter": 13,
+          "verse": 22
+        },
+        "start_ref": "Luke.13.22",
+        "end_ref": "Luke.13.22",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 13,22"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 13,22"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_03",
+      "gospel_id": "Luke",
+      "order_within_gospel": 3,
+      "report_id": "luke_travel_report",
+      "title_de": "Samaria und Galiläa auf dem Weg",
+      "range": {
+        "label_de": "17,11",
+        "start": {
+          "chapter": 17,
+          "verse": 11
+        },
+        "end": {
+          "chapter": 17,
+          "verse": 11
+        },
+        "start_ref": "Luke.17.11",
+        "end_ref": "Luke.17.11",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 17,11"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [
+        "place_samaria",
+        "place_galilee"
+      ],
+      "source_ids": [
+        "nab_luke_17",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 17,11"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_04",
+      "gospel_id": "Luke",
+      "order_within_gospel": 4,
+      "report_id": "luke_travel_report",
+      "title_de": "Ankündigung des Weges nach Jerusalem",
+      "range": {
+        "label_de": "18,31–34",
+        "start": {
+          "chapter": 18,
+          "verse": 31
+        },
+        "end": {
+          "chapter": 18,
+          "verse": 34
+        },
+        "start_ref": "Luke.18.31",
+        "end_ref": "Luke.18.34",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 18,31–34"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jerusalem",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 18,31–34"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_05",
+      "gospel_id": "Luke",
+      "order_within_gospel": 5,
+      "report_id": "luke_travel_report",
+      "title_de": "Annäherung an Jericho",
+      "range": {
+        "label_de": "18,35–43",
+        "start": {
+          "chapter": 18,
+          "verse": 35
+        },
+        "end": {
+          "chapter": 18,
+          "verse": 43
+        },
+        "start_ref": "Luke.18.35",
+        "end_ref": "Luke.18.43",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 18,35–43"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jericho",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 18,35–43"
+      ]
+    },
+    {
+      "id": "luke_travel_signal_06",
+      "gospel_id": "Luke",
+      "order_within_gospel": 6,
+      "report_id": "luke_travel_report",
+      "title_de": "Jesus in Jericho",
+      "range": {
+        "label_de": "19,1–10",
+        "start": {
+          "chapter": 19,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 19,
+          "verse": 10
+        },
+        "start_ref": "Luke.19.1",
+        "end_ref": "Luke.19.10",
+        "inclusive": true,
+        "bible_book_id": "Luke",
+        "bible_book_de": "Lukas",
+        "bible_reference_de": "Lk 19,1–10"
+      },
+      "from_location_id": null,
+      "goal_or_arrival_location_id": "place_jericho",
+      "location_ids_mentioned": [],
+      "source_ids": [
+        "bull_lk",
+        "gadenz_lk"
+      ],
+      "route_precision": "textual_signal_without_complete_itinerary",
+      "bible_references_de": [
+        "Lk 19,1–10"
+      ]
+    }
+  ],
+  "john_journey_episodes": [
+    {
+      "id": "john_journey_01",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 1,
+      "title_de": "Zum Passafest nach Jerusalem",
+      "context_range": {
+        "label_de": "2,13–25",
+        "start": {
+          "chapter": 2,
+          "verse": 13
+        },
+        "end": {
+          "chapter": 2,
+          "verse": 25
+        },
+        "start_ref": "John.2.13",
+        "end_ref": "John.2.25",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 2,13–25"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "2,13",
+          "start": {
+            "chapter": 2,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 13
+          },
+          "start_ref": "John.2.13",
+          "end_ref": "John.2.13",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 2,13"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_jerusalem",
+      "intermediate_or_related_location_ids": [],
+      "source_ids": [
+        "nab_john_2",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 2,13–25",
+        "Joh 2,13"
+      ]
+    },
+    {
+      "id": "john_journey_02",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 2,
+      "title_de": "Durch Samaria nach Galiläa",
+      "context_range": {
+        "label_de": "4,1–54",
+        "start": {
+          "chapter": 4,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 4,
+          "verse": 54
+        },
+        "start_ref": "John.4.1",
+        "end_ref": "John.4.54",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 4,1–54"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "4,3–5",
+          "start": {
+            "chapter": 4,
+            "verse": 3
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 5
+          },
+          "start_ref": "John.4.3",
+          "end_ref": "John.4.5",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 4,3–5"
+        },
+        {
+          "label_de": "4,43–46",
+          "start": {
+            "chapter": 4,
+            "verse": 43
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 46
+          },
+          "start_ref": "John.4.43",
+          "end_ref": "John.4.46",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 4,43–46"
+        }
+      ],
+      "from_location_id": "place_judea",
+      "to_location_id": "place_cana",
+      "intermediate_or_related_location_ids": [
+        "place_samaria",
+        "place_sychar",
+        "place_galilee"
+      ],
+      "source_ids": [
+        "nab_john_4",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 4,1–54",
+        "Joh 4,3–5",
+        "Joh 4,43–46"
+      ]
+    },
+    {
+      "id": "john_journey_03",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 3,
+      "title_de": "Zu einem Fest nach Jerusalem",
+      "context_range": {
+        "label_de": "5,1–47",
+        "start": {
+          "chapter": 5,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 5,
+          "verse": 47
+        },
+        "start_ref": "John.5.1",
+        "end_ref": "John.5.47",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 5,1–47"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "5,1",
+          "start": {
+            "chapter": 5,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 1
+          },
+          "start_ref": "John.5.1",
+          "end_ref": "John.5.1",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 5,1"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_jerusalem",
+      "intermediate_or_related_location_ids": [],
+      "source_ids": [
+        "nab_john_5",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 5,1–47",
+        "Joh 5,1"
+      ]
+    },
+    {
+      "id": "john_journey_04",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 4,
+      "title_de": "Zum Laubhüttenfest nach Jerusalem",
+      "context_range": {
+        "label_de": "7,1–14",
+        "start": {
+          "chapter": 7,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 7,
+          "verse": 14
+        },
+        "start_ref": "John.7.1",
+        "end_ref": "John.7.14",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 7,1–14"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "7,9–14",
+          "start": {
+            "chapter": 7,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 14
+          },
+          "start_ref": "John.7.9",
+          "end_ref": "John.7.14",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 7,9–14"
+        }
+      ],
+      "from_location_id": "place_galilee",
+      "to_location_id": "place_jerusalem",
+      "intermediate_or_related_location_ids": [],
+      "source_ids": [
+        "nab_john_7",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 7,1–14",
+        "Joh 7,9–14"
+      ]
+    },
+    {
+      "id": "john_journey_05",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 5,
+      "title_de": "Rückzug jenseits des Jordans",
+      "context_range": {
+        "label_de": "10,40–42",
+        "start": {
+          "chapter": 10,
+          "verse": 40
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 42
+        },
+        "start_ref": "John.10.40",
+        "end_ref": "John.10.42",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 10,40–42"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "10,40",
+          "start": {
+            "chapter": 10,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 40
+          },
+          "start_ref": "John.10.40",
+          "end_ref": "John.10.40",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 10,40"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_jordan_beyond",
+      "intermediate_or_related_location_ids": [],
+      "source_ids": [
+        "nab_john_10",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 10,40–42",
+        "Joh 10,40"
+      ]
+    },
+    {
+      "id": "john_journey_06",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 6,
+      "title_de": "Rückkehr nach Judäa und Betanien",
+      "context_range": {
+        "label_de": "11,1–44",
+        "start": {
+          "chapter": 11,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 11,
+          "verse": 44
+        },
+        "start_ref": "John.11.1",
+        "end_ref": "John.11.44",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 11,1–44"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "11,7–18",
+          "start": {
+            "chapter": 11,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 18
+          },
+          "start_ref": "John.11.7",
+          "end_ref": "John.11.18",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 11,7–18"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_bethany",
+      "intermediate_or_related_location_ids": [
+        "place_judea"
+      ],
+      "source_ids": [
+        "nab_john_11",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 11,1–44",
+        "Joh 11,7–18"
+      ]
+    },
+    {
+      "id": "john_journey_07",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 7,
+      "title_de": "Rückzug nach Ephraim",
+      "context_range": {
+        "label_de": "11,54",
+        "start": {
+          "chapter": 11,
+          "verse": 54
+        },
+        "end": {
+          "chapter": 11,
+          "verse": 54
+        },
+        "start_ref": "John.11.54",
+        "end_ref": "John.11.54",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 11,54"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "11,54",
+          "start": {
+            "chapter": 11,
+            "verse": 54
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 54
+          },
+          "start_ref": "John.11.54",
+          "end_ref": "John.11.54",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 11,54"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_ephraim",
+      "intermediate_or_related_location_ids": [],
+      "source_ids": [
+        "nab_john_11",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 11,54"
+      ]
+    },
+    {
+      "id": "john_journey_08",
+      "gospel_id": "John",
+      "protagonist": "Jesus",
+      "order_within_gospel": 8,
+      "title_de": "Betanien und Einzug in Jerusalem",
+      "context_range": {
+        "label_de": "12,1–19",
+        "start": {
+          "chapter": 12,
+          "verse": 1
+        },
+        "end": {
+          "chapter": 12,
+          "verse": 19
+        },
+        "start_ref": "John.12.1",
+        "end_ref": "John.12.19",
+        "inclusive": true,
+        "bible_book_id": "John",
+        "bible_book_de": "Johannes",
+        "bible_reference_de": "Joh 12,1–19"
+      },
+      "movement_signal_ranges": [
+        {
+          "label_de": "12,1",
+          "start": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "start_ref": "John.12.1",
+          "end_ref": "John.12.1",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 12,1"
+        },
+        {
+          "label_de": "12,12–19",
+          "start": {
+            "chapter": 12,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 19
+          },
+          "start_ref": "John.12.12",
+          "end_ref": "John.12.19",
+          "inclusive": true,
+          "bible_book_id": "John",
+          "bible_book_de": "Johannes",
+          "bible_reference_de": "Joh 12,12–19"
+        }
+      ],
+      "from_location_id": null,
+      "to_location_id": "place_jerusalem",
+      "intermediate_or_related_location_ids": [
+        "place_bethany"
+      ],
+      "source_ids": [
+        "nab_john_12",
+        "martin_wright_jn"
+      ],
+      "classification": "selected_journey_episode",
+      "route_precision": "textual_selection_without_complete_route",
+      "bible_references_de": [
+        "Joh 12,1–19",
+        "Joh 12,1",
+        "Joh 12,12–19"
+      ]
+    }
+  ],
+  "comparison_groups": [
+    {
+      "id": "comparison_prediction",
+      "title_de": "Leidensankündigung auf dem Weg",
+      "relation_type": "parallel_episode",
+      "note_de": "Vergleichbare synoptische Erzählung; Wortlaut und Gestaltung unterscheiden sich.",
+      "entries": [
+        {
+          "id": "prediction_matt",
+          "gospel_id": "Matt",
+          "range": {
+            "label_de": "20,17–19",
+            "start": {
+              "chapter": 20,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 19
+            },
+            "start_ref": "Matt.20.17",
+            "end_ref": "Matt.20.19",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 20,17–19"
+          },
+          "related_report_id": "matt_final_journey",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 20,17–19"
+          ]
+        },
+        {
+          "id": "prediction_mark",
+          "gospel_id": "Mark",
+          "range": {
+            "label_de": "10,32–34",
+            "start": {
+              "chapter": 10,
+              "verse": 32
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 34
+            },
+            "start_ref": "Mark.10.32",
+            "end_ref": "Mark.10.34",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,32–34"
+          },
+          "related_report_id": "mark_final_journey",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,32–34"
+          ]
+        },
+        {
+          "id": "prediction_luke",
+          "gospel_id": "Luke",
+          "range": {
+            "label_de": "18,31–34",
+            "start": {
+              "chapter": 18,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 34
+            },
+            "start_ref": "Luke.18.31",
+            "end_ref": "Luke.18.34",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 18,31–34"
+          },
+          "related_report_id": "luke_travel_report",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 18,31–34"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparison_jericho_blind",
+      "title_de": "Blindenheilung bei Jericho",
+      "relation_type": "parallel_episode",
+      "note_de": "Matthäus und Markus erzählen beim Verlassen Jerichos, Lukas bei der Annäherung. Matthäus nennt zwei Blinde, Markus und Lukas einen. Keine identische Ortsfolge ableiten.",
+      "entries": [
+        {
+          "id": "jericho_blind_matt",
+          "gospel_id": "Matt",
+          "range": {
+            "label_de": "20,29–34",
+            "start": {
+              "chapter": 20,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 34
+            },
+            "start_ref": "Matt.20.29",
+            "end_ref": "Matt.20.34",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 20,29–34"
+          },
+          "related_report_id": "matt_final_journey",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 20,29–34"
+          ]
+        },
+        {
+          "id": "jericho_blind_mark",
+          "gospel_id": "Mark",
+          "range": {
+            "label_de": "10,46–52",
+            "start": {
+              "chapter": 10,
+              "verse": 46
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 52
+            },
+            "start_ref": "Mark.10.46",
+            "end_ref": "Mark.10.52",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 10,46–52"
+          },
+          "related_report_id": "mark_final_journey",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 10,46–52"
+          ]
+        },
+        {
+          "id": "jericho_blind_luke",
+          "gospel_id": "Luke",
+          "range": {
+            "label_de": "18,35–43",
+            "start": {
+              "chapter": 18,
+              "verse": 35
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 43
+            },
+            "start_ref": "Luke.18.35",
+            "end_ref": "Luke.18.43",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 18,35–43"
+          },
+          "related_report_id": "luke_travel_report",
+          "relation_to_report": "within_report",
+          "source_ids": [
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 18,35–43"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparison_entry",
+      "title_de": "Einzug in Jerusalem",
+      "relation_type": "parallel_episode",
+      "note_de": "Bei den drei Synoptikern folgt die Einzugsszene auf den hier abgegrenzten Reisebericht. Johannes erzählt sie im letzten Jerusalemer Reisezusammenhang.",
+      "entries": [
+        {
+          "id": "entry_matt",
+          "gospel_id": "Matt",
+          "range": {
+            "label_de": "21,1–11",
+            "start": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 11
+            },
+            "start_ref": "Matt.21.1",
+            "end_ref": "Matt.21.11",
+            "inclusive": true,
+            "bible_book_id": "Matt",
+            "bible_book_de": "Matthäus",
+            "bible_reference_de": "Mt 21,1–11"
+          },
+          "related_report_id": "matt_final_journey",
+          "relation_to_report": "follows_report",
+          "source_ids": [
+            "bull_mt",
+            "mitch_sri_mt"
+          ],
+          "bible_references_de": [
+            "Mt 21,1–11"
+          ]
+        },
+        {
+          "id": "entry_mark",
+          "gospel_id": "Mark",
+          "range": {
+            "label_de": "11,1–11",
+            "start": {
+              "chapter": 11,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 11
+            },
+            "start_ref": "Mark.11.1",
+            "end_ref": "Mark.11.11",
+            "inclusive": true,
+            "bible_book_id": "Mark",
+            "bible_book_de": "Markus",
+            "bible_reference_de": "Mk 11,1–11"
+          },
+          "related_report_id": "mark_final_journey",
+          "relation_to_report": "follows_report",
+          "source_ids": [
+            "stolle_mk"
+          ],
+          "bible_references_de": [
+            "Mk 11,1–11"
+          ]
+        },
+        {
+          "id": "entry_luke",
+          "gospel_id": "Luke",
+          "range": {
+            "label_de": "19,28–40",
+            "start": {
+              "chapter": 19,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 40
+            },
+            "start_ref": "Luke.19.28",
+            "end_ref": "Luke.19.40",
+            "inclusive": true,
+            "bible_book_id": "Luke",
+            "bible_book_de": "Lukas",
+            "bible_reference_de": "Lk 19,28–40"
+          },
+          "related_report_id": "luke_travel_report",
+          "relation_to_report": "follows_report",
+          "source_ids": [
+            "gadenz_lk"
+          ],
+          "bible_references_de": [
+            "Lk 19,28–40"
+          ]
+        },
+        {
+          "id": "entry_john",
+          "gospel_id": "John",
+          "range": {
+            "label_de": "12,12–19",
+            "start": {
+              "chapter": 12,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 19
+            },
+            "start_ref": "John.12.12",
+            "end_ref": "John.12.19",
+            "inclusive": true,
+            "bible_book_id": "John",
+            "bible_book_de": "Johannes",
+            "bible_reference_de": "Joh 12,12–19"
+          },
+          "related_report_id": null,
+          "relation_to_report": "within_selected_john_journey",
+          "source_ids": [
+            "nab_john_12",
+            "martin_wright_jn"
+          ],
+          "bible_references_de": [
+            "Joh 12,12–19"
+          ]
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "place_jerusalem",
+      "name_de": "Jerusalem",
+      "type": "city",
+      "coordinates": null
+    },
+    {
+      "id": "place_galilee",
+      "name_de": "Galiläa",
+      "type": "region",
+      "coordinates": null
+    },
+    {
+      "id": "place_judea",
+      "name_de": "Judäa",
+      "type": "region",
+      "coordinates": null
+    },
+    {
+      "id": "place_samaria",
+      "name_de": "Samaria",
+      "type": "region",
+      "coordinates": null
+    },
+    {
+      "id": "place_sychar",
+      "name_de": "Sychar",
+      "type": "settlement",
+      "coordinates": null
+    },
+    {
+      "id": "place_cana",
+      "name_de": "Kana",
+      "type": "settlement",
+      "coordinates": null
+    },
+    {
+      "id": "place_jordan_beyond",
+      "name_de": "Gebiet jenseits des Jordans",
+      "type": "region",
+      "coordinates": null
+    },
+    {
+      "id": "place_bethany",
+      "name_de": "Betanien bei Jerusalem",
+      "type": "settlement",
+      "coordinates": null
+    },
+    {
+      "id": "place_ephraim",
+      "name_de": "Ephraim",
+      "type": "settlement",
+      "coordinates": null
+    },
+    {
+      "id": "place_jericho",
+      "name_de": "Jericho",
+      "type": "city",
+      "coordinates": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "bull_mt",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Matthäusevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/matthaeusevangelium-mt",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_mk",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Markusevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/markusevangelium-mk",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_lk",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Lukasevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/lukasevangelium-lk",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "stolle_mk",
+      "author": "Volker Stolle",
+      "title_de": "Das Markusevangelium. Übersetzung und Kommentierung, Edition Ruprecht 2015, Inhaltsverzeichnis S. 5–8",
+      "url": "https://beckassets.blob.core.windows.net/product/readingsample/14845978/9783846901755_excerpt_002.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "martin_wright_jn",
+      "author": "Francis Martin und William M. Wright IV",
+      "title_de": "The Gospel of John, Baker Academic 2015, Einleitung und Gliederung S. 20–21 und 27–30",
+      "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801036477.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "gadenz_lk",
+      "author": "Pablo T. Gadenz",
+      "title_de": "The Gospel of Luke, Baker Academic 2018, Gliederung S. 24–27",
+      "url": "https://www.catholiccommentaryonsacredscripture.com/wp-content/uploads/2018/09/Gospel-of-Luke-Excerpt-Intro-chapter-1.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_provenance",
+      "author": "Deutsche Bibelgesellschaft",
+      "title_de": "Nachweis der digitalen Bibelkunde: Klaus-Michael Bull, Bibelkunde des Neuen Testaments, 8. Auflage, Göttingen 2018",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/themenkapitel-nt/gleichnisse",
+      "type": "publication_provenance",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "mitch_sri_mt",
+      "author": "Curtis Mitch und Edward Sri",
+      "title_de": "The Gospel of Matthew. Catholic Commentary on Sacred Scripture. Grand Rapids: Baker Academic, 2010. Besonders S. 22–23 und 29–31 zur Struktur und zu den fünf Reden.",
+      "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801036026.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_2",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 2",
+      "url": "https://bible.usccb.org/bible/john/2",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_4",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 4",
+      "url": "https://bible.usccb.org/bible/john/4",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_5",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 5",
+      "url": "https://bible.usccb.org/bible/john/5",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_7",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 7",
+      "url": "https://bible.usccb.org/bible/john/7",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_10",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 10",
+      "url": "https://bible.usccb.org/bible/john/10",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_11",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 11",
+      "url": "https://bible.usccb.org/bible/john/11",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_john_12",
+      "author": "USCCB",
+      "title_de": "Johannesevangelium Kapitel 12",
+      "url": "https://bible.usccb.org/bible/john/12",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_luke_17",
+      "author": "USCCB",
+      "title_de": "Lukasevangelium Kapitel 17",
+      "url": "https://bible.usccb.org/bible/luke/17",
+      "type": "primary_bible_text",
+      "accessed_on": "2026-10-12"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "Matt",
+        "type": "gospel",
+        "label_de": "Matthäus"
+      },
+      {
+        "id": "Mark",
+        "type": "gospel",
+        "label_de": "Markus"
+      },
+      {
+        "id": "Luke",
+        "type": "gospel",
+        "label_de": "Lukas"
+      },
+      {
+        "id": "John",
+        "type": "gospel",
+        "label_de": "Johannes"
+      },
+      {
+        "id": "place_jerusalem",
+        "type": "location",
+        "label_de": "Jerusalem"
+      },
+      {
+        "id": "place_galilee",
+        "type": "location",
+        "label_de": "Galiläa"
+      },
+      {
+        "id": "place_judea",
+        "type": "location",
+        "label_de": "Judäa"
+      },
+      {
+        "id": "place_samaria",
+        "type": "location",
+        "label_de": "Samaria"
+      },
+      {
+        "id": "place_sychar",
+        "type": "location",
+        "label_de": "Sychar"
+      },
+      {
+        "id": "place_cana",
+        "type": "location",
+        "label_de": "Kana"
+      },
+      {
+        "id": "place_jordan_beyond",
+        "type": "location",
+        "label_de": "Gebiet jenseits des Jordans"
+      },
+      {
+        "id": "place_bethany",
+        "type": "location",
+        "label_de": "Betanien bei Jerusalem"
+      },
+      {
+        "id": "place_ephraim",
+        "type": "location",
+        "label_de": "Ephraim"
+      },
+      {
+        "id": "place_jericho",
+        "type": "location",
+        "label_de": "Jericho"
+      },
+      {
+        "id": "matt_final_journey",
+        "type": "journey_report",
+        "label_de": "Weg Jesu nach Jerusalem",
+        "gospel_id": "Matt",
+        "bible_references_de": [
+          "Mt 19,1–20,34",
+          "Mt 16,21–20,34"
+        ]
+      },
+      {
+        "id": "matt_final_journey_section_01",
+        "type": "literary_section",
+        "label_de": "Aufbruch und Unterweisung über Ehe und Kinder",
+        "bible_references_de": [
+          "Mt 19,1–15"
+        ]
+      },
+      {
+        "id": "matt_final_journey_section_02",
+        "type": "literary_section",
+        "label_de": "Reichtum und Nachfolge",
+        "bible_references_de": [
+          "Mt 19,16–30"
+        ]
+      },
+      {
+        "id": "matt_final_journey_section_03",
+        "type": "literary_section",
+        "label_de": "Gleichnis von den Arbeitern im Weinberg",
+        "bible_references_de": [
+          "Mt 20,1–16"
+        ]
+      },
+      {
+        "id": "matt_final_journey_section_04",
+        "type": "literary_section",
+        "label_de": "Leiden, Dienst und Heilung bei Jericho",
+        "bible_references_de": [
+          "Mt 20,17–34"
+        ]
+      },
+      {
+        "id": "mark_final_journey",
+        "type": "journey_report",
+        "label_de": "Weg Jesu nach Jerusalem",
+        "gospel_id": "Mark",
+        "bible_references_de": [
+          "Mk 10,1–52",
+          "Mk 8,27–10,52"
+        ]
+      },
+      {
+        "id": "mark_final_journey_section_01",
+        "type": "literary_section",
+        "label_de": "Ehe und Scheidung",
+        "bible_references_de": [
+          "Mk 10,1–12"
+        ]
+      },
+      {
+        "id": "mark_final_journey_section_02",
+        "type": "literary_section",
+        "label_de": "Kinder und Gottesreich",
+        "bible_references_de": [
+          "Mk 10,13–16"
+        ]
+      },
+      {
+        "id": "mark_final_journey_section_03",
+        "type": "literary_section",
+        "label_de": "Reichtum und Nachfolge",
+        "bible_references_de": [
+          "Mk 10,17–31"
+        ]
+      },
+      {
+        "id": "mark_final_journey_section_04",
+        "type": "literary_section",
+        "label_de": "Leidensankündigung, Dienst und Bartimäus",
+        "bible_references_de": [
+          "Mk 10,32–52"
+        ]
+      },
+      {
+        "id": "luke_travel_report",
+        "type": "journey_report",
+        "label_de": "Lukanischer Reisebericht",
+        "gospel_id": "Luke",
+        "bible_references_de": [
+          "Lk 9,51–19,27"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_01",
+        "type": "literary_section",
+        "label_de": "Aufbruch, Nachfolge und Aussendung",
+        "bible_references_de": [
+          "Lk 9,51–10,24"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_02",
+        "type": "literary_section",
+        "label_de": "Lehre über Nächstenliebe, Gebet und Hören",
+        "bible_references_de": [
+          "Lk 10,25–11,36"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_03",
+        "type": "literary_section",
+        "label_de": "Gericht, Mahnung und Umkehr",
+        "bible_references_de": [
+          "Lk 11,37–13,9"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_04",
+        "type": "literary_section",
+        "label_de": "Heilung am Sabbat",
+        "bible_references_de": [
+          "Lk 13,10–17"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_05",
+        "type": "literary_section",
+        "label_de": "Gottesreich und Jerusalem",
+        "bible_references_de": [
+          "Lk 13,18–35"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_06",
+        "type": "literary_section",
+        "label_de": "Gastmahl und Nachfolge",
+        "bible_references_de": [
+          "Lk 14,1–35"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_07",
+        "type": "literary_section",
+        "label_de": "Gleichnisse vom Verlorenen",
+        "bible_references_de": [
+          "Lk 15,1–32"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_08",
+        "type": "literary_section",
+        "label_de": "Besitz und Verantwortung",
+        "bible_references_de": [
+          "Lk 16,1–31"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_09",
+        "type": "literary_section",
+        "label_de": "Unterweisung der Jünger",
+        "bible_references_de": [
+          "Lk 17,1–10"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_10",
+        "type": "literary_section",
+        "label_de": "Heilung der zehn Aussätzigen",
+        "bible_references_de": [
+          "Lk 17,11–19"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_11",
+        "type": "literary_section",
+        "label_de": "Kommen des Gottesreiches",
+        "bible_references_de": [
+          "Lk 17,20–37"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_12",
+        "type": "literary_section",
+        "label_de": "Gebet und Aufnahme ins Gottesreich",
+        "bible_references_de": [
+          "Lk 18,1–30"
+        ]
+      },
+      {
+        "id": "luke_travel_report_section_13",
+        "type": "literary_section",
+        "label_de": "Letzter Wegabschnitt und Jericho",
+        "bible_references_de": [
+          "Lk 18,31–19,27"
+        ]
+      },
+      {
+        "id": "matt_travel_signal_01",
+        "type": "travel_signal",
+        "label_de": "Galiläa verlassen",
+        "bible_references_de": [
+          "Mt 19,1–2"
+        ]
+      },
+      {
+        "id": "matt_travel_signal_02",
+        "type": "travel_signal",
+        "label_de": "Hinauf nach Jerusalem",
+        "bible_references_de": [
+          "Mt 20,17–19"
+        ]
+      },
+      {
+        "id": "mark_travel_signal_01",
+        "type": "travel_signal",
+        "label_de": "Judäa und Gebiet jenseits des Jordans",
+        "bible_references_de": [
+          "Mk 10,1"
+        ]
+      },
+      {
+        "id": "mark_travel_signal_02",
+        "type": "travel_signal",
+        "label_de": "Auf dem Weg nach Jerusalem",
+        "bible_references_de": [
+          "Mk 10,32–34"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_01",
+        "type": "travel_signal",
+        "label_de": "Ausrichtung auf Jerusalem und Samariterdorf",
+        "bible_references_de": [
+          "Lk 9,51–56"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_02",
+        "type": "travel_signal",
+        "label_de": "Unterwegs durch Städte und Dörfer",
+        "bible_references_de": [
+          "Lk 13,22"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_03",
+        "type": "travel_signal",
+        "label_de": "Samaria und Galiläa auf dem Weg",
+        "bible_references_de": [
+          "Lk 17,11"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_04",
+        "type": "travel_signal",
+        "label_de": "Ankündigung des Weges nach Jerusalem",
+        "bible_references_de": [
+          "Lk 18,31–34"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_05",
+        "type": "travel_signal",
+        "label_de": "Annäherung an Jericho",
+        "bible_references_de": [
+          "Lk 18,35–43"
+        ]
+      },
+      {
+        "id": "luke_travel_signal_06",
+        "type": "travel_signal",
+        "label_de": "Jesus in Jericho",
+        "bible_references_de": [
+          "Lk 19,1–10"
+        ]
+      },
+      {
+        "id": "john_journey_01",
+        "type": "journey_episode",
+        "label_de": "Zum Passafest nach Jerusalem",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 2,13–25",
+          "Joh 2,13"
+        ]
+      },
+      {
+        "id": "john_journey_02",
+        "type": "journey_episode",
+        "label_de": "Durch Samaria nach Galiläa",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 4,1–54",
+          "Joh 4,3–5",
+          "Joh 4,43–46"
+        ]
+      },
+      {
+        "id": "john_journey_03",
+        "type": "journey_episode",
+        "label_de": "Zu einem Fest nach Jerusalem",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 5,1–47",
+          "Joh 5,1"
+        ]
+      },
+      {
+        "id": "john_journey_04",
+        "type": "journey_episode",
+        "label_de": "Zum Laubhüttenfest nach Jerusalem",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 7,1–14",
+          "Joh 7,9–14"
+        ]
+      },
+      {
+        "id": "john_journey_05",
+        "type": "journey_episode",
+        "label_de": "Rückzug jenseits des Jordans",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 10,40–42",
+          "Joh 10,40"
+        ]
+      },
+      {
+        "id": "john_journey_06",
+        "type": "journey_episode",
+        "label_de": "Rückkehr nach Judäa und Betanien",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 11,1–44",
+          "Joh 11,7–18"
+        ]
+      },
+      {
+        "id": "john_journey_07",
+        "type": "journey_episode",
+        "label_de": "Rückzug nach Ephraim",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 11,54"
+        ]
+      },
+      {
+        "id": "john_journey_08",
+        "type": "journey_episode",
+        "label_de": "Betanien und Einzug in Jerusalem",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 12,1–19",
+          "Joh 12,1",
+          "Joh 12,12–19"
+        ]
+      },
+      {
+        "id": "comparison_prediction",
+        "type": "comparison_group",
+        "label_de": "Leidensankündigung auf dem Weg"
+      },
+      {
+        "id": "prediction_matt",
+        "type": "comparison_passage",
+        "label_de": "20,17–19",
+        "gospel_id": "Matt",
+        "bible_references_de": [
+          "Mt 20,17–19"
+        ]
+      },
+      {
+        "id": "prediction_mark",
+        "type": "comparison_passage",
+        "label_de": "10,32–34",
+        "gospel_id": "Mark",
+        "bible_references_de": [
+          "Mk 10,32–34"
+        ]
+      },
+      {
+        "id": "prediction_luke",
+        "type": "comparison_passage",
+        "label_de": "18,31–34",
+        "gospel_id": "Luke",
+        "bible_references_de": [
+          "Lk 18,31–34"
+        ]
+      },
+      {
+        "id": "comparison_jericho_blind",
+        "type": "comparison_group",
+        "label_de": "Blindenheilung bei Jericho"
+      },
+      {
+        "id": "jericho_blind_matt",
+        "type": "comparison_passage",
+        "label_de": "20,29–34",
+        "gospel_id": "Matt",
+        "bible_references_de": [
+          "Mt 20,29–34"
+        ]
+      },
+      {
+        "id": "jericho_blind_mark",
+        "type": "comparison_passage",
+        "label_de": "10,46–52",
+        "gospel_id": "Mark",
+        "bible_references_de": [
+          "Mk 10,46–52"
+        ]
+      },
+      {
+        "id": "jericho_blind_luke",
+        "type": "comparison_passage",
+        "label_de": "18,35–43",
+        "gospel_id": "Luke",
+        "bible_references_de": [
+          "Lk 18,35–43"
+        ]
+      },
+      {
+        "id": "comparison_entry",
+        "type": "comparison_group",
+        "label_de": "Einzug in Jerusalem"
+      },
+      {
+        "id": "entry_matt",
+        "type": "comparison_passage",
+        "label_de": "21,1–11",
+        "gospel_id": "Matt",
+        "bible_references_de": [
+          "Mt 21,1–11"
+        ]
+      },
+      {
+        "id": "entry_mark",
+        "type": "comparison_passage",
+        "label_de": "11,1–11",
+        "gospel_id": "Mark",
+        "bible_references_de": [
+          "Mk 11,1–11"
+        ]
+      },
+      {
+        "id": "entry_luke",
+        "type": "comparison_passage",
+        "label_de": "19,28–40",
+        "gospel_id": "Luke",
+        "bible_references_de": [
+          "Lk 19,28–40"
+        ]
+      },
+      {
+        "id": "entry_john",
+        "type": "comparison_passage",
+        "label_de": "12,12–19",
+        "gospel_id": "John",
+        "bible_references_de": [
+          "Joh 12,12–19"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "type": "occurs_in",
+        "from_id": "matt_final_journey",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "narrative_goal",
+        "from_id": "matt_final_journey",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_final_journey_section_01",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_final_journey_section_02",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_final_journey_section_03",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_final_journey_section_04",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "matt_final_journey_section_01",
+        "to_id": "matt_final_journey_section_02",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "matt_final_journey_section_02",
+        "to_id": "matt_final_journey_section_03",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "matt_final_journey_section_03",
+        "to_id": "matt_final_journey_section_04",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "mark_final_journey",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "narrative_goal",
+        "from_id": "mark_final_journey",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_final_journey_section_01",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_final_journey_section_02",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_final_journey_section_03",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_final_journey_section_04",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "mark_final_journey_section_01",
+        "to_id": "mark_final_journey_section_02",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "mark_final_journey_section_02",
+        "to_id": "mark_final_journey_section_03",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "mark_final_journey_section_03",
+        "to_id": "mark_final_journey_section_04",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "luke_travel_report",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "narrative_goal",
+        "from_id": "luke_travel_report",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_01",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_02",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_03",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_04",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_05",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_06",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_07",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_08",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_09",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_10",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_11",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_12",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_report_section_13",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_01",
+        "to_id": "luke_travel_report_section_02",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_02",
+        "to_id": "luke_travel_report_section_03",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_03",
+        "to_id": "luke_travel_report_section_04",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_04",
+        "to_id": "luke_travel_report_section_05",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_05",
+        "to_id": "luke_travel_report_section_06",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_06",
+        "to_id": "luke_travel_report_section_07",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_07",
+        "to_id": "luke_travel_report_section_08",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_08",
+        "to_id": "luke_travel_report_section_09",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_09",
+        "to_id": "luke_travel_report_section_10",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_10",
+        "to_id": "luke_travel_report_section_11",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_11",
+        "to_id": "luke_travel_report_section_12",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "luke_travel_report_section_12",
+        "to_id": "luke_travel_report_section_13",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_travel_signal_01",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "matt_travel_signal_01",
+        "to_id": "place_galilee",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "matt_travel_signal_01",
+        "to_id": "place_judea",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "matt_travel_signal_01",
+        "to_id": "place_jordan_beyond",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "matt_final_journey",
+        "to_id": "matt_travel_signal_02",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "matt_travel_signal_02",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_travel_signal_01",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "mark_travel_signal_01",
+        "to_id": "place_judea",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "mark_travel_signal_01",
+        "to_id": "place_jordan_beyond",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "mark_final_journey",
+        "to_id": "mark_travel_signal_02",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "mark_travel_signal_02",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_01",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_01",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_01",
+        "to_id": "place_samaria",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_02",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_02",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_03",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_03",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_03",
+        "to_id": "place_samaria",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_03",
+        "to_id": "place_galilee",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_04",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_04",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_05",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_05",
+        "to_id": "place_jericho",
+        "directed": true
+      },
+      {
+        "type": "contains",
+        "from_id": "luke_travel_report",
+        "to_id": "luke_travel_signal_06",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "luke_travel_signal_06",
+        "to_id": "place_jericho",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_01",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_01",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_02",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_02",
+        "to_id": "place_judea",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_02",
+        "to_id": "place_cana",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_02",
+        "to_id": "place_samaria",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_02",
+        "to_id": "place_sychar",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_02",
+        "to_id": "place_galilee",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_03",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_03",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_04",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_04",
+        "to_id": "place_galilee",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_04",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_05",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_05",
+        "to_id": "place_jordan_beyond",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_06",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_06",
+        "to_id": "place_bethany",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_06",
+        "to_id": "place_judea",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_07",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_07",
+        "to_id": "place_ephraim",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "john_journey_08",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_08",
+        "to_id": "place_jerusalem",
+        "directed": true
+      },
+      {
+        "type": "mentions_location",
+        "from_id": "john_journey_08",
+        "to_id": "place_bethany",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_01",
+        "to_id": "john_journey_02",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_02",
+        "to_id": "john_journey_03",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_03",
+        "to_id": "john_journey_04",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_04",
+        "to_id": "john_journey_05",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_05",
+        "to_id": "john_journey_06",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_06",
+        "to_id": "john_journey_07",
+        "directed": true
+      },
+      {
+        "type": "next_in_text",
+        "from_id": "john_journey_07",
+        "to_id": "john_journey_08",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_prediction",
+        "to_id": "prediction_matt",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "prediction_matt",
+        "to_id": "matt_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_prediction",
+        "to_id": "prediction_mark",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "prediction_mark",
+        "to_id": "mark_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_prediction",
+        "to_id": "prediction_luke",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "prediction_luke",
+        "to_id": "luke_travel_report",
+        "directed": true
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "prediction_matt",
+        "to_id": "prediction_mark",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "prediction_matt",
+        "to_id": "prediction_luke",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "prediction_mark",
+        "to_id": "prediction_luke",
+        "directed": false
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_jericho_blind",
+        "to_id": "jericho_blind_matt",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "jericho_blind_matt",
+        "to_id": "matt_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_jericho_blind",
+        "to_id": "jericho_blind_mark",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "jericho_blind_mark",
+        "to_id": "mark_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_jericho_blind",
+        "to_id": "jericho_blind_luke",
+        "directed": true
+      },
+      {
+        "type": "within_report",
+        "from_id": "jericho_blind_luke",
+        "to_id": "luke_travel_report",
+        "directed": true
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "jericho_blind_matt",
+        "to_id": "jericho_blind_mark",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "jericho_blind_matt",
+        "to_id": "jericho_blind_luke",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "jericho_blind_mark",
+        "to_id": "jericho_blind_luke",
+        "directed": false
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_entry",
+        "to_id": "entry_matt",
+        "directed": true
+      },
+      {
+        "type": "follows_report",
+        "from_id": "entry_matt",
+        "to_id": "matt_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_entry",
+        "to_id": "entry_mark",
+        "directed": true
+      },
+      {
+        "type": "follows_report",
+        "from_id": "entry_mark",
+        "to_id": "mark_final_journey",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_entry",
+        "to_id": "entry_luke",
+        "directed": true
+      },
+      {
+        "type": "follows_report",
+        "from_id": "entry_luke",
+        "to_id": "luke_travel_report",
+        "directed": true
+      },
+      {
+        "type": "includes",
+        "from_id": "comparison_entry",
+        "to_id": "entry_john",
+        "directed": true
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_matt",
+        "to_id": "entry_mark",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_matt",
+        "to_id": "entry_luke",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_matt",
+        "to_id": "entry_john",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_mark",
+        "to_id": "entry_luke",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_mark",
+        "to_id": "entry_john",
+        "directed": false
+      },
+      {
+        "type": "parallel_episode",
+        "from_id": "entry_luke",
+        "to_id": "entry_john",
+        "directed": false
+      }
+    ],
+    "mixed_direction": true
+  }
+}

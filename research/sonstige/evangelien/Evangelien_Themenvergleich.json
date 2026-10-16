@@ -1,0 +1,3944 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "title_de": "Themenvergleich der vier Evangelien",
+    "created_on": "2026-10-12",
+    "language": "de",
+    "scope": "curated_thematic_learning_blocks",
+    "base_dataset": "Grundstruktur_der_vier_Evangelien.json",
+    "authoring_note_de": "Eigene Zusammenführung nach den genannten literarischen Gliederungen; nicht fachlich begutachtet."
+  },
+  "methodology": {
+    "complete_partition": false,
+    "overlapping_topics": true,
+    "exhaustive_parallel_synopsis": false,
+    "literature_basis_de": "Die Kapitel von Klaus-Michael Bull in der digitalen Bibelkunde der Deutschen Bibelgesellschaft beruhen laut Herkunftsnachweis auf der 8. Buchauflage von 2018. Ergänzend: Stolle, Gadenz sowie Martin und Wright.",
+    "boundary_note_de": "Die Online-Haupttabelle zu Markus zeigt 8,2 als Beginn der Jüngerbelehrung; die dortige Detailgliederung und Stolle setzen bei 8,27 an. Hier wird 8,27 verwendet.",
+    "interpretation_de": "Die Themen sind eine Vergleichsebene und keine lückenlose, überschneidungsfreie Einteilung jedes Evangeliums. Sammlungen enthalten auch andere Stoffe; aufgeführte Einzelstellen sind eine Auswahl.",
+    "absence_note_de": "Eine leere Zelle bedeutet, dass kein entsprechender Erzähl- oder Literaturblock in dieser Auswahl eingetragen ist. Daraus folgt keine vollständige Abwesenheit einzelner Motive oder verstreuter Worte.",
+    "relation_note_de": "Eine Verbindung bezeichnet gleiche Erzählthemen, vergleichbare Reden oder verwandte Literaturblöcke. Sie beweist keine literarische Abhängigkeit und keine Wortlautidentität."
+  },
+  "match_kinds": {
+    "parallel_narrative_or_discourse": {
+      "symbol": "↔",
+      "label_de": "Erzählung oder Rede mit Parallelen",
+      "note_de": "Nicht jede Szene und jeder Vers müssen parallel sein."
+    },
+    "thematic_correspondence": {
+      "symbol": "≈",
+      "label_de": "Verwandtes Thema",
+      "note_de": "Unterschiedlicher Kontext oder andere literarische Gestaltung."
+    },
+    "selected_collection_or_literary_block": {
+      "symbol": "•",
+      "label_de": "Sammlung oder Lernblock",
+      "note_de": "Große Einheiten oder ausgewählte Schwerpunkte, keine exakte Perikopenparallele."
+    }
+  },
+  "gospels": [
+    {
+      "id": "Matt",
+      "name_de": "Matthäus",
+      "order": 1,
+      "chapter_count": 28
+    },
+    {
+      "id": "Mark",
+      "name_de": "Markus",
+      "order": 2,
+      "chapter_count": 16
+    },
+    {
+      "id": "Luke",
+      "name_de": "Lukas",
+      "order": 3,
+      "chapter_count": 24
+    },
+    {
+      "id": "John",
+      "name_de": "Johannes",
+      "order": 4,
+      "chapter_count": 21
+    }
+  ],
+  "topics": [
+    {
+      "id": "topic_birth",
+      "order": 1,
+      "title_de": "Geburtsgeschichte und Kindheit",
+      "group_de": "Erzählanfang",
+      "note_de": "Geburts- und Kindheitsüberlieferungen; Matthäus und Lukas setzen unterschiedliche Schwerpunkte.",
+      "entries": [
+        {
+          "id": "birth_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "1,1–2,23",
+          "ranges": [
+            {
+              "label_de": "1,1–2,23",
+              "start": {
+                "chapter": 1,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 23
+              },
+              "inclusive": true,
+              "start_ref": "Matt.1.1",
+              "end_ref": "Matt.2.23"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Herkunft, Josef, Magier und Ägypten.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "birth_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "1,5–2,52",
+          "ranges": [
+            {
+              "label_de": "1,5–2,52",
+              "start": {
+                "chapter": 1,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 52
+              },
+              "inclusive": true,
+              "start_ref": "Luke.1.5",
+              "end_ref": "Luke.2.52"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Geburt des Täufers und Jesu; Tempelszenen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_baptist",
+      "order": 2,
+      "title_de": "Auftreten des Täufers",
+      "group_de": "Erzählanfang",
+      "note_de": "Bei Johannes steht das Zeugnis über Jesus im Vordergrund.",
+      "entries": [
+        {
+          "id": "baptist_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "3,1–12",
+          "ranges": [
+            {
+              "label_de": "3,1–12",
+              "start": {
+                "chapter": 3,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 12
+              },
+              "inclusive": true,
+              "start_ref": "Matt.3.1",
+              "end_ref": "Matt.3.12"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Bußpredigt des Täufers.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "baptist_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "1,2–8",
+          "ranges": [
+            {
+              "label_de": "1,2–8",
+              "start": {
+                "chapter": 1,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 8
+              },
+              "inclusive": true,
+              "start_ref": "Mark.1.2",
+              "end_ref": "Mark.1.8"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Der Täufer als Wegbereiter.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "baptist_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "3,1–20",
+          "ranges": [
+            {
+              "label_de": "3,1–20",
+              "start": {
+                "chapter": 3,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 20
+              },
+              "inclusive": true,
+              "start_ref": "Luke.3.1",
+              "end_ref": "Luke.3.20"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Täuferpredigt und Reaktionen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "baptist_john",
+          "gospel_id": "John",
+          "range_label_de": "1,19–34",
+          "ranges": [
+            {
+              "label_de": "1,19–34",
+              "start": {
+                "chapter": 1,
+                "verse": 19
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 34
+              },
+              "inclusive": true,
+              "start_ref": "John.1.19",
+              "end_ref": "John.1.34"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Zeugnis des Täufers über Jesus.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_baptism",
+      "order": 3,
+      "title_de": "Taufe Jesu",
+      "group_de": "Erzählanfang",
+      "note_de": "Johannes erzählt keine Taufszene, sondern lässt den Täufer rückblickend vom Geistzeugnis berichten.",
+      "entries": [
+        {
+          "id": "baptism_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "3,13–17",
+          "ranges": [
+            {
+              "label_de": "3,13–17",
+              "start": {
+                "chapter": 3,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 17
+              },
+              "inclusive": true,
+              "start_ref": "Matt.3.13",
+              "end_ref": "Matt.3.17"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Taufe und Himmelsstimme.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "baptism_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "1,9–11",
+          "ranges": [
+            {
+              "label_de": "1,9–11",
+              "start": {
+                "chapter": 1,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 11
+              },
+              "inclusive": true,
+              "start_ref": "Mark.1.9",
+              "end_ref": "Mark.1.11"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Taufe und Geistempfang.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "baptism_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "3,21–22",
+          "ranges": [
+            {
+              "label_de": "3,21–22",
+              "start": {
+                "chapter": 3,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 22
+              },
+              "inclusive": true,
+              "start_ref": "Luke.3.21",
+              "end_ref": "Luke.3.22"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Taufe, Gebet und Himmelsstimme.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "baptism_john",
+          "gospel_id": "John",
+          "range_label_de": "1,29–34",
+          "ranges": [
+            {
+              "label_de": "1,29–34",
+              "start": {
+                "chapter": 1,
+                "verse": 29
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 34
+              },
+              "inclusive": true,
+              "start_ref": "John.1.29",
+              "end_ref": "John.1.34"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Rückblickendes Zeugnis; keine erzählte Taufszene.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_temptation",
+      "order": 4,
+      "title_de": "Versuchungsgeschichte",
+      "group_de": "Erzählanfang",
+      "note_de": "Die ausführlichen Dialoge bei Matthäus und Lukas stehen dem knappen Markusbericht gegenüber.",
+      "entries": [
+        {
+          "id": "temptation_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "4,1–11",
+          "ranges": [
+            {
+              "label_de": "4,1–11",
+              "start": {
+                "chapter": 4,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 11
+              },
+              "inclusive": true,
+              "start_ref": "Matt.4.1",
+              "end_ref": "Matt.4.11"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Drei Versuchungen.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "temptation_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "1,12–13",
+          "ranges": [
+            {
+              "label_de": "1,12–13",
+              "start": {
+                "chapter": 1,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 13
+              },
+              "inclusive": true,
+              "start_ref": "Mark.1.12",
+              "end_ref": "Mark.1.13"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Knapper Wüstenbericht.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "temptation_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "4,1–13",
+          "ranges": [
+            {
+              "label_de": "4,1–13",
+              "start": {
+                "chapter": 4,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 13
+              },
+              "inclusive": true,
+              "start_ref": "Luke.4.1",
+              "end_ref": "Luke.4.13"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Drei Versuchungen in anderer Reihenfolge.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_call",
+      "order": 5,
+      "title_de": "Jüngerberufungen",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Verwandtes Thema mit unterschiedlicher szenischer Gestaltung; keine Gleichsetzung aller Berufungsberichte.",
+      "entries": [
+        {
+          "id": "call_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "4,18–22",
+          "ranges": [
+            {
+              "label_de": "4,18–22",
+              "start": {
+                "chapter": 4,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 22
+              },
+              "inclusive": true,
+              "start_ref": "Matt.4.18",
+              "end_ref": "Matt.4.22"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Berufung der ersten Fischer.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "call_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "1,16–20",
+          "ranges": [
+            {
+              "label_de": "1,16–20",
+              "start": {
+                "chapter": 1,
+                "verse": 16
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 20
+              },
+              "inclusive": true,
+              "start_ref": "Mark.1.16",
+              "end_ref": "Mark.1.20"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Berufung der ersten Fischer.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "call_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "5,1–11",
+          "ranges": [
+            {
+              "label_de": "5,1–11",
+              "start": {
+                "chapter": 5,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 11
+              },
+              "inclusive": true,
+              "start_ref": "Luke.5.1",
+              "end_ref": "Luke.5.11"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Fischfang und Berufung.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "call_john",
+          "gospel_id": "John",
+          "range_label_de": "1,35–51",
+          "ranges": [
+            {
+              "label_de": "1,35–51",
+              "start": {
+                "chapter": 1,
+                "verse": 35
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 51
+              },
+              "inclusive": true,
+              "start_ref": "John.1.35",
+              "end_ref": "John.1.51"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Erste Begegnungen und Berufungen.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_sermon",
+      "order": 6,
+      "title_de": "Bergpredigt und Feldrede",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Die Feldrede ist eine vergleichbare Lehrrede mit teilweise parallelen Überlieferungen, aber kein vollständiges Gegenstück zu jedem Vers der Bergpredigt.",
+      "entries": [
+        {
+          "id": "sermon_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "5,1–7,29",
+          "ranges": [
+            {
+              "label_de": "5,1–7,29",
+              "start": {
+                "chapter": 5,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 7,
+                "verse": 29
+              },
+              "inclusive": true,
+              "start_ref": "Matt.5.1",
+              "end_ref": "Matt.7.29"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Bergpredigt als große Lehrrede.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "sermon_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "6,17–49",
+          "ranges": [
+            {
+              "label_de": "6,17–49",
+              "start": {
+                "chapter": 6,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 49
+              },
+              "inclusive": true,
+              "start_ref": "Luke.6.17",
+              "end_ref": "Luke.6.49"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Feldrede mit Seligpreisungen und Mahnungen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_miracles",
+      "order": 7,
+      "title_de": "Wundergeschichten",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Ausgewählte Schwerpunkte, keine vollständige Wunderliste. Die Sammlungen sind nicht in jedem Einzeltext parallel.",
+      "entries": [
+        {
+          "id": "miracles_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "8,1–9,34",
+          "ranges": [
+            {
+              "label_de": "8,1–9,34",
+              "start": {
+                "chapter": 8,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 34
+              },
+              "inclusive": true,
+              "start_ref": "Matt.8.1",
+              "end_ref": "Matt.9.34"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Gebündelte Machttaten.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "miracles_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "4,35–5,43",
+          "ranges": [
+            {
+              "label_de": "4,35–5,43",
+              "start": {
+                "chapter": 4,
+                "verse": 35
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 43
+              },
+              "inclusive": true,
+              "start_ref": "Mark.4.35",
+              "end_ref": "Mark.5.43"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Sturm, Dämonen, Heilung und Auferweckung.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "miracles_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "8,22–56",
+          "ranges": [
+            {
+              "label_de": "8,22–56",
+              "start": {
+                "chapter": 8,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 56
+              },
+              "inclusive": true,
+              "start_ref": "Luke.8.22",
+              "end_ref": "Luke.8.56"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Sturm und anschließende Heilungen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "miracles_john",
+          "gospel_id": "John",
+          "range_label_de": "2,1–11; 11,1–44",
+          "ranges": [
+            {
+              "label_de": "2,1–11",
+              "start": {
+                "chapter": 2,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 11
+              },
+              "inclusive": true,
+              "start_ref": "John.2.1",
+              "end_ref": "John.2.11"
+            },
+            {
+              "label_de": "11,1–44",
+              "start": {
+                "chapter": 11,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 44
+              },
+              "inclusive": true,
+              "start_ref": "John.11.1",
+              "end_ref": "John.11.44"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Ausgewählte Zeichen: Kana und Lazarus.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_mission",
+      "order": 8,
+      "title_de": "Aussendung der Jünger",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Bei Lukas kommt zur Aussendung der Zwölf eine weitere Sendung der Siebzig beziehungsweise Zweiundsiebzig hinzu. Die nachösterliche Sendung ist ein anderer Erzählzusammenhang.",
+      "entries": [
+        {
+          "id": "mission_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "9,36–11,1",
+          "ranges": [
+            {
+              "label_de": "9,36–11,1",
+              "start": {
+                "chapter": 9,
+                "verse": 36
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 1
+              },
+              "inclusive": true,
+              "start_ref": "Matt.9.36",
+              "end_ref": "Matt.11.1"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Aussendung und ausführliche Missionsrede.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "mission_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "6,7–13",
+          "ranges": [
+            {
+              "label_de": "6,7–13",
+              "start": {
+                "chapter": 6,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 13
+              },
+              "inclusive": true,
+              "start_ref": "Mark.6.7",
+              "end_ref": "Mark.6.13"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Aussendung der Zwölf.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "mission_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "9,1–6; 10,1–24",
+          "ranges": [
+            {
+              "label_de": "9,1–6",
+              "start": {
+                "chapter": 9,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 6
+              },
+              "inclusive": true,
+              "start_ref": "Luke.9.1",
+              "end_ref": "Luke.9.6"
+            },
+            {
+              "label_de": "10,1–24",
+              "start": {
+                "chapter": 10,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 24
+              },
+              "inclusive": true,
+              "start_ref": "Luke.10.1",
+              "end_ref": "Luke.10.24"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Zwölf und weitere Siebzig/Zweiundsiebzig.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_community_formation",
+      "order": 9,
+      "title_de": "Entstehung der Jüngergemeinde",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Der große Matthäusblock folgt Bulls Deutung. Die übrigen Stellen bieten thematisch verwandte Jünger- und Bekenntnisszenen; sie sind keine Parallelfassung des ganzen Matthäusblocks.",
+      "entries": [
+        {
+          "id": "community_formation_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "11,2–16,20",
+          "ranges": [
+            {
+              "label_de": "11,2–16,20",
+              "start": {
+                "chapter": 11,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 20
+              },
+              "inclusive": true,
+              "start_ref": "Matt.11.2",
+              "end_ref": "Matt.16.20"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Auseinandersetzung um Jesus; Jüngergemeinde und Petrusbekenntnis.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "community_formation_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "3,13–19; 8,27–30",
+          "ranges": [
+            {
+              "label_de": "3,13–19",
+              "start": {
+                "chapter": 3,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 19
+              },
+              "inclusive": true,
+              "start_ref": "Mark.3.13",
+              "end_ref": "Mark.3.19"
+            },
+            {
+              "label_de": "8,27–30",
+              "start": {
+                "chapter": 8,
+                "verse": 27
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 30
+              },
+              "inclusive": true,
+              "start_ref": "Mark.8.27",
+              "end_ref": "Mark.8.30"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Zwölferkreis und Petrusbekenntnis.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "community_formation_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "6,12–16; 9,18–21",
+          "ranges": [
+            {
+              "label_de": "6,12–16",
+              "start": {
+                "chapter": 6,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 16
+              },
+              "inclusive": true,
+              "start_ref": "Luke.6.12",
+              "end_ref": "Luke.6.16"
+            },
+            {
+              "label_de": "9,18–21",
+              "start": {
+                "chapter": 9,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 21
+              },
+              "inclusive": true,
+              "start_ref": "Luke.9.18",
+              "end_ref": "Luke.9.21"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Zwölferkreis und Petrusbekenntnis.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "community_formation_john",
+          "gospel_id": "John",
+          "range_label_de": "1,35–51; 6,67–71",
+          "ranges": [
+            {
+              "label_de": "1,35–51",
+              "start": {
+                "chapter": 1,
+                "verse": 35
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 51
+              },
+              "inclusive": true,
+              "start_ref": "John.1.35",
+              "end_ref": "John.1.51"
+            },
+            {
+              "label_de": "6,67–71",
+              "start": {
+                "chapter": 6,
+                "verse": 67
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 71
+              },
+              "inclusive": true,
+              "start_ref": "John.6.67",
+              "end_ref": "John.6.71"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Erste Jünger und Bekenntnis des Petrus.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_parables",
+      "order": 10,
+      "title_de": "Gleichnisse und Bildreden",
+      "group_de": "Wirken und Jüngerkreis",
+      "note_de": "Ausgewählte Sammlungen. Die johanneische Hirtenrede ist eine verwandte Bildrede, keine direkte Parallele zur synoptischen Gleichnissammlung.",
+      "entries": [
+        {
+          "id": "parables_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "13,1–52",
+          "ranges": [
+            {
+              "label_de": "13,1–52",
+              "start": {
+                "chapter": 13,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 52
+              },
+              "inclusive": true,
+              "start_ref": "Matt.13.1",
+              "end_ref": "Matt.13.52"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Gleichnisse vom Himmelreich.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "parables_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "4,1–34",
+          "ranges": [
+            {
+              "label_de": "4,1–34",
+              "start": {
+                "chapter": 4,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 34
+              },
+              "inclusive": true,
+              "start_ref": "Mark.4.1",
+              "end_ref": "Mark.4.34"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Gleichnisse vom Gottesreich.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "parables_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "8,4–18; 15,1–32",
+          "ranges": [
+            {
+              "label_de": "8,4–18",
+              "start": {
+                "chapter": 8,
+                "verse": 4
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 18
+              },
+              "inclusive": true,
+              "start_ref": "Luke.8.4",
+              "end_ref": "Luke.8.18"
+            },
+            {
+              "label_de": "15,1–32",
+              "start": {
+                "chapter": 15,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 32
+              },
+              "inclusive": true,
+              "start_ref": "Luke.15.1",
+              "end_ref": "Luke.15.32"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Sämann und Gleichnisse vom Verlorenen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "parables_john",
+          "gospel_id": "John",
+          "range_label_de": "10,1–18",
+          "ranges": [
+            {
+              "label_de": "10,1–18",
+              "start": {
+                "chapter": 10,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 18
+              },
+              "inclusive": true,
+              "start_ref": "John.10.1",
+              "end_ref": "John.10.18"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Bildrede vom Hirten.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_discipleship",
+      "order": 11,
+      "title_de": "Jüngerbelehrung über die Nachfolge",
+      "group_de": "Nachfolge und Gemeinde",
+      "note_de": "Thematische Lernblöcke mit erzählerischen Einschüben. Johannes bietet hier einen kürzeren thematischen Vergleichstext über Dienen und Nachfolgen.",
+      "entries": [
+        {
+          "id": "discipleship_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "16,21–17,23; 19,1–20,34",
+          "ranges": [
+            {
+              "label_de": "16,21–17,23",
+              "start": {
+                "chapter": 16,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 17,
+                "verse": 23
+              },
+              "inclusive": true,
+              "start_ref": "Matt.16.21",
+              "end_ref": "Matt.17.23"
+            },
+            {
+              "label_de": "19,1–20,34",
+              "start": {
+                "chapter": 19,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 20,
+                "verse": 34
+              },
+              "inclusive": true,
+              "start_ref": "Matt.19.1",
+              "end_ref": "Matt.20.34"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leiden, Nachfolge und Dienst.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "discipleship_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "8,27–10,52",
+          "ranges": [
+            {
+              "label_de": "8,27–10,52",
+              "start": {
+                "chapter": 8,
+                "verse": 27
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 52
+              },
+              "inclusive": true,
+              "start_ref": "Mark.8.27",
+              "end_ref": "Mark.10.52"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leidensnachfolge und Jüngerunterweisung.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "discipleship_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "9,18–50; 9,51–10,24",
+          "ranges": [
+            {
+              "label_de": "9,18–50",
+              "start": {
+                "chapter": 9,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 50
+              },
+              "inclusive": true,
+              "start_ref": "Luke.9.18",
+              "end_ref": "Luke.9.50"
+            },
+            {
+              "label_de": "9,51–10,24",
+              "start": {
+                "chapter": 9,
+                "verse": 51
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 24
+              },
+              "inclusive": true,
+              "start_ref": "Luke.9.51",
+              "end_ref": "Luke.10.24"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Bekenntnis, Nachfolge und Unterweisung.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "discipleship_john",
+          "gospel_id": "John",
+          "range_label_de": "12,23–26",
+          "ranges": [
+            {
+              "label_de": "12,23–26",
+              "start": {
+                "chapter": 12,
+                "verse": 23
+              },
+              "end": {
+                "chapter": 12,
+                "verse": 26
+              },
+              "inclusive": true,
+              "start_ref": "John.12.23",
+              "end_ref": "John.12.26"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Dienen und Nachfolgen im Horizont des Todes Jesu.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_transfiguration",
+      "order": 12,
+      "title_de": "Verklärungsgeschichte",
+      "group_de": "Nachfolge und Gemeinde",
+      "note_de": "Eine gemeinsame synoptische Erzählung, unterschiedlich in ihren Rahmen eingebunden.",
+      "entries": [
+        {
+          "id": "transfiguration_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "17,1–13",
+          "ranges": [
+            {
+              "label_de": "17,1–13",
+              "start": {
+                "chapter": 17,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 17,
+                "verse": 13
+              },
+              "inclusive": true,
+              "start_ref": "Matt.17.1",
+              "end_ref": "Matt.17.13"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Verklärung und Gespräch beim Abstieg.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "transfiguration_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "9,2–13",
+          "ranges": [
+            {
+              "label_de": "9,2–13",
+              "start": {
+                "chapter": 9,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 13
+              },
+              "inclusive": true,
+              "start_ref": "Mark.9.2",
+              "end_ref": "Mark.9.13"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Verklärung und Gespräch beim Abstieg.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "transfiguration_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "9,28–36",
+          "ranges": [
+            {
+              "label_de": "9,28–36",
+              "start": {
+                "chapter": 9,
+                "verse": 28
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 36
+              },
+              "inclusive": true,
+              "start_ref": "Luke.9.28",
+              "end_ref": "Luke.9.36"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Verklärung während des Gebets.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_temple_tax",
+      "order": 13,
+      "title_de": "Tempelsteuer",
+      "group_de": "Nachfolge und Gemeinde",
+      "note_de": "Matthäisches Sondergut. Die Frage nach der Steuer an den Kaiser ist ein anderes Thema und wird hier nicht als Parallele eingetragen.",
+      "entries": [
+        {
+          "id": "temple_tax_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "17,24–27",
+          "ranges": [
+            {
+              "label_de": "17,24–27",
+              "start": {
+                "chapter": 17,
+                "verse": 24
+              },
+              "end": {
+                "chapter": 17,
+                "verse": 27
+              },
+              "inclusive": true,
+              "start_ref": "Matt.17.24",
+              "end_ref": "Matt.17.27"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Tempelsteuer und Münze im Fisch.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_community_life",
+      "order": 14,
+      "title_de": "Jüngerbelehrung über das Gemeindeleben",
+      "group_de": "Nachfolge und Gemeinde",
+      "note_de": "Verwandte Unterweisungen über Zusammenleben, Demut und Vergebung; die Fußwaschung bei Johannes ist ein thematisches Gegenstück.",
+      "entries": [
+        {
+          "id": "community_life_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "18,1–35",
+          "ranges": [
+            {
+              "label_de": "18,1–35",
+              "start": {
+                "chapter": 18,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 18,
+                "verse": 35
+              },
+              "inclusive": true,
+              "start_ref": "Matt.18.1",
+              "end_ref": "Matt.18.35"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Gemeinderede.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "community_life_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "9,33–50",
+          "ranges": [
+            {
+              "label_de": "9,33–50",
+              "start": {
+                "chapter": 9,
+                "verse": 33
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 50
+              },
+              "inclusive": true,
+              "start_ref": "Mark.9.33",
+              "end_ref": "Mark.9.50"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Rangstreit und Jüngerunterweisung.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "community_life_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "17,1–10",
+          "ranges": [
+            {
+              "label_de": "17,1–10",
+              "start": {
+                "chapter": 17,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 17,
+                "verse": 10
+              },
+              "inclusive": true,
+              "start_ref": "Luke.17.1",
+              "end_ref": "Luke.17.10"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Vergebung, Glaube und Dienst.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "community_life_john",
+          "gospel_id": "John",
+          "range_label_de": "13,1–17; 13,34–35",
+          "ranges": [
+            {
+              "label_de": "13,1–17",
+              "start": {
+                "chapter": 13,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 17
+              },
+              "inclusive": true,
+              "start_ref": "John.13.1",
+              "end_ref": "John.13.17"
+            },
+            {
+              "label_de": "13,34–35",
+              "start": {
+                "chapter": 13,
+                "verse": 34
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 35
+              },
+              "inclusive": true,
+              "start_ref": "John.13.34",
+              "end_ref": "John.13.35"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Fußwaschung und Liebesgebot.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_jerusalem",
+      "order": 15,
+      "title_de": "Wirken in Jerusalem",
+      "group_de": "Jerusalem und Abschluss",
+      "note_de": "Die Synoptiker bündeln das späte Wirken in Jerusalem. Bei Johannes stehen hier ausgewählte Jerusalemer Szenen, darunter die früh platzierte Tempelhandlung.",
+      "entries": [
+        {
+          "id": "jerusalem_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "21,1–23,39",
+          "ranges": [
+            {
+              "label_de": "21,1–23,39",
+              "start": {
+                "chapter": 21,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 23,
+                "verse": 39
+              },
+              "inclusive": true,
+              "start_ref": "Matt.21.1",
+              "end_ref": "Matt.23.39"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Einzug, Tempel und Auseinandersetzungen.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "jerusalem_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "11,1–12,44",
+          "ranges": [
+            {
+              "label_de": "11,1–12,44",
+              "start": {
+                "chapter": 11,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 12,
+                "verse": 44
+              },
+              "inclusive": true,
+              "start_ref": "Mark.11.1",
+              "end_ref": "Mark.12.44"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Einzug, Tempel und Auseinandersetzungen.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "jerusalem_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "19,28–21,4",
+          "ranges": [
+            {
+              "label_de": "19,28–21,4",
+              "start": {
+                "chapter": 19,
+                "verse": 28
+              },
+              "end": {
+                "chapter": 21,
+                "verse": 4
+              },
+              "inclusive": true,
+              "start_ref": "Luke.19.28",
+              "end_ref": "Luke.21.4"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Einzug, Tempel und Auseinandersetzungen.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "jerusalem_john",
+          "gospel_id": "John",
+          "range_label_de": "2,13–22; 12,12–19",
+          "ranges": [
+            {
+              "label_de": "2,13–22",
+              "start": {
+                "chapter": 2,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 22
+              },
+              "inclusive": true,
+              "start_ref": "John.2.13",
+              "end_ref": "John.2.22"
+            },
+            {
+              "label_de": "12,12–19",
+              "start": {
+                "chapter": 12,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 12,
+                "verse": 19
+              },
+              "inclusive": true,
+              "start_ref": "John.12.12",
+              "end_ref": "John.12.19"
+            }
+          ],
+          "match_kind": "thematic_correspondence",
+          "summary_de": "Tempelhandlung am Anfang; später Einzug.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_last_things",
+      "order": 16,
+      "title_de": "Endzeitrede",
+      "group_de": "Jerusalem und Abschluss",
+      "note_de": "Vergleichbare synoptische Reden über Tempelzerstörung, kommende Ereignisse und Wachsamkeit.",
+      "entries": [
+        {
+          "id": "last_things_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "24,1–25,46",
+          "ranges": [
+            {
+              "label_de": "24,1–25,46",
+              "start": {
+                "chapter": 24,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 25,
+                "verse": 46
+              },
+              "inclusive": true,
+              "start_ref": "Matt.24.1",
+              "end_ref": "Matt.25.46"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Endzeit und Gericht.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "last_things_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "13,1–37",
+          "ranges": [
+            {
+              "label_de": "13,1–37",
+              "start": {
+                "chapter": 13,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 37
+              },
+              "inclusive": true,
+              "start_ref": "Mark.13.1",
+              "end_ref": "Mark.13.37"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Ölbergrede.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "last_things_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "21,5–38",
+          "ranges": [
+            {
+              "label_de": "21,5–38",
+              "start": {
+                "chapter": 21,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 21,
+                "verse": 38
+              },
+              "inclusive": true,
+              "start_ref": "Luke.21.5",
+              "end_ref": "Luke.21.38"
+            }
+          ],
+          "match_kind": "parallel_narrative_or_discourse",
+          "summary_de": "Tempelzerstörung und kommende Ereignisse.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_farewell",
+      "order": 17,
+      "title_de": "Abschiedsreden und Gebet Jesu",
+      "group_de": "Jerusalem und Abschluss",
+      "note_de": "Die lange johanneische Abschiedseinheit wird als eigener Literaturblock ausgewiesen.",
+      "entries": [
+        {
+          "id": "farewell_john",
+          "gospel_id": "John",
+          "range_label_de": "13,31–17,26",
+          "ranges": [
+            {
+              "label_de": "13,31–17,26",
+              "start": {
+                "chapter": 13,
+                "verse": 31
+              },
+              "end": {
+                "chapter": 17,
+                "verse": 26
+              },
+              "inclusive": true,
+              "start_ref": "John.13.31",
+              "end_ref": "John.17.26"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Abschiedsreden und Gebet Jesu.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_passion",
+      "order": 18,
+      "title_de": "Passionsgeschichte",
+      "group_de": "Jerusalem und Abschluss",
+      "note_de": "Gemeinsamer Erzählkomplex mit je eigener Auswahl und Gestaltung.",
+      "entries": [
+        {
+          "id": "passion_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "26,1–27,66",
+          "ranges": [
+            {
+              "label_de": "26,1–27,66",
+              "start": {
+                "chapter": 26,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 27,
+                "verse": 66
+              },
+              "inclusive": true,
+              "start_ref": "Matt.26.1",
+              "end_ref": "Matt.27.66"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leiden, Tod und Grablegung.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "passion_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "14,1–15,47",
+          "ranges": [
+            {
+              "label_de": "14,1–15,47",
+              "start": {
+                "chapter": 14,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 47
+              },
+              "inclusive": true,
+              "start_ref": "Mark.14.1",
+              "end_ref": "Mark.15.47"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leiden, Tod und Grablegung.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "passion_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "22,1–23,56",
+          "ranges": [
+            {
+              "label_de": "22,1–23,56",
+              "start": {
+                "chapter": 22,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 23,
+                "verse": 56
+              },
+              "inclusive": true,
+              "start_ref": "Luke.22.1",
+              "end_ref": "Luke.23.56"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leiden, Tod und Grablegung.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "passion_john",
+          "gospel_id": "John",
+          "range_label_de": "18,1–19,42",
+          "ranges": [
+            {
+              "label_de": "18,1–19,42",
+              "start": {
+                "chapter": 18,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 19,
+                "verse": 42
+              },
+              "inclusive": true,
+              "start_ref": "John.18.1",
+              "end_ref": "John.19.42"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leiden, Tod und Grablegung.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_easter",
+      "order": 19,
+      "title_de": "Ostergeschichte",
+      "group_de": "Jerusalem und Abschluss",
+      "note_de": "Markus 16,1–8 enthält die Osterbotschaft am leeren Grab, aber keine Erscheinung Jesu. Der lange Schluss bleibt gesondert markiert.",
+      "entries": [
+        {
+          "id": "easter_matt",
+          "gospel_id": "Matt",
+          "range_label_de": "28,1–20",
+          "ranges": [
+            {
+              "label_de": "28,1–20",
+              "start": {
+                "chapter": 28,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 20
+              },
+              "inclusive": true,
+              "start_ref": "Matt.28.1",
+              "end_ref": "Matt.28.20"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Grab, Erscheinungen und Missionsauftrag.",
+          "source_ids": [
+            "bull_mt"
+          ]
+        },
+        {
+          "id": "easter_mark",
+          "gospel_id": "Mark",
+          "range_label_de": "16,1–8",
+          "ranges": [
+            {
+              "label_de": "16,1–8",
+              "start": {
+                "chapter": 16,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 8
+              },
+              "inclusive": true,
+              "start_ref": "Mark.16.1",
+              "end_ref": "Mark.16.8"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Leeres Grab und Osterbotschaft.",
+          "source_ids": [
+            "bull_mk",
+            "stolle_mk"
+          ]
+        },
+        {
+          "id": "easter_luke",
+          "gospel_id": "Luke",
+          "range_label_de": "24,1–53",
+          "ranges": [
+            {
+              "label_de": "24,1–53",
+              "start": {
+                "chapter": 24,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 53
+              },
+              "inclusive": true,
+              "start_ref": "Luke.24.1",
+              "end_ref": "Luke.24.53"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Grab, Emmaus, Erscheinung und Himmelfahrt.",
+          "source_ids": [
+            "bull_lk",
+            "gadenz_lk"
+          ]
+        },
+        {
+          "id": "easter_john",
+          "gospel_id": "John",
+          "range_label_de": "20,1–21,25",
+          "ranges": [
+            {
+              "label_de": "20,1–21,25",
+              "start": {
+                "chapter": 20,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 21,
+                "verse": 25
+              },
+              "inclusive": true,
+              "start_ref": "John.20.1",
+              "end_ref": "John.21.25"
+            }
+          ],
+          "match_kind": "selected_collection_or_literary_block",
+          "summary_de": "Grab und Erscheinungen; Kapitel 21 als Epilog.",
+          "source_ids": [
+            "martin_wright_jn",
+            "nab_jn"
+          ]
+        }
+      ]
+    }
+  ],
+  "textual_additions": [
+    {
+      "id": "mark_longer_ending",
+      "gospel_id": "Mark",
+      "range_label_de": "16,9–20",
+      "ranges": [
+        {
+          "label_de": "16,9–20",
+          "start": {
+            "chapter": 16,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 20
+          },
+          "inclusive": true,
+          "start_ref": "Mark.16.9",
+          "end_ref": "Mark.16.20"
+        }
+      ],
+      "summary_de": "Spätere Schlussüberlieferung mit Erscheinungen und Sendung. Nicht Teil der Hauptzeile zur Ostergeschichte.",
+      "source_ids": [
+        "bull_mk",
+        "stolle_mk"
+      ],
+      "textual_status": "later_transmitted_addition"
+    }
+  ],
+  "sources": [
+    {
+      "id": "bull_mt",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Matthäusevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/matthaeusevangelium-mt",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_mk",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Markusevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/markusevangelium-mk",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_lk",
+      "author": "Klaus-Michael Bull",
+      "title_de": "Das Lukasevangelium",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/bibelkunde-nt/lukasevangelium-lk",
+      "type": "online_book_chapter",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "stolle_mk",
+      "author": "Volker Stolle",
+      "title_de": "Das Markusevangelium. Übersetzung und Kommentierung, Edition Ruprecht 2015, Inhaltsverzeichnis S. 5–8",
+      "url": "https://beckassets.blob.core.windows.net/product/readingsample/14845978/9783846901755_excerpt_002.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "martin_wright_jn",
+      "author": "Francis Martin und William M. Wright IV",
+      "title_de": "The Gospel of John, Baker Academic 2015, Einleitung und Gliederung S. 20–21 und 27–30",
+      "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801036477.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "gadenz_lk",
+      "author": "Pablo T. Gadenz",
+      "title_de": "The Gospel of Luke, Baker Academic 2018, Gliederung S. 24–27",
+      "url": "https://www.catholiccommentaryonsacredscripture.com/wp-content/uploads/2018/09/Gospel-of-Luke-Excerpt-Intro-chapter-1.pdf",
+      "type": "book_excerpt",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "nab_jn",
+      "author": "USCCB",
+      "title_de": "Einleitung zum Johannesevangelium, New American Bible Revised Edition",
+      "url": "https://bible.usccb.org/bible/john/0",
+      "type": "bible_introduction",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "bull_provenance",
+      "author": "Deutsche Bibelgesellschaft",
+      "title_de": "Nachweis der digitalen Bibelkunde: Klaus-Michael Bull, Bibelkunde des Neuen Testaments, 8. Auflage, Göttingen 2018",
+      "url": "https://www.die-bibel.de/ressourcen/bibelkunde/themenkapitel-nt/gleichnisse",
+      "type": "publication_provenance",
+      "accessed_on": "2026-10-12"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "Matt",
+        "type": "gospel",
+        "label_de": "Matthäus"
+      },
+      {
+        "id": "Mark",
+        "type": "gospel",
+        "label_de": "Markus"
+      },
+      {
+        "id": "Luke",
+        "type": "gospel",
+        "label_de": "Lukas"
+      },
+      {
+        "id": "John",
+        "type": "gospel",
+        "label_de": "Johannes"
+      },
+      {
+        "id": "topic_birth",
+        "type": "topic",
+        "label_de": "Geburtsgeschichte und Kindheit"
+      },
+      {
+        "id": "birth_matt",
+        "type": "text_block",
+        "label_de": "1,1–2,23",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "birth_luke",
+        "type": "text_block",
+        "label_de": "1,5–2,52",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_baptist",
+        "type": "topic",
+        "label_de": "Auftreten des Täufers"
+      },
+      {
+        "id": "baptist_matt",
+        "type": "text_block",
+        "label_de": "3,1–12",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "baptist_mark",
+        "type": "text_block",
+        "label_de": "1,2–8",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "baptist_luke",
+        "type": "text_block",
+        "label_de": "3,1–20",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "baptist_john",
+        "type": "text_block",
+        "label_de": "1,19–34",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_baptism",
+        "type": "topic",
+        "label_de": "Taufe Jesu"
+      },
+      {
+        "id": "baptism_matt",
+        "type": "text_block",
+        "label_de": "3,13–17",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "baptism_mark",
+        "type": "text_block",
+        "label_de": "1,9–11",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "baptism_luke",
+        "type": "text_block",
+        "label_de": "3,21–22",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "baptism_john",
+        "type": "text_block",
+        "label_de": "1,29–34",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_temptation",
+        "type": "topic",
+        "label_de": "Versuchungsgeschichte"
+      },
+      {
+        "id": "temptation_matt",
+        "type": "text_block",
+        "label_de": "4,1–11",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "temptation_mark",
+        "type": "text_block",
+        "label_de": "1,12–13",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "temptation_luke",
+        "type": "text_block",
+        "label_de": "4,1–13",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_call",
+        "type": "topic",
+        "label_de": "Jüngerberufungen"
+      },
+      {
+        "id": "call_matt",
+        "type": "text_block",
+        "label_de": "4,18–22",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "call_mark",
+        "type": "text_block",
+        "label_de": "1,16–20",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "call_luke",
+        "type": "text_block",
+        "label_de": "5,1–11",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "call_john",
+        "type": "text_block",
+        "label_de": "1,35–51",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_sermon",
+        "type": "topic",
+        "label_de": "Bergpredigt und Feldrede"
+      },
+      {
+        "id": "sermon_matt",
+        "type": "text_block",
+        "label_de": "5,1–7,29",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "sermon_luke",
+        "type": "text_block",
+        "label_de": "6,17–49",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_miracles",
+        "type": "topic",
+        "label_de": "Wundergeschichten"
+      },
+      {
+        "id": "miracles_matt",
+        "type": "text_block",
+        "label_de": "8,1–9,34",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "miracles_mark",
+        "type": "text_block",
+        "label_de": "4,35–5,43",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "miracles_luke",
+        "type": "text_block",
+        "label_de": "8,22–56",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "miracles_john",
+        "type": "text_block",
+        "label_de": "2,1–11;11,1–44",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_mission",
+        "type": "topic",
+        "label_de": "Aussendung der Jünger"
+      },
+      {
+        "id": "mission_matt",
+        "type": "text_block",
+        "label_de": "9,36–11,1",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "mission_mark",
+        "type": "text_block",
+        "label_de": "6,7–13",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "mission_luke",
+        "type": "text_block",
+        "label_de": "9,1–6;10,1–24",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_community_formation",
+        "type": "topic",
+        "label_de": "Entstehung der Jüngergemeinde"
+      },
+      {
+        "id": "community_formation_matt",
+        "type": "text_block",
+        "label_de": "11,2–16,20",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "community_formation_mark",
+        "type": "text_block",
+        "label_de": "3,13–19;8,27–30",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "community_formation_luke",
+        "type": "text_block",
+        "label_de": "6,12–16;9,18–21",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "community_formation_john",
+        "type": "text_block",
+        "label_de": "1,35–51;6,67–71",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_parables",
+        "type": "topic",
+        "label_de": "Gleichnisse und Bildreden"
+      },
+      {
+        "id": "parables_matt",
+        "type": "text_block",
+        "label_de": "13,1–52",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "parables_mark",
+        "type": "text_block",
+        "label_de": "4,1–34",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "parables_luke",
+        "type": "text_block",
+        "label_de": "8,4–18;15,1–32",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "parables_john",
+        "type": "text_block",
+        "label_de": "10,1–18",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_discipleship",
+        "type": "topic",
+        "label_de": "Jüngerbelehrung über die Nachfolge"
+      },
+      {
+        "id": "discipleship_matt",
+        "type": "text_block",
+        "label_de": "16,21–17,23;19,1–20,34",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "discipleship_mark",
+        "type": "text_block",
+        "label_de": "8,27–10,52",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "discipleship_luke",
+        "type": "text_block",
+        "label_de": "9,18–50;9,51–10,24",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "discipleship_john",
+        "type": "text_block",
+        "label_de": "12,23–26",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_transfiguration",
+        "type": "topic",
+        "label_de": "Verklärungsgeschichte"
+      },
+      {
+        "id": "transfiguration_matt",
+        "type": "text_block",
+        "label_de": "17,1–13",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "transfiguration_mark",
+        "type": "text_block",
+        "label_de": "9,2–13",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "transfiguration_luke",
+        "type": "text_block",
+        "label_de": "9,28–36",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_temple_tax",
+        "type": "topic",
+        "label_de": "Tempelsteuer"
+      },
+      {
+        "id": "temple_tax_matt",
+        "type": "text_block",
+        "label_de": "17,24–27",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "topic_community_life",
+        "type": "topic",
+        "label_de": "Jüngerbelehrung über das Gemeindeleben"
+      },
+      {
+        "id": "community_life_matt",
+        "type": "text_block",
+        "label_de": "18,1–35",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "community_life_mark",
+        "type": "text_block",
+        "label_de": "9,33–50",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "community_life_luke",
+        "type": "text_block",
+        "label_de": "17,1–10",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "community_life_john",
+        "type": "text_block",
+        "label_de": "13,1–17;13,34–35",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_jerusalem",
+        "type": "topic",
+        "label_de": "Wirken in Jerusalem"
+      },
+      {
+        "id": "jerusalem_matt",
+        "type": "text_block",
+        "label_de": "21,1–23,39",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "jerusalem_mark",
+        "type": "text_block",
+        "label_de": "11,1–12,44",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "jerusalem_luke",
+        "type": "text_block",
+        "label_de": "19,28–21,4",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "jerusalem_john",
+        "type": "text_block",
+        "label_de": "2,13–22;12,12–19",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_last_things",
+        "type": "topic",
+        "label_de": "Endzeitrede"
+      },
+      {
+        "id": "last_things_matt",
+        "type": "text_block",
+        "label_de": "24,1–25,46",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "last_things_mark",
+        "type": "text_block",
+        "label_de": "13,1–37",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "last_things_luke",
+        "type": "text_block",
+        "label_de": "21,5–38",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "topic_farewell",
+        "type": "topic",
+        "label_de": "Abschiedsreden und Gebet Jesu"
+      },
+      {
+        "id": "farewell_john",
+        "type": "text_block",
+        "label_de": "13,31–17,26",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_passion",
+        "type": "topic",
+        "label_de": "Passionsgeschichte"
+      },
+      {
+        "id": "passion_matt",
+        "type": "text_block",
+        "label_de": "26,1–27,66",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "passion_mark",
+        "type": "text_block",
+        "label_de": "14,1–15,47",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "passion_luke",
+        "type": "text_block",
+        "label_de": "22,1–23,56",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "passion_john",
+        "type": "text_block",
+        "label_de": "18,1–19,42",
+        "gospel_id": "John"
+      },
+      {
+        "id": "topic_easter",
+        "type": "topic",
+        "label_de": "Ostergeschichte"
+      },
+      {
+        "id": "easter_matt",
+        "type": "text_block",
+        "label_de": "28,1–20",
+        "gospel_id": "Matt"
+      },
+      {
+        "id": "easter_mark",
+        "type": "text_block",
+        "label_de": "16,1–8",
+        "gospel_id": "Mark"
+      },
+      {
+        "id": "easter_luke",
+        "type": "text_block",
+        "label_de": "24,1–53",
+        "gospel_id": "Luke"
+      },
+      {
+        "id": "easter_john",
+        "type": "text_block",
+        "label_de": "20,1–21,25",
+        "gospel_id": "John"
+      },
+      {
+        "id": "mark_longer_ending",
+        "type": "textual_addition",
+        "label_de": "16,9–20",
+        "gospel_id": "Mark"
+      }
+    ],
+    "edges": [
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_birth",
+        "to_id": "birth_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "birth_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_birth",
+        "to_id": "birth_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "birth_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "birth_matt",
+        "to_id": "birth_luke",
+        "topic_id": "topic_birth",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptist",
+        "to_id": "baptist_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptist_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptist",
+        "to_id": "baptist_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptist_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptist",
+        "to_id": "baptist_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptist_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptist",
+        "to_id": "baptist_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptist_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptist_matt",
+        "to_id": "baptist_mark",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptist_matt",
+        "to_id": "baptist_luke",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptist_matt",
+        "to_id": "baptist_john",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptist_mark",
+        "to_id": "baptist_luke",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptist_mark",
+        "to_id": "baptist_john",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptist_luke",
+        "to_id": "baptist_john",
+        "topic_id": "topic_baptist",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptism",
+        "to_id": "baptism_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptism_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptism",
+        "to_id": "baptism_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptism_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptism",
+        "to_id": "baptism_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptism_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_baptism",
+        "to_id": "baptism_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "baptism_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptism_matt",
+        "to_id": "baptism_mark",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptism_matt",
+        "to_id": "baptism_luke",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptism_matt",
+        "to_id": "baptism_john",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "baptism_mark",
+        "to_id": "baptism_luke",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptism_mark",
+        "to_id": "baptism_john",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "baptism_luke",
+        "to_id": "baptism_john",
+        "topic_id": "topic_baptism",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_temptation",
+        "to_id": "temptation_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "temptation_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_temptation",
+        "to_id": "temptation_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "temptation_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_temptation",
+        "to_id": "temptation_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "temptation_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "temptation_matt",
+        "to_id": "temptation_mark",
+        "topic_id": "topic_temptation",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "temptation_matt",
+        "to_id": "temptation_luke",
+        "topic_id": "topic_temptation",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "temptation_mark",
+        "to_id": "temptation_luke",
+        "topic_id": "topic_temptation",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_call",
+        "to_id": "call_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "call_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_call",
+        "to_id": "call_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "call_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_call",
+        "to_id": "call_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "call_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_call",
+        "to_id": "call_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "call_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "call_matt",
+        "to_id": "call_mark",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "call_matt",
+        "to_id": "call_luke",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "call_matt",
+        "to_id": "call_john",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "call_mark",
+        "to_id": "call_luke",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "call_mark",
+        "to_id": "call_john",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "call_luke",
+        "to_id": "call_john",
+        "topic_id": "topic_call",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_sermon",
+        "to_id": "sermon_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "sermon_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_sermon",
+        "to_id": "sermon_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "sermon_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "sermon_matt",
+        "to_id": "sermon_luke",
+        "topic_id": "topic_sermon",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_miracles",
+        "to_id": "miracles_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "miracles_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_miracles",
+        "to_id": "miracles_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "miracles_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_miracles",
+        "to_id": "miracles_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "miracles_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_miracles",
+        "to_id": "miracles_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "miracles_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_matt",
+        "to_id": "miracles_mark",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_matt",
+        "to_id": "miracles_luke",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_matt",
+        "to_id": "miracles_john",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_mark",
+        "to_id": "miracles_luke",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_mark",
+        "to_id": "miracles_john",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "miracles_luke",
+        "to_id": "miracles_john",
+        "topic_id": "topic_miracles",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_mission",
+        "to_id": "mission_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "mission_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_mission",
+        "to_id": "mission_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "mission_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_mission",
+        "to_id": "mission_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "mission_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "mission_matt",
+        "to_id": "mission_mark",
+        "topic_id": "topic_mission",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "mission_matt",
+        "to_id": "mission_luke",
+        "topic_id": "topic_mission",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "mission_mark",
+        "to_id": "mission_luke",
+        "topic_id": "topic_mission",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_formation",
+        "to_id": "community_formation_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_formation_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_formation",
+        "to_id": "community_formation_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_formation_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_formation",
+        "to_id": "community_formation_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_formation_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_formation",
+        "to_id": "community_formation_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_formation_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_matt",
+        "to_id": "community_formation_mark",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_matt",
+        "to_id": "community_formation_luke",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_matt",
+        "to_id": "community_formation_john",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_mark",
+        "to_id": "community_formation_luke",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_mark",
+        "to_id": "community_formation_john",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_formation_luke",
+        "to_id": "community_formation_john",
+        "topic_id": "topic_community_formation",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_parables",
+        "to_id": "parables_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "parables_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_parables",
+        "to_id": "parables_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "parables_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_parables",
+        "to_id": "parables_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "parables_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_parables",
+        "to_id": "parables_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "parables_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_matt",
+        "to_id": "parables_mark",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_matt",
+        "to_id": "parables_luke",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_matt",
+        "to_id": "parables_john",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_mark",
+        "to_id": "parables_luke",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_mark",
+        "to_id": "parables_john",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "parables_luke",
+        "to_id": "parables_john",
+        "topic_id": "topic_parables",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_discipleship",
+        "to_id": "discipleship_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "discipleship_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_discipleship",
+        "to_id": "discipleship_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "discipleship_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_discipleship",
+        "to_id": "discipleship_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "discipleship_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_discipleship",
+        "to_id": "discipleship_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "discipleship_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_matt",
+        "to_id": "discipleship_mark",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_matt",
+        "to_id": "discipleship_luke",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_matt",
+        "to_id": "discipleship_john",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_mark",
+        "to_id": "discipleship_luke",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_mark",
+        "to_id": "discipleship_john",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "discipleship_luke",
+        "to_id": "discipleship_john",
+        "topic_id": "topic_discipleship",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_transfiguration",
+        "to_id": "transfiguration_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "transfiguration_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_transfiguration",
+        "to_id": "transfiguration_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "transfiguration_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_transfiguration",
+        "to_id": "transfiguration_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "transfiguration_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "transfiguration_matt",
+        "to_id": "transfiguration_mark",
+        "topic_id": "topic_transfiguration",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "transfiguration_matt",
+        "to_id": "transfiguration_luke",
+        "topic_id": "topic_transfiguration",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "transfiguration_mark",
+        "to_id": "transfiguration_luke",
+        "topic_id": "topic_transfiguration",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_temple_tax",
+        "to_id": "temple_tax_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "temple_tax_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_life",
+        "to_id": "community_life_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_life_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_life",
+        "to_id": "community_life_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_life_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_life",
+        "to_id": "community_life_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_life_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_community_life",
+        "to_id": "community_life_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "community_life_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_matt",
+        "to_id": "community_life_mark",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_matt",
+        "to_id": "community_life_luke",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_matt",
+        "to_id": "community_life_john",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_mark",
+        "to_id": "community_life_luke",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_mark",
+        "to_id": "community_life_john",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "community_life_luke",
+        "to_id": "community_life_john",
+        "topic_id": "topic_community_life",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_jerusalem",
+        "to_id": "jerusalem_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "jerusalem_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_jerusalem",
+        "to_id": "jerusalem_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "jerusalem_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_jerusalem",
+        "to_id": "jerusalem_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "jerusalem_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_jerusalem",
+        "to_id": "jerusalem_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "jerusalem_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_matt",
+        "to_id": "jerusalem_mark",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_matt",
+        "to_id": "jerusalem_luke",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_matt",
+        "to_id": "jerusalem_john",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_mark",
+        "to_id": "jerusalem_luke",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_mark",
+        "to_id": "jerusalem_john",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "jerusalem_luke",
+        "to_id": "jerusalem_john",
+        "topic_id": "topic_jerusalem",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_last_things",
+        "to_id": "last_things_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "last_things_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_last_things",
+        "to_id": "last_things_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "last_things_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_last_things",
+        "to_id": "last_things_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "last_things_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "last_things_matt",
+        "to_id": "last_things_mark",
+        "topic_id": "topic_last_things",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "last_things_matt",
+        "to_id": "last_things_luke",
+        "topic_id": "topic_last_things",
+        "directed": false
+      },
+      {
+        "type": "parallel_narrative_or_discourse",
+        "from_id": "last_things_mark",
+        "to_id": "last_things_luke",
+        "topic_id": "topic_last_things",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_farewell",
+        "to_id": "farewell_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "farewell_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_passion",
+        "to_id": "passion_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "passion_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_passion",
+        "to_id": "passion_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "passion_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_passion",
+        "to_id": "passion_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "passion_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_passion",
+        "to_id": "passion_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "passion_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_matt",
+        "to_id": "passion_mark",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_matt",
+        "to_id": "passion_luke",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_matt",
+        "to_id": "passion_john",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_mark",
+        "to_id": "passion_luke",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_mark",
+        "to_id": "passion_john",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "passion_luke",
+        "to_id": "passion_john",
+        "topic_id": "topic_passion",
+        "directed": false
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_easter",
+        "to_id": "easter_matt",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "easter_matt",
+        "to_id": "Matt",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_easter",
+        "to_id": "easter_mark",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "easter_mark",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_easter",
+        "to_id": "easter_luke",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "easter_luke",
+        "to_id": "Luke",
+        "directed": true
+      },
+      {
+        "type": "includes_text_block",
+        "from_id": "topic_easter",
+        "to_id": "easter_john",
+        "directed": true
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "easter_john",
+        "to_id": "John",
+        "directed": true
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_matt",
+        "to_id": "easter_mark",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_matt",
+        "to_id": "easter_luke",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_matt",
+        "to_id": "easter_john",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_mark",
+        "to_id": "easter_luke",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_mark",
+        "to_id": "easter_john",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "thematic_correspondence",
+        "from_id": "easter_luke",
+        "to_id": "easter_john",
+        "topic_id": "topic_easter",
+        "directed": false
+      },
+      {
+        "type": "occurs_in",
+        "from_id": "mark_longer_ending",
+        "to_id": "Mark",
+        "directed": true
+      },
+      {
+        "type": "later_transmitted_continuation",
+        "from_id": "easter_mark",
+        "to_id": "mark_longer_ending",
+        "directed": true
+      }
+    ],
+    "mixed_direction": true
+  }
+}

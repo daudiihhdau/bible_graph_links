@@ -1,0 +1,21 @@
+{
+  "name": "@question-os/core",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable, game-independent LadybugDB knowledge graph and query SDK.",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node tools/validate-all.js",
+    "knowledge:inspect": "node tools/knowledge-author.js inspect",
+    "knowledge:check": "node tools/knowledge-author.js check",
+    "knowledge:apply": "node tools/knowledge-author.js apply",
+    "knowledge:ladybug:export": "node tools/ladybug-export.js",
+    "knowledge:ladybug:import": "node tools/ladybug-import.js",
+    "check": "npm run validate && npm test"
+  },
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  }
+}

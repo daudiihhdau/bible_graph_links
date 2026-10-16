@@ -1,0 +1,603 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://question-os.dev/schemas/7.0/content.schema.json",
+  "title": "Question OS Wissensdaten",
+  "description": "Nur überprüfbare Entitäten, Aussagen, Beziehungen, Zeitangaben und fachliche Kategorisierung. Querverweise und Zyklen werden paketweit validiert.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/entitiesDocument"
+    },
+    {
+      "$ref": "#/$defs/assertionsDocument"
+    },
+    {
+      "$ref": "#/$defs/relationTypesDocument"
+    },
+    {
+      "$ref": "#/$defs/curriculumDocument"
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9.-]+/[a-z0-9-]+(?:/[a-z0-9-]+)+$"
+    },
+    "date": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "year",
+        "era"
+      ],
+      "properties": {
+        "year": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Historische Jahreszahl; Jahr 0 nur mit era ZERO."
+        },
+        "era": {
+          "enum": [
+            "BCE",
+            "CE",
+            "ZERO"
+          ],
+          "description": "BCE = vor Christus, CE = nach Christus, ZERO = astronomisches Jahr 0 (entspricht 1 v. Chr.)."
+        },
+        "month": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 31
+        }
+      }
+    },
+    "time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/date",
+          "description": "Frühester genannter Zeitpunkt; bei einem einzelnen Datum das Datum selbst."
+        },
+        "end": {
+          "$ref": "#/$defs/date",
+          "description": "Optionaler letzter Zeitpunkt eines Zeitraums. Fehlt bei einem einzelnen Datum."
+        },
+        "isApproximate": {
+          "type": "boolean",
+          "description": "True kennzeichnet eine ungefähre Datierung, die sichtbar als ca. dargestellt werden kann."
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "if": {
+        "required": [
+          "entityType"
+        ],
+        "properties": {
+          "entityType": {
+            "enum": [
+              "word",
+              "phrase"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "languageCode"
+        ]
+      },
+      "required": [
+        "id",
+        "entityType",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "description": "Stabile, weltweit eindeutige ID dieser Entität."
+        },
+        "entityType": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "description": "Fachlicher Typ, zum Beispiel person, place, event, word oder sense."
+        },
+        "languageCode": {
+          "type": "string",
+          "pattern": "^[a-z]{2,3}(?:-[a-z0-9]{1,8})*$",
+          "description": "Sprachkennung des Wortes oder der Wortgruppe, zum Beispiel de oder grc-x-koine."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Kurzer, lesbarer Name dieser Entität."
+        },
+        "alternativeNames": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "uniqueItems": true,
+          "description": "Weitere bekannte Namen derselben Entität."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Fachliche Beschreibung der Entität."
+        },
+        "time": {
+          "$ref": "#/$defs/time",
+          "description": "Datierung dieser Entität: bei einer Person ihre Lebensspanne, bei einem Ereignis dessen Zeitpunkt oder Zeitraum. Ein timepoint braucht immer eine Zeitangabe."
+        }
+      }
+    },
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceType",
+        "title"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "sourceType": {
+              "const": "bible"
+            }
+          },
+          "required": [
+            "bibleBookCode",
+            "locationInSource"
+          ]
+        },
+        {
+          "properties": {
+            "sourceType": {
+              "const": "wikipedia"
+            },
+            "link": {
+              "pattern": "^https://"
+            }
+          },
+          "required": [
+            "languageCode",
+            "link"
+          ]
+        },
+        {
+          "properties": {
+            "sourceType": {
+              "const": "web"
+            },
+            "link": {
+              "pattern": "^https://"
+            }
+          },
+          "required": [
+            "link"
+          ]
+        },
+        {
+          "properties": {
+            "sourceType": {
+              "const": "deep-link"
+            }
+          },
+          "required": [
+            "link"
+          ]
+        },
+        {
+          "properties": {
+            "sourceType": {
+              "const": "internal"
+            }
+          },
+          "required": [
+            "locationInSource"
+          ]
+        },
+        {
+          "properties": {
+            "sourceType": {
+              "const": "bibliographic"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "sourceType": {
+          "enum": [
+            "bible",
+            "wikipedia",
+            "web",
+            "deep-link",
+            "internal",
+            "bibliographic"
+          ],
+          "description": "Art der Quelle, zum Beispiel bible, wikipedia oder deep-link."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Lesbarer Titel der Quelle."
+        },
+        "bibleBookCode": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]{2,8}$",
+          "description": "Bibelbuchkennung, zum Beispiel MAT oder GEN; nur für sourceType bible."
+        },
+        "locationInSource": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Fundstelle innerhalb der Quelle, zum Beispiel Kapitel und Vers oder Abschnitt."
+        },
+        "languageCode": {
+          "type": "string",
+          "pattern": "^[a-z]{2,3}(?:-[a-z0-9]{1,8})*$",
+          "description": "Sprachkennung des Wikipedia-Artikels."
+        },
+        "link": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9+.-]*:.*\\S",
+          "description": "Vollständiger HTTPS-Link oder erlaubter App-Deep-Link."
+        }
+      }
+    },
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subjectEntityId",
+        "relationTypeId",
+        "target"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "description": "Stabile ID dieser einzelnen wahren Aussage."
+        },
+        "subjectEntityId": {
+          "$ref": "#/$defs/id",
+          "description": "ID der Entität, über die diese Aussage etwas sagt."
+        },
+        "relationTypeId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "description": "ID der Beziehung, zum Beispiel born-in oder has-sense."
+        },
+        "target": {
+          "$ref": "#/$defs/assertionTarget",
+          "description": "Ziel der Aussage: eine Entität, ein Text oder eine Quelle."
+        },
+        "time": {
+          "$ref": "#/$defs/time",
+          "description": "Optionaler Zeitraum, in dem genau diese Aussage gilt."
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceReference"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Optionale Belege für diese Aussage. Eine Quelle als Ziel nicht zusätzlich hier eintragen."
+        },
+        "context": {
+          "type": "string",
+          "description": "Optionaler fachlicher Kontext, der die Aussage präzisiert."
+        }
+      }
+    },
+    "relationType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subjectEntityTypes",
+        "targetType"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "description": "Kurze ID dieses Beziehungstyps."
+        },
+        "subjectEntityTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(\\*|[a-z][a-z0-9]*(?:-[a-z0-9]+)*)$"
+          },
+          "uniqueItems": true,
+          "description": "Erlaubte Typen der Subjekt-Entität."
+        },
+        "targetType": {
+          "enum": [
+            "entity",
+            "text",
+            "source"
+          ],
+          "description": "Erlaubte Art des Aussageziels: entity, text oder source."
+        },
+        "targetEntityTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(\\*|[a-z][a-z0-9]*(?:-[a-z0-9]+)*)$"
+          },
+          "uniqueItems": true,
+          "description": "Erlaubte Entitätstypen des Ziels; nur bei targetType entity."
+        },
+        "singleTargetPerSubject": {
+          "type": "boolean",
+          "description": "True, wenn dieselbe Subjekt-Entität für diesen Beziehungstyp höchstens ein Ziel haben darf."
+        },
+        "exclusiveWithRelationTypeIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "IDs von Beziehungstypen, die derselben Subjekt-Ziel-Kombination widersprechen."
+        }
+      }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "schoolSubjectId",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "description": "Stabile ID dieser Kategorie."
+        },
+        "schoolSubjectId": {
+          "$ref": "#/$defs/id",
+          "description": "ID des Unterrichtsfachs, zu dem die Kategorie gehört."
+        },
+        "parentCategoryId": {
+          "$ref": "#/$defs/id",
+          "description": "Optionale ID ihrer übergeordneten Kategorie im selben Fach."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Lesbarer Name dieser Kategorie."
+        },
+        "entityIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true,
+          "description": "Entitäten, die dieser Kategorie direkt zugeordnet sind."
+        },
+        "assertionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true,
+          "description": "Aussagen, die dieser Kategorie direkt zugeordnet sind."
+        }
+      }
+    },
+    "entitiesDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "documentType",
+        "entities"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "documentType": {
+          "const": "entities",
+          "description": "Art dieses Wissensdokuments."
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          },
+          "minItems": 1,
+          "description": "Einträge dieses Wissensdokuments."
+        }
+      }
+    },
+    "assertionsDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "documentType",
+        "assertions"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "documentType": {
+          "const": "assertions",
+          "description": "Art dieses Wissensdokuments."
+        },
+        "assertions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assertion"
+          },
+          "minItems": 1,
+          "description": "Einträge dieses Wissensdokuments."
+        }
+      }
+    },
+    "relationTypesDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "documentType",
+        "relationTypes"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "documentType": {
+          "const": "relationTypes",
+          "description": "Art dieses Wissensdokuments."
+        },
+        "relationTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relationType"
+          },
+          "minItems": 1,
+          "description": "Einträge dieses Wissensdokuments."
+        }
+      }
+    },
+    "curriculumDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "documentType",
+        "schoolSubjects",
+        "categories"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "documentType": {
+          "const": "curriculum",
+          "description": "Art dieses Wissensdokuments."
+        },
+        "schoolSubjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/schoolSubject"
+          },
+          "minItems": 1,
+          "description": "Unterrichtsfächer dieses Pakets."
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/category"
+          },
+          "minItems": 1,
+          "description": "Fachliche Kategorien und Unterkategorien dieses Pakets."
+        }
+      }
+    },
+    "assertionTarget": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetType",
+            "entityId"
+          ],
+          "properties": {
+            "targetType": {
+              "const": "entity",
+              "description": "Art des Aussageziels: entity."
+            },
+            "entityId": {
+              "$ref": "#/$defs/id",
+              "description": "ID der Entität, auf die sich die Aussage bezieht."
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetType",
+            "text"
+          ],
+          "properties": {
+            "targetType": {
+              "const": "text",
+              "description": "Art des Aussageziels: text."
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S",
+              "description": "Wörtlicher Textwert der Aussage."
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetType",
+            "sourceReference"
+          ],
+          "properties": {
+            "targetType": {
+              "const": "source",
+              "description": "Art des Aussageziels: source."
+            },
+            "sourceReference": {
+              "$ref": "#/$defs/sourceReference",
+              "description": "Die Quelle, die selbst das Ziel der Aussage ist."
+            }
+          }
+        }
+      ]
+    },
+    "schoolSubject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "description": "Stabile ID des Unterrichtsfachs."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Lesbarer Name des Unterrichtsfachs."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2168 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "title_de": "Grundstruktur der vier Evangelien",
+    "created_on": "2026-10-12",
+    "language_of_annotations": "de",
+    "purpose": "learning_and_data_visualization",
+    "companion_document": "Grundstruktur_der_vier_Evangelien.docx",
+    "related_research_package": "synoptisches_problem_forschungspaket(1).zip",
+    "supplement_de": "Die JSON ergänzt die unveränderte Word-Lernübersicht um einen gesonderten Wikipedia-Abgleich und einen Graph-Export.",
+    "scope_de": "Grobe, eigenständig zusammengeführte Lernstruktur aller vier Evangelien; keine vollständige Perikopensynopse.",
+    "authoring_note_de": "Recherche und Annotation durch KI erstellt; keine fachlich begutachtete Forschungspublikation."
+  },
+  "data_dictionary": {
+    "gospel_ids": "Matt, Mark und Luke entsprechen den Buchcodes im Forschungspaket; John ergänzt das vierte Evangelium.",
+    "order": "Ganzzahlige Reihenfolge innerhalb der jeweiligen Liste; keine zeitliche Dauer.",
+    "range": "Inklusive Start- und Endgrenze mit ganzzahligen chapter- und verse-Feldern; chapter-only labels werden bis zum Kapitelende aufgelöst.",
+    "reference_format": "Buch.Kapitel.Vers, beispielsweise Matt.4.12; keine editionsspezifische Vers-ID.",
+    "source_ids": "Nachweise für die jeweilige Zusammenführung; nicht jeder Nachweis verwendet genau dieselben Abschnittsgrenzen.",
+    "discourses": "Zusätzliche, überlappende Lernblöcke bei Matthäus; Kapitelangaben umfassen auch Rahmenszenen und sind keine exakten Redegrenzen.",
+    "transitions": "Orientierungsstellen innerhalb des Erzählverlaufs; keine weitere lückenlose Gliederung.",
+    "macro_sections": "Übergeordnete Gliederung bei Johannes; überlappt die Hauptabschnitte und darf beim Zählen nicht addiert werden.",
+    "textual_additions": "Gesondert überlieferte Texte außerhalb der gewählten Hauptgliederung.",
+    "graph": "graph.nodes enthält Knoten mit id, type und label_de; graph.edges enthält gerichtete Kanten mit from_id, to_id und type. entity_path ist ein JSON Pointer zur maßgeblichen Objektbeschreibung.",
+    "supplementary_source_ids": "Zusätzliche Wikipedia-Nachweise nur im JSON; die neun Quellen der Word-Datei behalten ihre bisherigen IDs.",
+    "wikipedia_cross_check": "Paraphrasierter Abgleich mit Wikipedia; related_object_ids nennt die betroffenen Lernobjekte. Keine Übernahme einer Wikipedia-Gliederung als wissenschaftlicher Konsens."
+  },
+  "visualization_notes_de": [
+    "Die Hauptabschnitte stehen in gospels[].sections. Namen und Kurztexte sind deutsch, Feldnamen englisch.",
+    "Für Ablaufdiagramme order oder next_section-Kanten verwenden. Für Kapitelbänder die strukturierten Versgrenzen verwenden.",
+    "Kapitel- und Versnummern sind Referenzen, keine proportionalen Längenmaße. Für genaue Textlängen oder Flächenanteile einen separat festgelegten Editionstext zählen.",
+    "Die Reihenfolge beschreibt den Erzählverlauf des jeweiligen Evangeliums, keine gemeinsame historische Chronologie.",
+    "Abschnitte verschiedener Evangelien sind nicht automatisch inhaltlich deckungsgleich. Es werden keine Perikopen-Parallelbeziehungen behauptet.",
+    "Markus endet in dieser Hauptgliederung bei 16,8. Der lange Schluss 16,9–20 ist separat erfasst.",
+    "Die Hauptgliederungen decken jeweils den gewählten Textbereich lückenlos und ohne Überschneidung ab; Zusatzebenen können überlappen."
+  ],
+  "wikipedia_methodology": {
+    "used": true,
+    "graph_database_used": false,
+    "method_de": "Abgleich der Gliederungsabschnitte der vier deutschsprachigen Wikipedia-Artikel. Der Graph wird aus den geprüften Lernobjekten und ihrer Hierarchie erzeugt; er ist kein Export aus Wikidata oder einer Wiki-Graphdatenbank.",
+    "effect_de": "Die 26 Hauptabschnitte der Word-Lernübersicht bleiben erhalten. Abweichende Zusammenfassungen und Redegrenzen stehen separat in wikipedia_cross_check."
+  },
+  "gospels": [
+    {
+      "id": "Matt",
+      "order": 1,
+      "name_de": "Matthäus",
+      "chapter_count": 28,
+      "profile_de": "28 Kapitel · Jesus als Messias und Lehrer · Erzählungen und große Reden wechseln sich ab.",
+      "source_ids": [
+        "src_001",
+        "src_005",
+        "src_006"
+      ],
+      "sections": [
+        {
+          "id": "matt_infancy",
+          "order": 1,
+          "title_de": "Herkunft und Kindheit",
+          "summary_de": "Stammbaum, Geburt, Magier, Flucht nach Ägypten.",
+          "range": {
+            "label_de": "1–2",
+            "start": {
+              "chapter": 1,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 23
+            },
+            "start_ref": "Matt.1.1",
+            "end_ref": "Matt.2.23",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_preparation",
+          "order": 2,
+          "title_de": "Vorbereitung",
+          "summary_de": "Johannes der Täufer, Taufe Jesu, Versuchung.",
+          "range": {
+            "label_de": "3,1–4,11",
+            "start": {
+              "chapter": 3,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 11
+            },
+            "start_ref": "Matt.3.1",
+            "end_ref": "Matt.4.11",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_public_ministry",
+          "order": 3,
+          "title_de": "Öffentliches Wirken",
+          "summary_de": "Vor allem Galiläa und Umgebung; Lehre, Heilungen, Gleichnisse, Jünger und wachsende Konflikte.",
+          "range": {
+            "label_de": "4,12–18,35",
+            "start": {
+              "chapter": 4,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 35
+            },
+            "start_ref": "Matt.4.12",
+            "end_ref": "Matt.18.35",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_journey",
+          "order": 4,
+          "title_de": "Weg nach Jerusalem",
+          "summary_de": "Aufbruch aus Galiläa; Nachfolge, Dienst und Leiden.",
+          "range": {
+            "label_de": "19–20",
+            "start": {
+              "chapter": 19,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 34
+            },
+            "start_ref": "Matt.19.1",
+            "end_ref": "Matt.20.34",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_jerusalem",
+          "order": 5,
+          "title_de": "Jerusalem und letzte Lehre",
+          "summary_de": "Einzug, Tempel, Streitgespräche, Gericht und Wachsamkeit.",
+          "range": {
+            "label_de": "21–25",
+            "start": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 46
+            },
+            "start_ref": "Matt.21.1",
+            "end_ref": "Matt.25.46",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_passion",
+          "order": 6,
+          "title_de": "Passion",
+          "summary_de": "Letztes Mahl, Gefangennahme, Prozess, Kreuzigung und Grablegung.",
+          "range": {
+            "label_de": "26–27",
+            "start": {
+              "chapter": 26,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 27,
+              "verse": 66
+            },
+            "start_ref": "Matt.26.1",
+            "end_ref": "Matt.27.66",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_resurrection",
+          "order": 7,
+          "title_de": "Auferstehung und Sendung",
+          "summary_de": "Leeres Grab, Begegnungen und Auftrag an die Jünger.",
+          "range": {
+            "label_de": "28",
+            "start": {
+              "chapter": 28,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 28,
+              "verse": 20
+            },
+            "start_ref": "Matt.28.1",
+            "end_ref": "Matt.28.20",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        }
+      ],
+      "discourses": [
+        {
+          "id": "matt_discourse_1",
+          "order": 1,
+          "title_de": "Bergpredigt",
+          "range": {
+            "label_de": "5–7",
+            "start": {
+              "chapter": 5,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 29
+            },
+            "start_ref": "Matt.5.1",
+            "end_ref": "Matt.7.29",
+            "inclusive": true
+          },
+          "range_precision": "chapter_learning_block",
+          "parent_section_id": "matt_public_ministry",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_discourse_2",
+          "order": 2,
+          "title_de": "Aussendungsrede",
+          "range": {
+            "label_de": "10",
+            "start": {
+              "chapter": 10,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 42
+            },
+            "start_ref": "Matt.10.1",
+            "end_ref": "Matt.10.42",
+            "inclusive": true
+          },
+          "range_precision": "chapter_learning_block",
+          "parent_section_id": "matt_public_ministry",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_discourse_3",
+          "order": 3,
+          "title_de": "Gleichnisrede",
+          "range": {
+            "label_de": "13",
+            "start": {
+              "chapter": 13,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 58
+            },
+            "start_ref": "Matt.13.1",
+            "end_ref": "Matt.13.58",
+            "inclusive": true
+          },
+          "range_precision": "chapter_learning_block",
+          "parent_section_id": "matt_public_ministry",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_discourse_4",
+          "order": 4,
+          "title_de": "Gemeinderede",
+          "range": {
+            "label_de": "18",
+            "start": {
+              "chapter": 18,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 35
+            },
+            "start_ref": "Matt.18.1",
+            "end_ref": "Matt.18.35",
+            "inclusive": true
+          },
+          "range_precision": "chapter_learning_block",
+          "parent_section_id": "matt_public_ministry",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        },
+        {
+          "id": "matt_discourse_5",
+          "order": 5,
+          "title_de": "Endzeitrede",
+          "range": {
+            "label_de": "24–25",
+            "start": {
+              "chapter": 24,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 46
+            },
+            "start_ref": "Matt.24.1",
+            "end_ref": "Matt.25.46",
+            "inclusive": true
+          },
+          "range_precision": "chapter_learning_block",
+          "parent_section_id": "matt_jerusalem",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        }
+      ],
+      "transitions": [
+        {
+          "id": "matt_transition_to_suffering",
+          "order": 1,
+          "range": {
+            "label_de": "16,21",
+            "start": {
+              "chapter": 16,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 21
+            },
+            "start_ref": "Matt.16.21",
+            "end_ref": "Matt.16.21",
+            "inclusive": true
+          },
+          "summary_de": "Ausdrückliche Hinwendung zum Leiden innerhalb des Blocks über das öffentliche Wirken.",
+          "source_ids": [
+            "src_001",
+            "src_005",
+            "src_006"
+          ]
+        }
+      ],
+      "macro_sections": [],
+      "textual_additions": [],
+      "outline_note_de": "Zur Einteilung: Die Reden gliedern das Werk zusätzlich. Andere Übersichten verbinden Erzählung und anschließende Rede zu größeren Einheiten. Mt 16,21 markiert bereits im Galiläa-Teil die ausdrückliche Hinwendung zum Leiden. Grundlagen: [1], [5], [6].",
+      "mnemonic_de": "Kindheit → Vorbereitung → Wirken → Weg → Jerusalem → Passion → Auferstehung. Redenfolge: 5–7 / 10 / 13 / 18 / 24–25.",
+      "supplementary_source_ids": [
+        "src_010"
+      ],
+      "wikipedia_cross_check": {
+        "source_id": "src_010",
+        "result": "compatible_after_coarse_grouping",
+        "summary_de": "Wikipedia erläutert mehrere Gliederungsmodelle. Die fünf Reden und Mt 16,21 bleiben als Strukturanker geeignet. Im dargestellten Fünf-Bücher-Modell wird die fünfte Rede breiter als Pharisäer- und Endzeitrede in Kapitel 23–25 gefasst; die Lernübersicht bezeichnet Kapitel 24–25 als Endzeitrede.",
+        "related_object_ids": [
+          "matt_discourse_5",
+          "matt_transition_to_suffering"
+        ],
+        "main_outline_changed": false
+      }
+    },
+    {
+      "id": "Mark",
+      "order": 2,
+      "name_de": "Markus",
+      "chapter_count": 16,
+      "profile_de": "16 Kapitel · Jesus erkennen und ihm auf dem Weg zum Kreuz folgen.",
+      "source_ids": [
+        "src_002",
+        "src_007"
+      ],
+      "sections": [
+        {
+          "id": "mark_preparation",
+          "order": 1,
+          "title_de": "Auftakt und Vorbereitung",
+          "summary_de": "Johannes der Täufer, Taufe Jesu und Versuchung; keine Kindheitsgeschichte.",
+          "range": {
+            "label_de": "1,1–13",
+            "start": {
+              "chapter": 1,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 13
+            },
+            "start_ref": "Mark.1.1",
+            "end_ref": "Mark.1.13",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_public_ministry",
+          "order": 2,
+          "title_de": "Wirken in Galiläa und Umgebung",
+          "summary_de": "Verkündigung, Heilungen, Gleichnisse, Jüngerberufung, Konflikte und Unverständnis.",
+          "range": {
+            "label_de": "1,14–8,26",
+            "start": {
+              "chapter": 1,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 26
+            },
+            "start_ref": "Mark.1.14",
+            "end_ref": "Mark.8.26",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_journey",
+          "order": 3,
+          "title_de": "Wendung und Weg zur Passion",
+          "summary_de": "Petrusbekenntnis, Leidensankündigungen, Verklärung und Unterweisung über Nachfolge; Reise nach Jerusalem.",
+          "range": {
+            "label_de": "8,27–10,52",
+            "start": {
+              "chapter": 8,
+              "verse": 27
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 52
+            },
+            "start_ref": "Mark.8.27",
+            "end_ref": "Mark.10.52",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_jerusalem",
+          "order": 4,
+          "title_de": "Jesus in Jerusalem",
+          "summary_de": "Einzug, Tempelhandlung, Streitgespräche und Endzeitrede.",
+          "range": {
+            "label_de": "11–13",
+            "start": {
+              "chapter": 11,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 37
+            },
+            "start_ref": "Mark.11.1",
+            "end_ref": "Mark.13.37",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_passion",
+          "order": 5,
+          "title_de": "Passion",
+          "summary_de": "Letztes Mahl, Getsemani, Verhaftung, Prozess, Kreuzigung und Grablegung.",
+          "range": {
+            "label_de": "14–15",
+            "start": {
+              "chapter": 14,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 47
+            },
+            "start_ref": "Mark.14.1",
+            "end_ref": "Mark.15.47",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_resurrection",
+          "order": 6,
+          "title_de": "Leeres Grab und Osterbotschaft",
+          "summary_de": "Frauen am Grab; Botschaft von Jesu Auferstehung; Furcht und Schweigen.",
+          "range": {
+            "label_de": "16,1–8",
+            "start": {
+              "chapter": 16,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 8
+            },
+            "start_ref": "Mark.16.1",
+            "end_ref": "Mark.16.8",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        }
+      ],
+      "discourses": [],
+      "transitions": [
+        {
+          "id": "mark_transition_1",
+          "order": 1,
+          "range": {
+            "label_de": "1,14–15",
+            "start": {
+              "chapter": 1,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 15
+            },
+            "start_ref": "Mark.1.14",
+            "end_ref": "Mark.1.15",
+            "inclusive": true
+          },
+          "summary_de": "Die öffentliche Verkündigung Jesu beginnt.",
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_transition_2",
+          "order": 2,
+          "range": {
+            "label_de": "8,27–31",
+            "start": {
+              "chapter": 8,
+              "verse": 27
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 31
+            },
+            "start_ref": "Mark.8.27",
+            "end_ref": "Mark.8.31",
+            "inclusive": true
+          },
+          "summary_de": "Petrus bekennt Jesus als Christus; unmittelbar danach folgt die erste Leidensankündigung.",
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_transition_3",
+          "order": 3,
+          "range": {
+            "label_de": "11,1",
+            "start": {
+              "chapter": 11,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 1
+            },
+            "start_ref": "Mark.11.1",
+            "end_ref": "Mark.11.1",
+            "inclusive": true
+          },
+          "summary_de": "Der Einzug eröffnet den Jerusalemer Abschnitt.",
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        },
+        {
+          "id": "mark_transition_4",
+          "order": 4,
+          "range": {
+            "label_de": "14,1",
+            "start": {
+              "chapter": 14,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 1
+            },
+            "start_ref": "Mark.14.1",
+            "end_ref": "Mark.14.1",
+            "inclusive": true
+          },
+          "summary_de": "Die Passionshandlung setzt ein.",
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        }
+      ],
+      "macro_sections": [],
+      "textual_additions": [
+        {
+          "id": "mark_longer_ending",
+          "order_after_main_sections": 7,
+          "title_de": "Langer Markusschluss",
+          "range": {
+            "label_de": "16,9–20",
+            "start": {
+              "chapter": 16,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 20
+            },
+            "start_ref": "Mark.16.9",
+            "end_ref": "Mark.16.20",
+            "inclusive": true
+          },
+          "summary_de": "Mk 16,9–20 enthält Erscheinungen des Auferstandenen, Sendung und Himmelfahrt. Dieser lange Schluss gilt in der textkritischen Forschung als spätere Ergänzung und wird deshalb gesondert gelernt. Der älteste rekonstruierbare Text endet bei 16,8; ob Markus selbst ursprünglich noch einen verlorenen Schluss schrieb, ist eine andere Frage.",
+          "textual_status": "later_transmitted_addition",
+          "included_in_main_outline": false,
+          "source_ids": [
+            "src_002",
+            "src_007"
+          ]
+        }
+      ],
+      "outline_note_de": "Zur Einteilung: Der Übergang zur zweiten großen Hälfte wird je nach Quelle bei 8,22, 8,27 oder 8,31 gesetzt. Für diese Lernübersicht dient 8,27 als Grenze. Einige Quellen zählen 1,14–15 noch zum Auftakt. Grundlagen: [2], [7].",
+      "mnemonic_de": "Vorbereitung → Wirken → Weg zum Kreuz → Jerusalem → Passion → Osterbotschaft.",
+      "supplementary_source_ids": [
+        "src_011"
+      ],
+      "wikipedia_cross_check": {
+        "source_id": "src_011",
+        "result": "compatible_after_coarse_grouping",
+        "summary_de": "Die Darstellung setzt den Prolog bei 1,1–13 und den Weg zum Kreuz bei 8,27–10,52 an. Sie verbindet Passion und leeres Grab zu 14,1–16,8 und behandelt 16,9–20 gesondert. Die Lernübersicht trennt innerhalb dieses Schlussblocks Passion und Osterbotschaft.",
+        "related_object_ids": [
+          "mark_preparation",
+          "mark_journey",
+          "mark_passion",
+          "mark_resurrection",
+          "mark_longer_ending"
+        ],
+        "main_outline_changed": false
+      }
+    },
+    {
+      "id": "Luke",
+      "order": 3,
+      "name_de": "Lukas",
+      "chapter_count": 24,
+      "profile_de": "24 Kapitel · Der Weg Jesu führt nach Jerusalem · Besonders langer Reiseabschnitt.",
+      "source_ids": [
+        "src_003",
+        "src_008"
+      ],
+      "sections": [
+        {
+          "id": "luke_infancy",
+          "order": 1,
+          "title_de": "Vorwort und Kindheitsgeschichte",
+          "summary_de": "Vorwort 1,1–4; Ankündigung und Geburt des Täufers und Jesu; Jesus als Kind im Tempel.",
+          "range": {
+            "label_de": "1–2",
+            "start": {
+              "chapter": 1,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 52
+            },
+            "start_ref": "Luke.1.1",
+            "end_ref": "Luke.2.52",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_preparation",
+          "order": 2,
+          "title_de": "Vorbereitung",
+          "summary_de": "Johannes der Täufer, Taufe, Stammbaum und Versuchung Jesu.",
+          "range": {
+            "label_de": "3,1–4,13",
+            "start": {
+              "chapter": 3,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 13
+            },
+            "start_ref": "Luke.3.1",
+            "end_ref": "Luke.4.13",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_public_ministry",
+          "order": 3,
+          "title_de": "Wirken in Galiläa",
+          "summary_de": "Nazareth, Heilungen, Berufungen, Feldrede, Gleichnisse, Petrusbekenntnis und Verklärung.",
+          "range": {
+            "label_de": "4,14–9,50",
+            "start": {
+              "chapter": 4,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 50
+            },
+            "start_ref": "Luke.4.14",
+            "end_ref": "Luke.9.50",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_journey",
+          "order": 4,
+          "title_de": "Reise nach Jerusalem",
+          "summary_de": "Ausführliche Lehre über Nachfolge, Gebet, Barmherzigkeit und Besitz; etwa barmherziger Samariter und verlorener Sohn.",
+          "range": {
+            "label_de": "9,51–19,27",
+            "start": {
+              "chapter": 9,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 27
+            },
+            "start_ref": "Luke.9.51",
+            "end_ref": "Luke.19.27",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_jerusalem",
+          "order": 5,
+          "title_de": "Jesus in Jerusalem",
+          "summary_de": "Einzug, Tempelhandlung, Streitgespräche und Rede über die kommenden Ereignisse.",
+          "range": {
+            "label_de": "19,28–21,38",
+            "start": {
+              "chapter": 19,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 38
+            },
+            "start_ref": "Luke.19.28",
+            "end_ref": "Luke.21.38",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_passion",
+          "order": 6,
+          "title_de": "Passion",
+          "summary_de": "Letztes Mahl, Ölberg, Verhaftung, Verhöre, Kreuzigung und Grablegung.",
+          "range": {
+            "label_de": "22–23",
+            "start": {
+              "chapter": 22,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 23,
+              "verse": 56
+            },
+            "start_ref": "Luke.22.1",
+            "end_ref": "Luke.23.56",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_resurrection",
+          "order": 7,
+          "title_de": "Auferstehung und Himmelfahrt",
+          "summary_de": "Leeres Grab, Emmaus, Erscheinung in Jerusalem und Himmelfahrt.",
+          "range": {
+            "label_de": "24",
+            "start": {
+              "chapter": 24,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 24,
+              "verse": 53
+            },
+            "start_ref": "Luke.24.1",
+            "end_ref": "Luke.24.53",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        }
+      ],
+      "discourses": [],
+      "transitions": [
+        {
+          "id": "luke_transition_1",
+          "order": 1,
+          "range": {
+            "label_de": "4,14–16",
+            "start": {
+              "chapter": 4,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 16
+            },
+            "start_ref": "Luke.4.14",
+            "end_ref": "Luke.4.16",
+            "inclusive": true
+          },
+          "summary_de": "Rückkehr nach Galiläa; anschließend Auftreten in Nazareth.",
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_transition_2",
+          "order": 2,
+          "range": {
+            "label_de": "9,51",
+            "start": {
+              "chapter": 9,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 51
+            },
+            "start_ref": "Luke.9.51",
+            "end_ref": "Luke.9.51",
+            "inclusive": true
+          },
+          "summary_de": "Jesus richtet seinen Weg ausdrücklich auf Jerusalem aus.",
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_transition_3",
+          "order": 3,
+          "range": {
+            "label_de": "19,28–45",
+            "start": {
+              "chapter": 19,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 45
+            },
+            "start_ref": "Luke.19.28",
+            "end_ref": "Luke.19.45",
+            "inclusive": true
+          },
+          "summary_de": "Aufstieg und Einzug; anschließend die Tempelhandlung.",
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        },
+        {
+          "id": "luke_transition_4",
+          "order": 4,
+          "range": {
+            "label_de": "24,50–53",
+            "start": {
+              "chapter": 24,
+              "verse": 50
+            },
+            "end": {
+              "chapter": 24,
+              "verse": 53
+            },
+            "start_ref": "Luke.24.50",
+            "end_ref": "Luke.24.53",
+            "inclusive": true
+          },
+          "summary_de": "Himmelfahrt als Abschluss des Evangeliums.",
+          "source_ids": [
+            "src_003",
+            "src_008"
+          ]
+        }
+      ],
+      "macro_sections": [],
+      "textual_additions": [],
+      "outline_note_de": "Zur Einteilung: Einige Quellen beginnen Galiläa erst bei 4,16. Der Reiseabschnitt endet je nach Einteilung bei 19,27 oder 19,44. Hier eröffnet die Einzugsszene ab 19,28 den Jerusalemer Block; der Wegbeginn 9,51 bleibt der zentrale Lernanker. Grundlagen: [3], [8].",
+      "mnemonic_de": "Kindheit → Vorbereitung → Galiläa → lange Reise → Jerusalem → Passion → Ostern und Himmelfahrt.",
+      "supplementary_source_ids": [
+        "src_012"
+      ],
+      "wikipedia_cross_check": {
+        "source_id": "src_012",
+        "result": "compatible_after_coarse_grouping",
+        "summary_de": "Die Hauptübergänge 4,14, 9,51 und 19,28 stimmen mit der Lernübersicht überein. Wikipedia fasst den Jerusalemer Teil bis 24,53 zusammen und verbindet die Kindheitsgeschichte mit der Vorbereitung als Vorgeschichten 1,5–4,13; die Lernübersicht unterteilt diese größeren Einheiten.",
+        "related_object_ids": [
+          "luke_public_ministry",
+          "luke_journey",
+          "luke_jerusalem",
+          "luke_passion",
+          "luke_resurrection"
+        ],
+        "main_outline_changed": false
+      }
+    },
+    {
+      "id": "John",
+      "order": 4,
+      "name_de": "Johannes",
+      "chapter_count": 21,
+      "profile_de": "21 Kapitel · Jesu Zeichen und Offenbarung · Anschließend Abschied, Passion und Auferstehung.",
+      "source_ids": [
+        "src_004",
+        "src_009"
+      ],
+      "sections": [
+        {
+          "id": "john_prologue",
+          "order": 1,
+          "title_de": "Prolog",
+          "summary_de": "Das ewige Wort wird Mensch; theologischer Auftakt statt Kindheitsgeschichte.",
+          "range": {
+            "label_de": "1,1–18",
+            "start": {
+              "chapter": 1,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 18
+            },
+            "start_ref": "John.1.1",
+            "end_ref": "John.1.18",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_public_ministry",
+          "order": 2,
+          "title_de": "Öffentliches Wirken und Zeichen",
+          "summary_de": "Täuferzeugnis, erste Jünger, Zeichen und Gespräche; etwa Kana, Nikodemus, Samariterin und Lazarus.",
+          "range": {
+            "label_de": "1,19–12,50",
+            "start": {
+              "chapter": 1,
+              "verse": 19
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 50
+            },
+            "start_ref": "John.1.19",
+            "end_ref": "John.12.50",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_farewell",
+          "order": 3,
+          "title_de": "Abschied von den Jüngern",
+          "summary_de": "Fußwaschung, Abschiedsreden, Verheißung des Geistes und Gebet Jesu.",
+          "range": {
+            "label_de": "13–17",
+            "start": {
+              "chapter": 13,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 26
+            },
+            "start_ref": "John.13.1",
+            "end_ref": "John.17.26",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_passion",
+          "order": 4,
+          "title_de": "Passion",
+          "summary_de": "Verhaftung, Verhöre, Kreuzigung und Grablegung.",
+          "range": {
+            "label_de": "18–19",
+            "start": {
+              "chapter": 18,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 19,
+              "verse": 42
+            },
+            "start_ref": "John.18.1",
+            "end_ref": "John.19.42",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_resurrection",
+          "order": 5,
+          "title_de": "Auferstehung und erster Abschluss",
+          "summary_de": "Leeres Grab; Maria Magdalena, Jünger und Thomas; Zweck des Evangeliums in 20,30–31.",
+          "range": {
+            "label_de": "20",
+            "start": {
+              "chapter": 20,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 31
+            },
+            "start_ref": "John.20.1",
+            "end_ref": "John.20.31",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_epilogue",
+          "order": 6,
+          "title_de": "Epilog",
+          "summary_de": "Erscheinung am See, Auftrag an Petrus und abschließendes Zeugnis.",
+          "range": {
+            "label_de": "21",
+            "start": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 25
+            },
+            "start_ref": "John.21.1",
+            "end_ref": "John.21.25",
+            "inclusive": true
+          },
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        }
+      ],
+      "discourses": [],
+      "transitions": [],
+      "macro_sections": [
+        {
+          "id": "john_macro_prologue",
+          "order": 1,
+          "title_de": "Prolog",
+          "range": {
+            "label_de": "1,1–18",
+            "start": {
+              "chapter": 1,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 18
+            },
+            "start_ref": "John.1.1",
+            "end_ref": "John.1.18",
+            "inclusive": true
+          },
+          "child_section_ids": [
+            "john_prologue"
+          ],
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_macro_signs",
+          "order": 2,
+          "title_de": "Buch der Zeichen",
+          "range": {
+            "label_de": "1,19–12,50",
+            "start": {
+              "chapter": 1,
+              "verse": 19
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 50
+            },
+            "start_ref": "John.1.19",
+            "end_ref": "John.12.50",
+            "inclusive": true
+          },
+          "child_section_ids": [
+            "john_public_ministry"
+          ],
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_macro_glory",
+          "order": 3,
+          "title_de": "Buch der Herrlichkeit",
+          "range": {
+            "label_de": "13–20",
+            "start": {
+              "chapter": 13,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 31
+            },
+            "start_ref": "John.13.1",
+            "end_ref": "John.20.31",
+            "inclusive": true
+          },
+          "child_section_ids": [
+            "john_farewell",
+            "john_passion",
+            "john_resurrection"
+          ],
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        },
+        {
+          "id": "john_macro_epilogue",
+          "order": 4,
+          "title_de": "Epilog",
+          "range": {
+            "label_de": "21",
+            "start": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 25
+            },
+            "start_ref": "John.21.1",
+            "end_ref": "John.21.25",
+            "inclusive": true
+          },
+          "child_section_ids": [
+            "john_epilogue"
+          ],
+          "source_ids": [
+            "src_004",
+            "src_009"
+          ]
+        }
+      ],
+      "textual_additions": [],
+      "outline_note_de": "Zur Einteilung: Manche Kommentare rechnen Kapitel 21 zum Buch der Herrlichkeit. Andere behandeln es als Epilog. Auch Kapitel 1 wird teils als gesamte Einleitung zusammengefasst. Anders als bei den Synoptikern lassen sich Jesu Reisen hier nicht auf einen einzigen Weg von Galiläa nach Jerusalem reduzieren. Grundlagen: [4], [9].",
+      "mnemonic_de": "Wort → Zeichen → Abschied → Passion → Auferstehung → Epilog.",
+      "supplementary_source_ids": [
+        "src_013"
+      ],
+      "wikipedia_cross_check": {
+        "source_id": "src_013",
+        "result": "compatible_after_coarse_grouping",
+        "summary_de": "Wikipedia unterscheidet Prolog, Täuferzeugnis und Jüngerberufungen, öffentliches Wirken, Offenbarung vor den Jüngern, Passion und Auferstehung, Zweckangabe und Kapitel 21. Die Lernübersicht bündelt 1,19–12,50, trennt Passion und Auferstehung und erfasst die Zweckangabe innerhalb von Kapitel 20.",
+        "related_object_ids": [
+          "john_prologue",
+          "john_public_ministry",
+          "john_farewell",
+          "john_passion",
+          "john_resurrection",
+          "john_epilogue"
+        ],
+        "main_outline_changed": false
+      }
+    }
+  ],
+  "comparison_anchors": [
+    {
+      "gospel_id": "Matt",
+      "summary_de": "Fünf große Reden im Erzählverlauf."
+    },
+    {
+      "gospel_id": "Mark",
+      "summary_de": "Wendung um 8,27–31: Christus erkennen und das Leiden verstehen."
+    },
+    {
+      "gospel_id": "Luke",
+      "summary_de": "Lange Reise nach Jerusalem ab 9,51."
+    },
+    {
+      "gospel_id": "John",
+      "summary_de": "Zeichen und Herrlichkeit; die große Zäsur liegt zwischen Kapitel 12 und 13."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_001",
+      "number_in_document": 1,
+      "type": "book",
+      "author_de": "Curtis Mitch und Edward Sri",
+      "bibliographic_note_de": "The Gospel of Matthew. Catholic Commentary on Sacred Scripture. Grand Rapids: Baker Academic, 2010. Besonders S. 22–23 und 29–31 zur Struktur und zu den fünf Reden.",
+      "access_type": "public_book_excerpt",
+      "access_label_de": "Verlagsleseprobe",
+      "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801036026.pdf",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_002",
+      "number_in_document": 2,
+      "type": "book",
+      "author_de": "Camille Focant",
+      "bibliographic_note_de": "The Gospel according to Mark. A Commentary. Übersetzt von Leslie Robert Keylock. Eugene: Pickwick Publications, 2012. Besonders S. 11–13 zur Vielfalt der Gliederungen und zur Wendung um Kapitel 8; Inhaltsverzeichnis zur Passions- und Osterstruktur.",
+      "access_type": "public_book_excerpt",
+      "access_label_de": "Buchleseprobe",
+      "url": "https://api.pageplace.de/preview/DT0400.9781725246935_A40374879/preview-9781725246935_A40374879.pdf",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_003",
+      "number_in_document": 3,
+      "type": "book",
+      "author_de": "Pablo T. Gadenz",
+      "bibliographic_note_de": "The Gospel of Luke. Catholic Commentary on Sacred Scripture. Grand Rapids: Baker Academic, 2018. Besonders S. 24–27 zur Gesamtgliederung; dort endet die Reise bei 19,44.",
+      "access_type": "public_book_excerpt",
+      "access_label_de": "Buchleseprobe",
+      "url": "https://www.catholiccommentaryonsacredscripture.com/wp-content/uploads/2018/09/Gospel-of-Luke-Excerpt-Intro-chapter-1.pdf",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_004",
+      "number_in_document": 4,
+      "type": "book",
+      "author_de": "Francis Martin und William M. Wright IV",
+      "bibliographic_note_de": "The Gospel of John. Catholic Commentary on Sacred Scripture. Grand Rapids: Baker Academic, 2015. Besonders S. 20–21 und 27–30; das Buch der Herrlichkeit umfasst dort auch Kapitel 21.",
+      "access_type": "public_book_excerpt",
+      "access_label_de": "Verlagsleseprobe",
+      "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801036477.pdf",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_005",
+      "number_in_document": 5,
+      "type": "online_bible_introduction",
+      "publisher": "USCCB",
+      "bibliographic_note_de": "New American Bible Revised Edition, Einleitung zu Matthäus; besonders Hauptgliederung und fünf Reden.",
+      "access_type": "web_page",
+      "url": "https://bible.usccb.org/bible/matthew/0",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_006",
+      "number_in_document": 6,
+      "type": "online_bible_introduction",
+      "publisher": "Crossway",
+      "bibliographic_note_de": "ESV Global Study Bible, Introduction to Matthew, Abschnitt Outline.",
+      "access_type": "web_page",
+      "url": "https://www.esv.org/resources/esv-global-study-bible/introduction-to-matthew/",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_007",
+      "number_in_document": 7,
+      "type": "online_bible_introduction",
+      "publisher": "Crossway",
+      "bibliographic_note_de": "ESV Global Study Bible, Introduction to Mark, Abschnitt Outline.",
+      "access_type": "web_page",
+      "url": "https://www.esv.org/resources/esv-global-study-bible/introduction-to-mark/",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_008",
+      "number_in_document": 8,
+      "type": "online_bible_introduction",
+      "publisher": "Crossway",
+      "bibliographic_note_de": "ESV Global Study Bible, Introduction to Luke, Abschnitt Outline; Reise bis 19,27.",
+      "access_type": "web_page",
+      "url": "https://www.esv.org/resources/esv-global-study-bible/introduction-to-luke/",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_009",
+      "number_in_document": 9,
+      "type": "online_bible_introduction",
+      "publisher": "Crossway",
+      "bibliographic_note_de": "ESV Global Study Bible, Introduction to John, Abschnitt Outline; Kapitel 21 als Epilog.",
+      "access_type": "web_page",
+      "url": "https://www.esv.org/resources/esv-global-study-bible/introduction-to-john/",
+      "accessed_on": "2026-10-12"
+    },
+    {
+      "id": "src_010",
+      "number_in_document": null,
+      "type": "encyclopedia_article",
+      "publisher": "Wikipedia",
+      "title_de": "Evangelium nach Matthäus",
+      "consulted_section_de": "Gliederung",
+      "access_type": "web_page",
+      "url": "https://de.wikipedia.org/wiki/Evangelium_nach_Matth%C3%A4us",
+      "accessed_on": "2026-10-12",
+      "role": "supplementary_outline_cross_check",
+      "present_in_companion_document": false
+    },
+    {
+      "id": "src_011",
+      "number_in_document": null,
+      "type": "encyclopedia_article",
+      "publisher": "Wikipedia",
+      "title_de": "Evangelium nach Markus",
+      "consulted_section_de": "Gliederung und Inhalt; Sekundärer Schluss",
+      "access_type": "web_page",
+      "url": "https://de.wikipedia.org/wiki/Evangelium_nach_Markus",
+      "accessed_on": "2026-10-12",
+      "role": "supplementary_outline_cross_check",
+      "present_in_companion_document": false
+    },
+    {
+      "id": "src_012",
+      "number_in_document": null,
+      "type": "encyclopedia_article",
+      "publisher": "Wikipedia",
+      "title_de": "Evangelium nach Lukas",
+      "consulted_section_de": "Inhalt / Gliederung",
+      "access_type": "web_page",
+      "url": "https://de.wikipedia.org/wiki/Evangelium_nach_Lukas",
+      "accessed_on": "2026-10-12",
+      "role": "supplementary_outline_cross_check",
+      "present_in_companion_document": false
+    },
+    {
+      "id": "src_013",
+      "number_in_document": null,
+      "type": "encyclopedia_article",
+      "publisher": "Wikipedia",
+      "title_de": "Evangelium nach Johannes",
+      "consulted_section_de": "Prolog und Aufbau / Übersicht",
+      "access_type": "web_page",
+      "url": "https://de.wikipedia.org/wiki/Evangelium_nach_Johannes",
+      "accessed_on": "2026-10-12",
+      "role": "supplementary_outline_cross_check",
+      "present_in_companion_document": false
+    }
+  ],
+  "graph": {
+    "directed": true,
+    "nodes": [
+      {
+        "id": "Matt",
+        "type": "gospel",
+        "label_de": "Matthäus",
+        "entity_path": "/gospels/0"
+      },
+      {
+        "id": "matt_infancy",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Herkunft und Kindheit",
+        "entity_path": "/gospels/0/sections/0"
+      },
+      {
+        "id": "matt_preparation",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Vorbereitung",
+        "entity_path": "/gospels/0/sections/1"
+      },
+      {
+        "id": "matt_public_ministry",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Öffentliches Wirken",
+        "entity_path": "/gospels/0/sections/2"
+      },
+      {
+        "id": "matt_journey",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Weg nach Jerusalem",
+        "entity_path": "/gospels/0/sections/3"
+      },
+      {
+        "id": "matt_jerusalem",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Jerusalem und letzte Lehre",
+        "entity_path": "/gospels/0/sections/4"
+      },
+      {
+        "id": "matt_passion",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Passion",
+        "entity_path": "/gospels/0/sections/5"
+      },
+      {
+        "id": "matt_resurrection",
+        "type": "section",
+        "gospel_id": "Matt",
+        "label_de": "Auferstehung und Sendung",
+        "entity_path": "/gospels/0/sections/6"
+      },
+      {
+        "id": "matt_discourse_1",
+        "type": "discourse",
+        "gospel_id": "Matt",
+        "label_de": "Bergpredigt",
+        "entity_path": "/gospels/0/discourses/0"
+      },
+      {
+        "id": "matt_discourse_2",
+        "type": "discourse",
+        "gospel_id": "Matt",
+        "label_de": "Aussendungsrede",
+        "entity_path": "/gospels/0/discourses/1"
+      },
+      {
+        "id": "matt_discourse_3",
+        "type": "discourse",
+        "gospel_id": "Matt",
+        "label_de": "Gleichnisrede",
+        "entity_path": "/gospels/0/discourses/2"
+      },
+      {
+        "id": "matt_discourse_4",
+        "type": "discourse",
+        "gospel_id": "Matt",
+        "label_de": "Gemeinderede",
+        "entity_path": "/gospels/0/discourses/3"
+      },
+      {
+        "id": "matt_discourse_5",
+        "type": "discourse",
+        "gospel_id": "Matt",
+        "label_de": "Endzeitrede",
+        "entity_path": "/gospels/0/discourses/4"
+      },
+      {
+        "id": "matt_transition_to_suffering",
+        "type": "transition",
+        "gospel_id": "Matt",
+        "label_de": "Ausdrückliche Hinwendung zum Leiden innerhalb des Blocks über das öffentliche Wirken.",
+        "entity_path": "/gospels/0/transitions/0"
+      },
+      {
+        "id": "Mark",
+        "type": "gospel",
+        "label_de": "Markus",
+        "entity_path": "/gospels/1"
+      },
+      {
+        "id": "mark_preparation",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Auftakt und Vorbereitung",
+        "entity_path": "/gospels/1/sections/0"
+      },
+      {
+        "id": "mark_public_ministry",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Wirken in Galiläa und Umgebung",
+        "entity_path": "/gospels/1/sections/1"
+      },
+      {
+        "id": "mark_journey",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Wendung und Weg zur Passion",
+        "entity_path": "/gospels/1/sections/2"
+      },
+      {
+        "id": "mark_jerusalem",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Jesus in Jerusalem",
+        "entity_path": "/gospels/1/sections/3"
+      },
+      {
+        "id": "mark_passion",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Passion",
+        "entity_path": "/gospels/1/sections/4"
+      },
+      {
+        "id": "mark_resurrection",
+        "type": "section",
+        "gospel_id": "Mark",
+        "label_de": "Leeres Grab und Osterbotschaft",
+        "entity_path": "/gospels/1/sections/5"
+      },
+      {
+        "id": "mark_transition_1",
+        "type": "transition",
+        "gospel_id": "Mark",
+        "label_de": "Die öffentliche Verkündigung Jesu beginnt.",
+        "entity_path": "/gospels/1/transitions/0"
+      },
+      {
+        "id": "mark_transition_2",
+        "type": "transition",
+        "gospel_id": "Mark",
+        "label_de": "Petrus bekennt Jesus als Christus; unmittelbar danach folgt die erste Leidensankündigung.",
+        "entity_path": "/gospels/1/transitions/1"
+      },
+      {
+        "id": "mark_transition_3",
+        "type": "transition",
+        "gospel_id": "Mark",
+        "label_de": "Der Einzug eröffnet den Jerusalemer Abschnitt.",
+        "entity_path": "/gospels/1/transitions/2"
+      },
+      {
+        "id": "mark_transition_4",
+        "type": "transition",
+        "gospel_id": "Mark",
+        "label_de": "Die Passionshandlung setzt ein.",
+        "entity_path": "/gospels/1/transitions/3"
+      },
+      {
+        "id": "mark_longer_ending",
+        "type": "textual_addition",
+        "gospel_id": "Mark",
+        "label_de": "Langer Markusschluss",
+        "entity_path": "/gospels/1/textual_additions/0"
+      },
+      {
+        "id": "Luke",
+        "type": "gospel",
+        "label_de": "Lukas",
+        "entity_path": "/gospels/2"
+      },
+      {
+        "id": "luke_infancy",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Vorwort und Kindheitsgeschichte",
+        "entity_path": "/gospels/2/sections/0"
+      },
+      {
+        "id": "luke_preparation",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Vorbereitung",
+        "entity_path": "/gospels/2/sections/1"
+      },
+      {
+        "id": "luke_public_ministry",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Wirken in Galiläa",
+        "entity_path": "/gospels/2/sections/2"
+      },
+      {
+        "id": "luke_journey",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Reise nach Jerusalem",
+        "entity_path": "/gospels/2/sections/3"
+      },
+      {
+        "id": "luke_jerusalem",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Jesus in Jerusalem",
+        "entity_path": "/gospels/2/sections/4"
+      },
+      {
+        "id": "luke_passion",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Passion",
+        "entity_path": "/gospels/2/sections/5"
+      },
+      {
+        "id": "luke_resurrection",
+        "type": "section",
+        "gospel_id": "Luke",
+        "label_de": "Auferstehung und Himmelfahrt",
+        "entity_path": "/gospels/2/sections/6"
+      },
+      {
+        "id": "luke_transition_1",
+        "type": "transition",
+        "gospel_id": "Luke",
+        "label_de": "Rückkehr nach Galiläa; anschließend Auftreten in Nazareth.",
+        "entity_path": "/gospels/2/transitions/0"
+      },
+      {
+        "id": "luke_transition_2",
+        "type": "transition",
+        "gospel_id": "Luke",
+        "label_de": "Jesus richtet seinen Weg ausdrücklich auf Jerusalem aus.",
+        "entity_path": "/gospels/2/transitions/1"
+      },
+      {
+        "id": "luke_transition_3",
+        "type": "transition",
+        "gospel_id": "Luke",
+        "label_de": "Aufstieg und Einzug; anschließend die Tempelhandlung.",
+        "entity_path": "/gospels/2/transitions/2"
+      },
+      {
+        "id": "luke_transition_4",
+        "type": "transition",
+        "gospel_id": "Luke",
+        "label_de": "Himmelfahrt als Abschluss des Evangeliums.",
+        "entity_path": "/gospels/2/transitions/3"
+      },
+      {
+        "id": "John",
+        "type": "gospel",
+        "label_de": "Johannes",
+        "entity_path": "/gospels/3"
+      },
+      {
+        "id": "john_prologue",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Prolog",
+        "entity_path": "/gospels/3/sections/0"
+      },
+      {
+        "id": "john_public_ministry",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Öffentliches Wirken und Zeichen",
+        "entity_path": "/gospels/3/sections/1"
+      },
+      {
+        "id": "john_farewell",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Abschied von den Jüngern",
+        "entity_path": "/gospels/3/sections/2"
+      },
+      {
+        "id": "john_passion",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Passion",
+        "entity_path": "/gospels/3/sections/3"
+      },
+      {
+        "id": "john_resurrection",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Auferstehung und erster Abschluss",
+        "entity_path": "/gospels/3/sections/4"
+      },
+      {
+        "id": "john_epilogue",
+        "type": "section",
+        "gospel_id": "John",
+        "label_de": "Epilog",
+        "entity_path": "/gospels/3/sections/5"
+      },
+      {
+        "id": "john_macro_prologue",
+        "type": "macro_section",
+        "gospel_id": "John",
+        "label_de": "Prolog",
+        "entity_path": "/gospels/3/macro_sections/0"
+      },
+      {
+        "id": "john_macro_signs",
+        "type": "macro_section",
+        "gospel_id": "John",
+        "label_de": "Buch der Zeichen",
+        "entity_path": "/gospels/3/macro_sections/1"
+      },
+      {
+        "id": "john_macro_glory",
+        "type": "macro_section",
+        "gospel_id": "John",
+        "label_de": "Buch der Herrlichkeit",
+        "entity_path": "/gospels/3/macro_sections/2"
+      },
+      {
+        "id": "john_macro_epilogue",
+        "type": "macro_section",
+        "gospel_id": "John",
+        "label_de": "Epilog",
+        "entity_path": "/gospels/3/macro_sections/3"
+      }
+    ],
+    "edges": [
+      {
+        "type": "next_section",
+        "from_id": "matt_infancy",
+        "to_id": "matt_preparation"
+      },
+      {
+        "type": "next_section",
+        "from_id": "matt_preparation",
+        "to_id": "matt_public_ministry"
+      },
+      {
+        "type": "next_section",
+        "from_id": "matt_public_ministry",
+        "to_id": "matt_journey"
+      },
+      {
+        "type": "next_section",
+        "from_id": "matt_journey",
+        "to_id": "matt_jerusalem"
+      },
+      {
+        "type": "next_section",
+        "from_id": "matt_jerusalem",
+        "to_id": "matt_passion"
+      },
+      {
+        "type": "next_section",
+        "from_id": "matt_passion",
+        "to_id": "matt_resurrection"
+      },
+      {
+        "type": "contains_discourse",
+        "from_id": "matt_public_ministry",
+        "to_id": "matt_discourse_1"
+      },
+      {
+        "type": "contains_discourse",
+        "from_id": "matt_public_ministry",
+        "to_id": "matt_discourse_2"
+      },
+      {
+        "type": "contains_discourse",
+        "from_id": "matt_public_ministry",
+        "to_id": "matt_discourse_3"
+      },
+      {
+        "type": "contains_discourse",
+        "from_id": "matt_public_ministry",
+        "to_id": "matt_discourse_4"
+      },
+      {
+        "type": "contains_discourse",
+        "from_id": "matt_jerusalem",
+        "to_id": "matt_discourse_5"
+      },
+      {
+        "type": "next_section",
+        "from_id": "mark_preparation",
+        "to_id": "mark_public_ministry"
+      },
+      {
+        "type": "next_section",
+        "from_id": "mark_public_ministry",
+        "to_id": "mark_journey"
+      },
+      {
+        "type": "next_section",
+        "from_id": "mark_journey",
+        "to_id": "mark_jerusalem"
+      },
+      {
+        "type": "next_section",
+        "from_id": "mark_jerusalem",
+        "to_id": "mark_passion"
+      },
+      {
+        "type": "next_section",
+        "from_id": "mark_passion",
+        "to_id": "mark_resurrection"
+      },
+      {
+        "type": "followed_by_textual_addition",
+        "from_id": "mark_resurrection",
+        "to_id": "mark_longer_ending"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_infancy",
+        "to_id": "luke_preparation"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_preparation",
+        "to_id": "luke_public_ministry"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_public_ministry",
+        "to_id": "luke_journey"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_journey",
+        "to_id": "luke_jerusalem"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_jerusalem",
+        "to_id": "luke_passion"
+      },
+      {
+        "type": "next_section",
+        "from_id": "luke_passion",
+        "to_id": "luke_resurrection"
+      },
+      {
+        "type": "next_section",
+        "from_id": "john_prologue",
+        "to_id": "john_public_ministry"
+      },
+      {
+        "type": "next_section",
+        "from_id": "john_public_ministry",
+        "to_id": "john_farewell"
+      },
+      {
+        "type": "next_section",
+        "from_id": "john_farewell",
+        "to_id": "john_passion"
+      },
+      {
+        "type": "next_section",
+        "from_id": "john_passion",
+        "to_id": "john_resurrection"
+      },
+      {
+        "type": "next_section",
+        "from_id": "john_resurrection",
+        "to_id": "john_epilogue"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_prologue",
+        "to_id": "john_prologue"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_signs",
+        "to_id": "john_public_ministry"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_glory",
+        "to_id": "john_farewell"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_glory",
+        "to_id": "john_passion"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_glory",
+        "to_id": "john_resurrection"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "john_macro_epilogue",
+        "to_id": "john_epilogue"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_infancy"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_preparation"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_public_ministry"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_journey"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_jerusalem"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_passion"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Matt",
+        "to_id": "matt_resurrection"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Matt",
+        "to_id": "matt_transition_to_suffering"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_preparation"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_public_ministry"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_journey"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_jerusalem"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_passion"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Mark",
+        "to_id": "mark_resurrection"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Mark",
+        "to_id": "mark_transition_1"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Mark",
+        "to_id": "mark_transition_2"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Mark",
+        "to_id": "mark_transition_3"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Mark",
+        "to_id": "mark_transition_4"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_infancy"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_preparation"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_public_ministry"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_journey"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_jerusalem"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_passion"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "Luke",
+        "to_id": "luke_resurrection"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Luke",
+        "to_id": "luke_transition_1"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Luke",
+        "to_id": "luke_transition_2"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Luke",
+        "to_id": "luke_transition_3"
+      },
+      {
+        "type": "has_transition",
+        "from_id": "Luke",
+        "to_id": "luke_transition_4"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_prologue"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_public_ministry"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_farewell"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_passion"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_resurrection"
+      },
+      {
+        "type": "contains_section",
+        "from_id": "John",
+        "to_id": "john_epilogue"
+      },
+      {
+        "type": "has_macro_section",
+        "from_id": "John",
+        "to_id": "john_macro_prologue"
+      },
+      {
+        "type": "has_macro_section",
+        "from_id": "John",
+        "to_id": "john_macro_signs"
+      },
+      {
+        "type": "has_macro_section",
+        "from_id": "John",
+        "to_id": "john_macro_glory"
+      },
+      {
+        "type": "has_macro_section",
+        "from_id": "John",
+        "to_id": "john_macro_epilogue"
+      }
+    ]
+  }
+}

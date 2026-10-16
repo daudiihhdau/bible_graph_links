@@ -1,0 +1,17 @@
+# LadybugDB is the ready-to-use graph distributed with the repository.
+data/ladybug/*.lbdb.wal
+data/ladybug/*.lbdb.tmp
+data/ladybug/.question-os-build-*
+
+# Exports and transient safety copies can be rebuilt from the LadybugDB.
+backups/ladybug/
+
+# Browser inspection output and local secrets/configuration.
+.playwright-mcp/
+.aws/
+.codex/
+.agents/
+
+# Node.js generated files.
+node_modules/
+npm-debug.log*

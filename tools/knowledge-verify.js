@@ -30,7 +30,12 @@ export async function verifyDraft(databasePath, draft) {
   const entityUpdates = draft.entityUpdates ?? []
   const entityMerges = draft.entityMerges ?? []
   if (records.length === 0 && entityUpdates.length === 0 && entityMerges.length === 0) throw new Error('Der Entwurf enthält keine Entitäten, Entitätsaktualisierungen, Zusammenführungen, Aussagen oder Beziehungstypen')
-  for (const [id] of records) if (!/^[a-z0-9.-]+\/[a-z0-9-]+(?:\/[a-z0-9-]+)+$/.test(id)) throw new Error(`Ungültige ID im Entwurf: ${id}`)
+  for (const [id, kind] of records) {
+    const validId = kind === 'relationType'
+      ? /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(id)
+      : /^[a-z0-9.-]+\/[a-z0-9-]+(?:\/[a-z0-9-]+)+$/.test(id)
+    if (!validId) throw new Error(`Ungültige ID im Entwurf: ${id}`)
+  }
 
   const allIds = [...records.map(([id]) => id), ...entityUpdates.map(update => update.entityId), ...entityMerges.flatMap(merge => [merge.entityId, merge.intoEntityId])]
   for (const id of entityUpdates.map(update => update.entityId)) if (!/^[a-z0-9.-]+\/[a-z0-9-]+(?:\/[a-z0-9-]+)+$/.test(id)) throw new Error(`Ungültige aktualisierte Entitäts-ID: ${id}`)

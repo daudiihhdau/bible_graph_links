@@ -26,14 +26,17 @@ Der Programmcode und die zugehörige technische Dokumentation stehen unter der
 ausgenommen** und behalten die Lizenz aus dem gespeicherten Paketmanifest:
 `bible-history` steht unter CC BY 4.0. Exporte daraus übernehmen diese Lizenz
 und die Herkunft des Pakets. Beim Wiederverwenden vorhandener Inhalte gilt
-deren Lizenz.
+deren Lizenz. Vor einer Übernahme aus einem Repository sind die Lizenz des
+konkreten Datenbestands und ihre Bedingungen zu prüfen; unklare oder
+widersprüchliche Lizenzangaben erlauben keinen Import. Die verbindliche
+Prüfregel steht in [AGENTS.md](AGENTS.md).
 
 ## Einfache Schreibregeln
 
 1. **Entität anlegen:** `id`, `entityType`, `name`. Optional sind `description`, `alternativeNames` und `time`.
 2. **Aussage anlegen:** `id`, `subjectEntityId`, `relationTypeId`, `target`. Das Ziel hat einen `targetType` (`entity`, `text` oder `source`) und genau den dazugehörigen Wert. `sources` belegt die Aussage optional. Eine Quelle als Ziel wird nicht noch einmal in `sources` eingetragen.
 3. **Wissen einordnen:** `schoolSubjects` enthält Unterrichtsfächer. Eine Kategorie nennt ihr Fach mit `schoolSubjectId` und gegebenenfalls ihre Oberkategorie mit `parentCategoryId`. `entityIds` und `assertionIds` wählen Wissen aus.
-4. **Prüfen:** `npm run check` validiert den LadybugDB-Datenbestand und seine Graphkanten.
+4. **Neue Daten prüfen:** `npm run test:new -- <entwurf.json>` kontrolliert die übernommenen Datensätze und ihre Ladybug-Kanten.
 
 Die verbindlichen Formate stehen in [content.schema.json](schemas/content.schema.json) und [package.schema.json](schemas/package.schema.json), Version **7.0**. Unbekannte Felder werden abgewiesen. Jede Aussage muss einer Kategorie zugeordnet und jede Entität über Kategorien erreichbar sein. [AGENTS.md](AGENTS.md) beschreibt die Pflege durch Sprachmodelle.
 
@@ -62,16 +65,22 @@ Ein Entwurf ist eine vorübergehende JSON-Datei außerhalb der Datenbank, zum Be
 ```sh
 npm run knowledge:check -- ./beispiel.draft.json
 npm run knowledge:apply -- ./beispiel.draft.json
-npm run check
+npm run test:new -- ./beispiel.draft.json
 ```
 
-`knowledge:check` liest LadybugDB und prüft den Entwurf ohne Änderung.
-`knowledge:apply` prüft erneut, baut eine neue Datenbank in einer temporären
-Datei und ersetzt den aktiven Stand erst nach erfolgreicher Validierung. Die
-Paketversion steigt automatisch. Ein Entwurf darf außerdem `assertions`,
+`knowledge:check` liest gezielt nur Entwurfsdatensätze, betroffene bestehende
+Aussagen, deren Verweise und verwendete Kategorien direkt aus LadybugDB. So
+werden neue Daten geprüft, ohne den ganzen Graphen einzulesen.
+`knowledge:apply` prüft den resultierenden Gesamtgraphen einmal, baut eine neue
+Datenbank in einer temporären Datei und ersetzt den aktiven Stand erst nach
+erfolgreicher Validierung. Die Paketversion steigt automatisch. Ein Entwurf darf außerdem `assertions`,
 `relationTypes`, `schoolSubjects` und `categories` enthalten. Das Schema prüft
 Struktur und Verweise; fachliche Richtigkeit muss anhand der angegebenen
-Quellen geprüft werden.
+Quellen geprüft werden. Der gezielte Verifier kontrolliert danach nur die
+Datensätze des Entwurfs und deren tatsächliche Graphkanten. `npm test` sichert
+diese Prüflogik an einer kleinen temporären LadybugDB ab. Der Gesamtaudit
+(`npm run test:full`, auch über `npm run check`) validiert den ganzen Bestand
+und ist für größere Meilensteine, Schemaänderungen und Releases vorgesehen.
 
 ### Beispiel: Person, Ort und Beziehung
 
@@ -133,8 +142,8 @@ Entwürfe, Exporte und lokale Konfigurationen werden nicht eingecheckt.
 
 Neue Inhalte folgen dem Recherche- und Prüfablauf in [`AGENTS.md`](AGENTS.md):
 vorhandene Daten in LadybugDB durchsuchen, Belege prüfen, Entwürfe mit
-`knowledge:check` prüfen und erst danach übernehmen. `knowledge:apply` schreibt
-keine Änderungen an der aktiven Datei, bevor ein vollständiger Neuaufbau
+`knowledge:check` gezielt prüfen und erst danach übernehmen. `knowledge:apply`
+schreibt keine Änderungen an der aktiven Datei, bevor ein vollständiger Neuaufbau
 erfolgreich validiert wurde.
 Details stehen in [`docs/ladybugdb.md`](docs/ladybugdb.md).
 

@@ -6,8 +6,8 @@ import { loadPackages, predicates } from './index.js'
 const csvCell = value => `"${String(value ?? '').replaceAll('"', '""')}"`
 const csv = rows => `${rows.map(row => row.map(csvCell).join(',')).join('\n')}\n`
 
-export async function exportPackages(packages, outputPath) {
-  loadPackages(packages)
+export async function exportPackages(packages, outputPath, { validated = false } = {}) {
+  if (!validated) loadPackages(packages)
   const records = []
   for (const data of packages) {
     const packageId = data.manifest.id

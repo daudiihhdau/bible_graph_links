@@ -13,7 +13,7 @@ const issue = (path, message) => ({ path, message })
 const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value)
 const allows = (allowed, type) => allowed?.includes('*') || allowed?.includes(type)
 
-export function validatePackage(data, { externalEntities = [] } = {}) {
+export function validatePackage(data, { externalEntities = [], allowEmptyEntities = false } = {}) {
   const issues = []
   if (!isObject(data)) return [issue('$', 'muss ein Paketobjekt sein')]
   const allowed = ['manifest', 'entities', 'assertions', 'relationTypes', 'curriculum']
@@ -27,7 +27,7 @@ export function validatePackage(data, { externalEntities = [] } = {}) {
     arrays[key] = Array.isArray(data[key]) ? data[key] : []
   }
   const { entities, assertions, relationTypes } = arrays
-  if (!entities.length) issues.push(issue('entities', 'mindestens eine Entität erforderlich'))
+  if (!entities.length && !allowEmptyEntities) issues.push(issue('entities', 'mindestens eine Entität erforderlich'))
   for (const [key, items, definition] of [['entities', entities, 'entity'], ['assertions', assertions, 'assertion'], ['relationTypes', relationTypes, 'relationType']]) {
     const schema = { $defs: contentSchema.$defs, $ref: `#/$defs/${definition}` }
     items.forEach((item, index) => issues.push(...validateJsonSchema(item, schema, `${key}[${index}]`)))

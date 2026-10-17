@@ -96,10 +96,11 @@ Modellantwort allein reichen nicht als Beleg.
 
 Für die Fortführung mit KI bleibt [`AGENTS.md`](../AGENTS.md) der verbindliche
 Pflegevertrag. Er legt unter anderem Datenfelder, Recherche mit Quellen und
-Wikidata, Unsicherheitskennzeichnung, Entwurf außerhalb der aktiven Datenbank,
-Prüfung mit `knowledge:check`, Übernahme mit `knowledge:apply` und den
-abschließenden `npm run check` fest. So können spätere KI-Agenten die Datenbank
-im gleichen nachvollziehbaren Verfahren weiterpflegen.
+Wikidata, Lizenzprüfung, Unsicherheitskennzeichnung, Entwurf außerhalb der
+aktiven Datenbank, Prüfung mit `knowledge:check`, Übernahme mit
+`knowledge:apply` und die gezielte Prüfung neuer Datensätze fest. Der vollständige
+Gesamtcheck bleibt für größere Meilensteine, Schemaänderungen und Releases
+verfügbar.
 
 ## Wie Inhalte ergänzt werden
 
@@ -110,10 +111,14 @@ Neue Inhalte werden in kleinen, überprüfbaren Schritten ergänzt:
 2. Einen kleinen temporären Entwurf erstellen und jede geplante
    Aussage mit tatsächlich geprüften, verlässlichen Belegen abgleichen.
 3. Den Entwurf mit `npm run knowledge:check -- <entwurf.json>`
-   prüfen lassen.
+   prüfen lassen. `knowledge:check` prüft gezielt nur die Änderungen und ihre
+   betroffenen Verweise in LadybugDB; der vollständige Paketgraph wird erst
+   einmal vor dem atomaren Neuaufbau in `knowledge:apply` validiert.
 4. Nur einen fehlerfreien Entwurf mit
    `npm run knowledge:apply -- <entwurf.json>` übernehmen.
-5. Mit `npm run check` die LadybugDB und ihre Graphkanten prüfen.
+5. Mit `npm run test:new -- <entwurf.json>` die neuen LadybugDB-Datensätze
+   und ihre Graphkanten prüfen. Den vollständigen `npm run check` nur an größeren
+   Projektmeilensteinen, nach Schemaänderungen und vor Releases ausführen.
 
 Die Pflegevorgaben und Details des Datenformats stehen in [AGENTS.md](../AGENTS.md),
 die Projekt- und Befehlsübersicht in [README.md](../README.md).

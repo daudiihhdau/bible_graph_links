@@ -51,7 +51,7 @@ export function queryLadybug(databasePath, query) {
   }
 }
 
-export function readPackagesFromLadybug(databasePath = defaultDatabasePath) {
+export function readPackagesFromLadybug(databasePath = defaultDatabasePath, { validate = true } = {}) {
   const manifestRows = queryLadybug(databasePath, "MATCH (n:KnowledgeRecord) WHERE n.kind = 'manifest' RETURN n.packageId, n.json ORDER BY n.packageId")
   if (manifestRows.length < 2) throw new Error(`LadybugDB enthält kein Wissenspaket: ${JSON.stringify(manifestRows)}`)
   const packages = []
@@ -69,12 +69,12 @@ export function readPackagesFromLadybug(databasePath = defaultDatabasePath) {
     if (data.manifest?.id !== packageId || !data.curriculum) throw new Error(`Unvollständiges Paket in LadybugDB: ${packageId}`)
     packages.push(data)
   }
-  loadPackages(packages)
+  if (validate) loadPackages(packages)
   return packages
 }
 
-export async function buildLadybugDatabase(packages, databasePath = defaultDatabasePath) {
-  loadPackages(packages)
+export async function buildLadybugDatabase(packages, databasePath = defaultDatabasePath, { validated = false } = {}) {
+  if (!validated) loadPackages(packages)
   const target = resolve(databasePath)
   await mkdir(dirname(target), { recursive: true })
   const temporaryRoot = join(tmpdir(), `question-os-ladybug-build-${randomUUID()}`)
@@ -83,7 +83,7 @@ export async function buildLadybugDatabase(packages, databasePath = defaultDatab
   const buildPath = join(dirname(target), `.${randomUUID()}.lbdb`)
   await mkdir(historyPath, { recursive: true })
   try {
-    const manifest = await exportPackages(packages, exportPath)
+    const manifest = await exportPackages(packages, exportPath, { validated })
     const imported = spawnSync(executable, [buildPath, '--init', join(exportPath, 'import.cypher'), '--path_history', historyPath, '--no_progress_bar'], {
       cwd: root, encoding: 'utf8', input: ':quit\n', maxBuffer: 16 * 1024 * 1024, timeout: 300_000
     })

@@ -22,11 +22,16 @@ RETURN s.name, p.id, t.name;
 
 ## Qualitätsprüfung
 
-Alle Prüfungen lesen dieselbe LadybugDB-Datei. `npm run validate` rekonstruiert das gespeicherte Wissenspaket aus seinen vollständigen `KnowledgeRecord.json`-Datensätzen, prüft JSON-Schema, IDs, Kategorien und Zeitregeln und kontrolliert anschließend die Graphkanten direkt in LadybugDB. `npm test` führt schreibgeschützte Ladybug-Abfragen aus und prüft außerdem, dass ein neuer Entwurf in einer temporären LadybugDB gebaut und abgefragt werden kann. Die Tests und Prüfungen ändern die aktive Datenbank nicht.
+Die schnelle Prüfung nach einem Import kontrolliert nur die neuen Datensätze und deren Graphkanten:
 
 ```sh
-npm run check
+npm run test:new -- /tmp/beispiel.draft.json
 ```
+
+`npm test` prüft die Verifikationslogik an einer kleinen temporären LadybugDB.
+Der Gesamtaudit (`npm run test:full` oder `npm run check`) validiert den ganzen
+Bestand und ist für größere Batches, Schemaänderungen und Releases vorgesehen.
+Er läuft nicht bei jedem neuen Datensatz und ändert die aktive Datenbank nicht.
 
 Technische Prüfungen erkennen Schemafehler, fehlende Verweise und fehlerhafte Kanten. Sie können nicht entscheiden, ob eine historische Aussage durch ihre Quelle tatsächlich belegt ist. Dafür gelten zusätzlich die Recherche-, Beleg- und Wikidata-Vorgaben in [`../AGENTS.md`](../AGENTS.md).
 
@@ -38,15 +43,22 @@ Zuerst den existierenden Bestand prüfen:
 npm run knowledge:inspect -- "Jesus" person
 ```
 
-Einen kleinen JSON-Entwurf außerhalb der Datenbank und des Repositories anlegen. Er darf nur neue Entitäten, Aussagen, Beziehungstypen, Fächer, Kategorien oder Kategoriezuweisungen enthalten. Danach prüfen und übernehmen:
+Für den schnellen Abgleich deutscher und englischer Namen kann eine einzelne Eingabe oder eine Textdatei mit einem Namen pro Zeile durchsucht werden. Das Skript vergleicht Haupt- und Alternativnamen, ignoriert Großschreibung und Akzentzeichen und markiert exakte, teilweise oder schreibähnliche Treffer. Es behauptet keine Übersetzung: Fehlt ein Sprachalias im Graphen, meldet es das, damit der Alias recherchiert und anschließend gezielt ergänzt werden kann. Die Suche ändert die Datenbank nicht.
+
+```bash
+npm run knowledge:names -- "John the Baptist"
+npm run knowledge:names -- ./namen.txt
+```
+
+Einen kleinen JSON-Entwurf außerhalb der Datenbank und des Repositories anlegen. Er darf neue Entitäten, Aussagen, Beziehungstypen, Fächer, Kategorien und Kategoriezuweisungen enthalten. `entityUpdates` ergänzt bei bestehenden IDs nur Alternativnamen. `entityMerges` führt eindeutig doppelte Entitäten zusammen und überträgt ihre Graph- und Kategorieverweise. Danach prüfen und übernehmen:
 
 ```sh
 npm run knowledge:check -- /tmp/beispiel.draft.json
 npm run knowledge:apply -- /tmp/beispiel.draft.json
-npm run check
+npm run test:new -- /tmp/beispiel.draft.json
 ```
 
-`knowledge:check` validiert den Entwurf zusammen mit dem aktuellen Bestand, ohne etwas zu ändern. `knowledge:apply` führt dieselbe Prüfung erneut aus, baut eine neue LadybugDB in einer temporären Datei und ersetzt den aktiven Bestand erst, wenn Import und Graphprüfungen erfolgreich waren. Bei einem Fehler bleibt die bisherige Datenbank unverändert. Die gespeicherten Quellen und Kontexte werden beim Neuaufbau vollständig übernommen. Frühere `.lbdb`-Kopien und große CSV-Exporte werden nicht angelegt.
+`knowledge:check` liest nur die neuen Datensätze und die für ihre Schema- und Graphprüfung benötigten Bestandsverweise, ohne etwas zu ändern. `knowledge:apply` prüft danach den vollständigen resultierenden Paketgraphen einmal, baut die LadybugDB in einer temporären Datei und ersetzt den aktiven Bestand atomar erst nach erfolgreichem Import. Bei einem Fehler bleibt die bisherige Datenbank unverändert. Die gespeicherten Quellen und Kontexte werden beim Neuaufbau vollständig übernommen. Frühere `.lbdb`-Kopien und große CSV-Exporte werden nicht angelegt.
 
 ## Graphmodell
 

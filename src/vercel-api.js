@@ -6,7 +6,7 @@ const DEFAULT_ALLOWED_ORIGINS = [
 ]
 
 function allowedOrigins () {
-  const configured = (process.env.QUESTION_OS_API_ALLOWED_ORIGINS || '')
+  const configured = (process.env.BIBLEGRAPHLINKS_API_ALLOWED_ORIGINS || '')
     .split(',')
     .map(origin => origin.trim())
     .filter(Boolean)

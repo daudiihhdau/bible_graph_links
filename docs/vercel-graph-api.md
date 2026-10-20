@@ -14,10 +14,10 @@ Dieses Repository stellt die Question-OS-Wissensdaten als öffentliche, schreibg
 
 1. Dieses Repository als eigenes Projekt in Vercel importieren. Ein Build-Befehl ist nicht erforderlich; Vercel installiert die Abhängigkeiten aus `package-lock.json` und erkennt die Functions unter `api/v1/`.
 2. Node.js 20 oder neuer verwenden. Die LadybugDB wird per `includeFiles` eingebunden; die API verwendet keine Edge Runtime.
-3. Optional die Produktionsursprünge der Browser-Clients als kommaseparierte Liste in `QUESTION_OS_API_ALLOWED_ORIGINS` setzen, zum Beispiel `https://example.org,https://www.example.org`. Ohne diese Variable sind nur `http://localhost:3000` und `http://127.0.0.1:3000` zugelassen. Server-zu-Server-Aufrufe benötigen keinen CORS-Ursprung.
+3. Optional die Produktionsursprünge der Browser-Clients als kommaseparierte Liste in `BIBLEGRAPHLINKS_API_ALLOWED_ORIGINS` setzen, zum Beispiel `https://example.org,https://www.example.org`. Ohne diese Variable sind nur `http://localhost:3000` und `http://127.0.0.1:3000` zugelassen. Server-zu-Server-Aufrufe benötigen keinen CORS-Ursprung.
 4. Das Projekt deployen. Die Client-Anwendung konfiguriert anschließend die öffentliche API-Basisadresse bis einschließlich `/api/v1`.
 
-Die API kann ohne `QUESTION_OS_API_ALLOWED_ORIGINS` betrieben werden, wenn kein Browser-Client von einer anderen Domain darauf zugreifen soll. CORS ist keine Zugriffskontrolle für nicht browserbasierte Clients; die Daten und Endpunkte sind öffentlich.
+Die API kann ohne `BIBLEGRAPHLINKS_API_ALLOWED_ORIGINS` betrieben werden, wenn kein Browser-Client von einer anderen Domain darauf zugreifen soll. CORS ist keine Zugriffskontrolle für nicht browserbasierte Clients; die Daten und Endpunkte sind öffentlich.
 
 ## Endpunkte
 
@@ -44,7 +44,7 @@ curl 'https://<api-domain>/api/v1/search?q=Beispiel&limit=10'
 
 Ein Client verwendet die Basisadresse der API als Konfiguration und ergänzt die jeweilige Route. Bei einer statisch gebauten Website muss die öffentliche Basisadresse zur Build-Zeit gesetzt und im Browser verwendet werden können. Die API bleibt eigenständig deploybar und ist nicht an ein bestimmtes Client-Framework gebunden.
 
-Für Browser-Clients müssen alle tatsächlich verwendeten Ursprünge exakt in `QUESTION_OS_API_ALLOWED_ORIGINS` stehen. Dazu können eigene Domains und bei Bedarf Vorschau-Domains gehören. Änderungen der erlaubten Ursprünge werden nach dem Deployment wirksam.
+Für Browser-Clients müssen alle tatsächlich verwendeten Ursprünge exakt in `BIBLEGRAPHLINKS_API_ALLOWED_ORIGINS` stehen. Dazu können eigene Domains und bei Bedarf Vorschau-Domains gehören. Änderungen der erlaubten Ursprünge werden nach dem Deployment wirksam.
 
 ## Betrieb und Datenlizenz
 

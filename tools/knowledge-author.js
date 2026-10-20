@@ -66,7 +66,8 @@ function validateNewDraft(original, draft) {
     for (const name of update.alternativeNames) {
       const normalized = name.toLocaleLowerCase()
       if ([current.name, ...(current.alternativeNames ?? [])].some(existing => existing.toLocaleLowerCase() === normalized)) throw new Error(`Alternativname ist bereits hinterlegt: ${name}`)
-      const collisions = possibleNameRecords.filter(({ id, record }) => id !== update.entityId && [record.name, ...(record.alternativeNames ?? [])].some(existing => existing.toLocaleLowerCase() === normalized))
+      const mergeSourceIds = new Set((draft.entityMerges ?? []).filter(merge => merge.intoEntityId === update.entityId).map(merge => merge.entityId))
+      const collisions = possibleNameRecords.filter(({ id, record }) => id !== update.entityId && !mergeSourceIds.has(id) && [record.name, ...(record.alternativeNames ?? [])].some(existing => existing.toLocaleLowerCase() === normalized))
       if (collisions.length) throw new Error(`Alternativname ist bereits einer anderen Entität zugeordnet: ${name} (${collisions.map(({ id }) => id).join(', ')})`)
     }
   }
@@ -86,7 +87,7 @@ function validateNewDraft(original, draft) {
     const target = mergeById.get(merge.intoEntityId)
     if (source.entityType !== target.entityType) throw new Error(`Entitätstypen stimmen bei Zusammenführung nicht überein: ${merge.entityId}`)
     const sourceNames = [source.name, ...(source.alternativeNames ?? [])].map(nameKey)
-    const targetNames = [target.name, ...(target.alternativeNames ?? [])].map(nameKey)
+    const targetNames = [target.name, ...(target.alternativeNames ?? []), ...(draft.entityUpdates ?? []).filter(update => update.entityId === merge.intoEntityId).flatMap(update => update.alternativeNames)].map(nameKey)
     if (!sourceNames.some(name => targetNames.includes(name))) throw new Error(`Zusammenführung braucht mindestens einen übereinstimmenden Namen: ${merge.entityId}`)
     if (sourceIds.includes(merge.intoEntityId)) throw new Error(`Zusammenführungsketten sind nicht erlaubt: ${merge.intoEntityId}`)
   }

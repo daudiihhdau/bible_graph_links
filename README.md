@@ -19,6 +19,12 @@ dauerhaften Datenbestand. Eigene Inhalte lassen sich über geprüfte Entwürfe
 ergänzen; Anwendungen können die stabilen IDs und Graphbeziehungen direkt
 abfragen.
 
+Eine öffentliche, schreibgeschützte Graph-API kann als eigenständiges Vercel-
+Projekt aus diesem Repository bereitgestellt werden. Sie richtet sich an
+beliebige Clients und bietet vorbereitete Endpunkte für Suche, Kategorien,
+Datensätze und Beziehungen. Einrichtung, CORS-Konfiguration und Endpunkte
+stehen in der [API-Dokumentation](docs/vercel-graph-api.md).
+
 ## Lizenz
 
 Der Programmcode und die zugehörige technische Dokumentation stehen unter der
@@ -146,6 +152,14 @@ vorhandene Daten in LadybugDB durchsuchen, Belege prüfen, Entwürfe mit
 schreibt keine Änderungen an der aktiven Datei, bevor ein vollständiger Neuaufbau
 erfolgreich validiert wurde.
 Details stehen in [`docs/ladybugdb.md`](docs/ladybugdb.md).
+
+## Öffentliche Vercel-Graph-API
+
+Eine optionale, schreibgeschützte HTTP-API für statische Clients liegt in `api/v1/`.
+Sie wird als eigenes Vercel-Projekt aus diesem Repository betrieben und liest die
+LadybugDB direkt. Clients bleiben unabhängig und rufen die vorbereiteten
+Endpunkte über HTTPS auf. Endpunkte, Deployment- und CORS-Konfiguration stehen in
+[`docs/vercel-graph-api.md`](docs/vercel-graph-api.md).
 
 ## LadybugDB direkt verwenden
 

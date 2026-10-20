@@ -20,5 +20,8 @@
   "exports": "./src/index.js",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@ladybugdb/core": "^0.21.2"
   }
 }

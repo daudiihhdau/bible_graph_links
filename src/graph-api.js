@@ -238,6 +238,122 @@ async function nodeRelations (url) {
   return { node: node.json, items, nextCursor: result.length > limit ? String(offset + limit) : null, limit }
 }
 
+function chronologyYear (date) {
+  if (!date) return null
+  if (date.era === 'BCE') return -Number(date.year)
+  if (date.era === 'ZERO') return -1
+  return Number(date.year)
+}
+
+async function timeline (url) {
+  const categoryId = requiredParam(url, 'categoryId')
+  const fromYear = Number(requiredParam(url, 'fromYear'))
+  const toYear = Number(requiredParam(url, 'toYear'))
+  if (!Number.isSafeInteger(fromYear) || !Number.isSafeInteger(toYear) || fromYear >= toYear) {
+    throw httpError(400, 'fromYear und toYear müssen ganze Jahre sein; toYear muss nach fromYear liegen.')
+  }
+  const includeDescendants = url.searchParams.get('includeDescendants') === 'true'
+  const { limit, offset } = pageOptions(url)
+  const curriculum = await getCurriculum()
+  const categories = categoryRecords(curriculum)
+  const root = categoryById(curriculum, categoryId)
+  if (!root) throw httpError(404, 'Kategorie nicht gefunden.')
+  const selectedCategories = includeDescendants
+    ? categories.filter(candidate => {
+      if (candidate.id === categoryId) return true
+      let parent = candidate.parentCategoryId
+      while (parent) {
+        if (parent === categoryId) return true
+        parent = categoryById(curriculum, parent)?.parentCategoryId
+      }
+      return false
+    })
+    : [root]
+
+  const entityIdsByCategory = selectedCategories.map(category => {
+    const ids = new Set(category.entityIds ?? [])
+    return { category, entityIds: ids, assertionIds: category.assertionIds ?? [] }
+  })
+  const assertionIds = [...new Set(entityIdsByCategory.flatMap(entry => entry.assertionIds))]
+  if (assertionIds.length) {
+    const assertionRows = await rows(
+      "MATCH (n:KnowledgeRecord) WHERE n.id IN $ids AND n.kind = 'assertion' RETURN n.json AS json",
+      { ids: assertionIds }
+    )
+    const assertions = assertionRows.map(row => parseJson(field(row, 'json', 0)))
+    for (const entry of entityIdsByCategory) {
+      const categoryAssertions = assertions.filter(assertion => entry.assertionIds.includes(assertion.id))
+      for (const assertion of categoryAssertions) {
+        if (assertion.subjectEntityId) entry.entityIds.add(assertion.subjectEntityId)
+        if (assertion.target?.targetType === 'entity') entry.entityIds.add(assertion.target.entityId)
+      }
+    }
+  }
+
+  const allEntityIds = [...new Set(entityIdsByCategory.flatMap(entry => [...entry.entityIds]))]
+  const entityRows = allEntityIds.length
+    ? await rows("MATCH (n:KnowledgeRecord) WHERE n.id IN $ids AND n.kind = 'entity' RETURN n.json AS json", { ids: allEntityIds })
+    : []
+  const entities = new Map(entityRows.map(row => {
+    const entity = parseJson(field(row, 'json', 0))
+    return [entity.id, entity]
+  }))
+
+  const eventIds = [...entities.values()].filter(entity => entity.entityType === 'event' && !entity.time).map(entity => entity.id)
+  const timepointByEvent = new Map()
+  if (eventIds.length) {
+    const relationRows = await rows(`
+      MATCH (a:KnowledgeRecord)-[:KnowledgeLink {kind: 'SUBJECT'}]->(s:KnowledgeRecord)
+      WHERE a.kind = 'assertion' AND s.id IN $ids
+      RETURN a.json AS json
+    `, { ids: eventIds })
+    for (const row of relationRows) {
+      const assertion = parseJson(field(row, 'json', 0))
+      if (assertion.relationTypeId === 'happened-on' && assertion.target?.targetType === 'entity') {
+        timepointByEvent.set(assertion.subjectEntityId, assertion.target.entityId)
+      }
+    }
+  }
+  const missingTimepointIds = [...new Set([...timepointByEvent.values()].filter(id => !entities.has(id)))]
+  if (missingTimepointIds.length) {
+    const timepointRows = await rows("MATCH (n:KnowledgeRecord) WHERE n.id IN $ids AND n.kind = 'entity' RETURN n.json AS json", { ids: missingTimepointIds })
+    for (const row of timepointRows) {
+      const entity = parseJson(field(row, 'json', 0))
+      entities.set(entity.id, entity)
+    }
+  }
+
+  const all = []
+  for (const { category, entityIds } of entityIdsByCategory) {
+    for (const id of entityIds) {
+      const entity = entities.get(id)
+      if (!entity) continue
+      const time = entity.time ?? entities.get(timepointByEvent.get(entity.id))?.time ?? null
+      if (!time?.start) continue
+      const start = chronologyYear(time.start)
+      const end = chronologyYear(time.end ?? time.start)
+      if (start == null || end < fromYear || start > toYear) continue
+      all.push({
+        id: entity.id,
+        entityType: entity.entityType,
+        name: entity.name,
+        ...(entity.description ? { description: entity.description } : {}),
+        time,
+        categoryId: category.id,
+        categoryName: category.name
+      })
+    }
+  }
+  all.sort((a, b) => chronologyYear(a.time.start) - chronologyYear(b.time.start) || a.name.localeCompare(b.name) || a.categoryId.localeCompare(b.categoryId))
+  const items = all.slice(offset, offset + limit)
+  return {
+    category: { id: root.id, name: root.name },
+    items,
+    nextCursor: all.length > offset + limit ? String(offset + limit) : null,
+    limit
+  }
+}
+
 export async function handleKnowledgeRequest (pathname, url) {
   if (pathname === '/api/v1/manifest') return getManifest()
   if (pathname === '/api/v1/categories') return getCategories(url)
@@ -250,6 +366,7 @@ export async function handleKnowledgeRequest (pathname, url) {
     return record
   }
   if (pathname === '/api/v1/node-relations') return nodeRelations(url)
+  if (pathname === '/api/v1/timeline') return timeline(url)
   throw httpError(404, 'API-Endpunkt nicht gefunden.')
 }
 

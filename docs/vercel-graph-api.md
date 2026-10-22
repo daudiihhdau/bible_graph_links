@@ -31,8 +31,11 @@ Alle Endpunkte verwenden `GET` und liefern JSON. Beispielbasis ist `https://<api
 | `/search?q=…&type=person&limit=20&cursor=0` | Suche nach Namen, Alternativnamen und JSON-Datensätzen; `type` ist optional |
 | `/node?id=…` | Vollständiger Datensatz anhand stabiler ID |
 | `/node-relations?id=…&direction=both&limit=40&cursor=0` | Aussagen zu einem Knoten; `direction` ist `both`, `in` oder `out` |
+| `/timeline?categoryId=…&fromYear=…&toYear=…&limit=40&cursor=0` | Datierte Einträge einer Kategorie im Zeitraum, einschließlich Zeiträumen, die das Fenster überschneiden |
 
-`limit` ist auf 40 begrenzt. `cursor` ist ein numerischer Offset in einer nach ID stabil sortierten Ergebnismenge. Ungültige Parameter liefern 400; unbekannte Datensatz- und Kategorie-IDs liefern 404. Interne Fehlerdetails werden nicht an Clients gesendet. Relationsantworten enthalten Subjekt, Beziehungstyp, optionales Entitätsziel und die vollständigen JSON-Daten der Aussage. Text- und Quellenziele besitzen kein Entitätsziel.
+`limit` ist auf 40 begrenzt. `cursor` ist ein numerischer Offset in einer stabil sortierten Ergebnismenge. Ungültige Parameter liefern 400; unbekannte Datensatz- und Kategorie-IDs liefern 404. Interne Fehlerdetails werden nicht an Clients gesendet. Relationsantworten enthalten Subjekt, Beziehungstyp, optionales Entitätsziel und die vollständigen JSON-Daten der Aussage. Text- und Quellenziele besitzen kein Entitätsziel.
+
+Der Zeitstrahl liefert `{ category, items, nextCursor, limit }`. Jeder Eintrag enthält die Entitäts-ID, den Typ, Namen, optionale Beschreibung und `time` aus Question OS. Ereignisse, die über `happened-on` datiert sind, erhalten die Zeit des verknüpften Zeitpunkts. Mit `includeDescendants=true` werden zusätzlich Unterkategorien abgefragt. Jahreszahlen akzeptieren negative Werte für v. Chr. und positive Werte für n. Chr.; intern gibt es kein Jahr 0.
 
 Beispiel:
 
